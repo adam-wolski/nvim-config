@@ -1,0 +1,33 @@
+[submodule "pack/core/start/semantic-highlight.vim"]
+	path = pack/core/start/semantic-highlight.vim
+	url = https://github.com/jaxbot/semantic-highlight.vim
+[submodule "pack/core/start/fzf"]
+	path = pack/core/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "pack/core/start/fzf.vim"]
+	path = pack/core/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "pack/core/start/rainbow"]
+	path = pack/core/start/rainbow
+	url = https://github.com/luochen1990/rainbow
+[submodule "pack/core/start/neovim-gui-shim"]
+	path = pack/core/start/neovim-gui-shim
+	url = https://github.com/equalsraf/neovim-gui-shim
+[submodule "pack/core/start/hlsl.vim"]
+	path = pack/core/start/hlsl.vim
+	url = https://github.com/beyondmarc/hlsl.vim
+[submodule "pack/core/start/auto-pairs"]
+	path = pack/core/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "pack/core/start/coc.nvim"]
+	path = pack/core/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+[submodule "pack/core/start/vim-lsp-cxx-highlight"]
+	path = pack/core/start/vim-lsp-cxx-highlight
+	url = https://github.com/jackguo380/vim-lsp-cxx-highlight
+[submodule "pack/core/start/vim-polyglot"]
+	path = pack/core/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/core/start/vim-fugitive"]
+	path = pack/core/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive

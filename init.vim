@@ -1,17 +1,3 @@
-call plug#begin()
-	Plug 'jaxbot/semantic-highlight.vim'
-    	Plug 'junegunn/fzf'
-    	Plug 'junegunn/fzf.vim'
-    	Plug 'luochen1990/rainbow'
-    	Plug 'equalsraf/neovim-gui-shim'
-    	Plug 'beyondmarc/hlsl.vim'
-    	Plug 'jiangmiao/auto-pairs'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'jackguo380/vim-lsp-cxx-highlight'
-	Plug 'sheerun/vim-polyglot'
-	Plug 'tpope/vim-fugitive'
-call plug#end()
-
 set exrc
 set ignorecase
 set hidden

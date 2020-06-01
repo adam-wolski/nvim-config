@@ -7,9 +7,6 @@
 [submodule "pack/core/start/rainbow"]
 	path = pack/core/start/rainbow
 	url = https://github.com/luochen1990/rainbow
-[submodule "pack/core/start/neovim-gui-shim"]
-	path = pack/core/start/neovim-gui-shim
-	url = https://github.com/equalsraf/neovim-gui-shim
 [submodule "pack/core/start/hlsl.vim"]
 	path = pack/core/start/hlsl.vim
 	url = https://github.com/beyondmarc/hlsl.vim

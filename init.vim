@@ -33,8 +33,6 @@ nmap <C-p> :Files<CR>
 tnoremap <Esc> <C-\><C-n>  
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
-runtime init-coc.vim
-
 function MyFoldText()
 	let linestart = trim(getline(v:foldstart))
 	let lineend = trim(getline(v:foldend))

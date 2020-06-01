@@ -11,17 +11,19 @@ set breakindent
 set icm=nosplit
 let &breakat="),="
 let &grepprg = "rg --vimgrep"
-let &statusline = "%{GitStatus()} %f %{coc#status()} %h%w%m%r%=%-14.(%l,%c%V%) %P"
+let &statusline = "%{GitStatus()} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
+
 let &shell = 'pwsh' 
 let &shellquote= ''
 let &shellpipe= '|' 
 let &shellxquote= ''
 let &shellcmdflag='-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
 let &shellredir='| Tee-Object'
+
 let mapleader = "\<Space>"
 
 let g:rainbow_active = 1
-let g:fzf_preview_window = '' 	" Disable preview window
+let g:fzf_preview_window = ''
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 
 colorscheme nugl
@@ -46,27 +48,8 @@ function MyFoldText()
 endfunction
 
 function GitStatus()
-	return getbufvar(bufnr('%'), 'LastGitStatus') 
+	return getbufvar(bufnr('%'), 'git_status') 
 endfunction
 
-function UpdateGitStatus()
-	let filename = expand('%')
-	if !len(filename)
-		return ''
-	endif
-	let status = system("git diff --numstat " . filename)
-	let matched = matchlist(status, '^\W*\(\d*\)\W*\(\d*\).*$')
-	if len(matched)
-		let i = matched[1]
-		let d = matched[2]
-		if !i && !d
-			return ''
-		endif
-		return printf("+%d -%d", i, d)
-	else
-		return ''
-	endif
-endfunction
-
-au BufEnter * let b:LastGitStatus = UpdateGitStatus()
-au BufWritePost * let b:LastGitStatus = UpdateGitStatus()
+au BufEnter * let b:git_status = '' | call luaeval('require("git_status").run()')
+au BufWritePost * let b:git_status = '' | call luaeval('require("git_status").run()')

@@ -15,10 +15,10 @@ let &statusline = "%{GitStatus()} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
 
 let &shell = 'pwsh' 
 let &shellquote= ''
-let &shellpipe= '|' 
+let &shellpipe= '| Tee-Object' 
 let &shellxquote= ''
 let &shellcmdflag='-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
-let &shellredir='| Tee-Object'
+let &shellredir='| Out-File -Encoding UTF8'
 
 let mapleader = "\<Space>"
 

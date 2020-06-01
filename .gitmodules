@@ -17,10 +17,10 @@
 	path = pack/core/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
 [submodule "pack/core/start/coc.nvim"]
-	path = pack/core/start/coc.nvim
+	path = pack/core/opt/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
 [submodule "pack/core/start/vim-lsp-cxx-highlight"]
-	path = pack/core/start/vim-lsp-cxx-highlight
+	path = pack/core/opt/vim-lsp-cxx-highlight
 	url = https://github.com/jackguo380/vim-lsp-cxx-highlight
 [submodule "pack/core/start/vim-polyglot"]
 	path = pack/core/start/vim-polyglot

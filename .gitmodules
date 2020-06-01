@@ -1,6 +1,3 @@
-[submodule "pack/core/start/semantic-highlight.vim"]
-	path = pack/core/start/semantic-highlight.vim
-	url = https://github.com/jaxbot/semantic-highlight.vim
 [submodule "pack/core/start/fzf"]
 	path = pack/core/start/fzf
 	url = https://github.com/junegunn/fzf

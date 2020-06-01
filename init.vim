@@ -10,9 +10,14 @@ set linebreak
 set breakindent
 set icm=nosplit
 let &breakat="),="
-let &shellpipe="| wtee.exe"
 let &grepprg = "rg --vimgrep"
 let &statusline = "%{GitStatus()} %f %{coc#status()} %h%w%m%r%=%-14.(%l,%c%V%) %P"
+let &shell = 'pwsh' 
+let &shellquote= ''
+let &shellpipe= '|' 
+let &shellxquote= ''
+let &shellcmdflag='-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
+let &shellredir='| Tee-Object'
 let mapleader = "\<Space>"
 
 let g:rainbow_active = 1

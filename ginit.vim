@@ -11,3 +11,4 @@ function! AdjustFontSize(amount)
 	:execute "GuiFont! " . font . ":h" . font_size
 endfunction
 
+set mouse=n

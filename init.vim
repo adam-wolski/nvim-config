@@ -24,7 +24,6 @@ let &shellcmdflag='-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
 let &shellredir='| Out-File -Encoding UTF8'
 
 nmap <Leader>/ :nohl<CR>
-" tnoremap <Esc> <C-\><C-n> Overwritten by config for fzf
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
 let g:rainbow_active = 1
@@ -35,7 +34,6 @@ command! B :Buffers
 command! F :Files
 command! L :Lines
 nmap <C-p> :Files<CR>
-tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 function MyFoldText()
 	let linestart = trim(getline(v:foldstart))

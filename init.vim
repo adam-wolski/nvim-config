@@ -25,6 +25,7 @@ let &shellredir='| Out-File -Encoding UTF8'
 
 nmap <Leader>/ :nohl<CR>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+map Y y$
 
 let g:rainbow_active = 1
 

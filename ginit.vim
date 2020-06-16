@@ -12,3 +12,5 @@ function! AdjustFontSize(amount)
 endfunction
 
 set mouse=n
+
+GuiFont! Fira Code:h10

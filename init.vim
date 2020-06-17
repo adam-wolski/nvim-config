@@ -11,10 +11,14 @@ set foldlevel=2
 set linebreak
 set breakindent
 set icm=nosplit
+set mouse=n
 let &breakat="),="
 let &grepprg = "rg --vimgrep"
 let &statusline = "%{GitStatus()} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
+let &guifont = "Iosevka:h16"
 let mapleader = "\<Space>"
+
+let g:neovide_refresh_rate=140
 
 let &shell = 'pwsh' 
 let &shellquote= ''
@@ -25,6 +29,10 @@ let &shellredir='| Out-File -Encoding UTF8'
 
 nmap <Leader>/ :nohl<CR>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+nmap <silent> <leader>F :let g:neovide_fullscreen=!g:neovide_fullscreen<CR>
+nmap <silent> <leader>> :call AdjustFontSize(1)<CR>
+nmap <silent> <leader>< :call AdjustFontSize(-1)<CR>
+
 map Y y$
 
 let g:rainbow_active = 1
@@ -52,5 +60,16 @@ function GitStatus()
 	return getbufvar(bufnr('%'), 'git_status') 
 endfunction
 
+function! AdjustFontSize(amount)
+	" Split font name from FontName:hSize format and set increased size
+	let current_font = &guifont
+	let font_split = split(current_font, ':')
+	let font = font_split[0]
+	let font_size = font_split[1][1:] + a:amount
+	let command = "let &guifont = \"" . font . ":h" . font_size . "\""
+	:execute command
+endfunction
+
 au BufEnter * let b:git_status = '' | call luaeval('require("git_status").run()')
 au BufWritePost * let b:git_status = '' | call luaeval('require("git_status").run()')
+

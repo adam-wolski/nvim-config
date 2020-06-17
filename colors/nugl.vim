@@ -111,13 +111,14 @@ let s:fa7 = " guifg=".s:c7
 " }}}
 " Default gui formats {{{
 
-let s:gn = " gui=NONE"
-let s:gb = " gui=bold"
-let s:gu = " gui=underline"
-let s:gi = " gui=italic"
-let s:gc = " gui=undercurl"
-let s:gr = " gui=reverse"
-let s:gs = " gui=standout"
+let s:gn  = " gui=NONE"
+let s:gb  = " gui=bold"
+let s:gu  = " gui=underline"
+let s:gi  = " gui=italic"
+let s:gc  = " gui=undercurl"
+let s:gr  = " gui=reverse"
+let s:gs  = " gui=standout"
+let s:gbi = " gui=bold,italic"
 
 " }}}
 " Special colors {{{
@@ -141,7 +142,7 @@ let s:g_normal = s:gn
 let s:b_normal = s:bg0
 exe "hi! Normal"   .s:g_normal   .s:g_normal   .s:b_normal
 
-let s:g_comment = s:gi   
+let s:g_comment = s:gbi 
 let s:f_comment = s:fa6   
 let s:b_comment = s:bgn
 exe "hi! Comment"   .s:g_comment   .s:f_comment   .s:b_comment
@@ -479,7 +480,7 @@ exe "hi! LspCxxHlSymTypeParameter"      .s:ba6 .s:fa2 .s:gn
 
 exe "hi! LspCxxHlSymFunction"           .s:bg0 .s:fa5 .s:gn
 exe "hi! LspCxxHlSymMethod"             .s:bg0 .s:fa5 .s:gi
-exe "hi! LspCxxHlSymStaticMethod"       .s:bg0 .s:fa5 .s:gb
+exe "hi! LspCxxHlSymStaticMethod"       .s:bg0 .s:fa5 .s:gn
 exe "hi! LspCxxHlSymConstructor"        .s:bg0 .s:fa1 .s:gi
 
 exe "hi! LspCxxHlSymEnumMember"         .s:bg0 .s:fa2 .s:gn
@@ -488,26 +489,26 @@ exe "hi! LspCxxHlSymMacro"              .s:bg0 .s:fa2 .s:gn
 
 exe "hi! LspCxxHlSymNamespace"          .s:bg0 .s:fa7 .s:gn
 
-exe "hi! LspCxxHlSymVariable"           .s:bg0 .s:fa3 .s:gb
-exe "hi! LspCxxHlSymParameter"          .s:bg0 .s:fg0 .s:gi
+exe "hi! LspCxxHlSymVariable"           .s:bg0 .s:fa3 .s:gn
+exe "hi! LspCxxHlSymParameter"          .s:bg0 .s:fg0 .s:gn
 exe "hi! LspCxxHlSymField"              .s:bg0 .s:fa1 .s:gi
 
 " Static only member
-exe "hi! LspCxxHlSymUnknownStaticField" .s:bg0 .s:fa1 .s:gb
+exe "hi! LspCxxHlSymUnknownStaticField" .s:bg0 .s:fa6 .s:gn
 " Alias to primitive
 exe "hi! LspCxxHlSymPrimitive"          .s:bg0 .s:fa0 .s:gn
 " == TypeAlias
 exe "hi! LspCxxHlSymTypedef"            .s:bg0 .s:fa0 .s:gi
 " == TypeParamerer
-exe "hi! LspCxxHlSymTemplateParameter"  .s:bg0 .s:fa0 .s:gu
+exe "hi! LspCxxHlSymTemplateParameter"  .s:bg0 .s:fa0 .s:gb
 " == EnumMember
 exe "hi! LspCxxHlSymEnumConstant"       .s:bg0 .s:fa6 .s:gn
 " A type dependent on a template
 " E.g. T::A, A would be a dependent type
-exe "hi! LspCxxHlSymDependentType"      .s:bg0 .s:fa0 .s:gu
+exe "hi! LspCxxHlSymDependentType"      .s:bg0 .s:fa0 .s:gb
 " A name dependent on a template, usually a function 
 " but can also be a variable?
-exe "hi! LspCxxHlSymDependentName"      .s:bg0 .s:fa1 .s:gu
+exe "hi! LspCxxHlSymDependentName"      .s:bg0 .s:fa1 .s:gb
 " C++20 concepts
 exe "hi! LspCxxHlSymConcept"            .s:ba0 .s:fa2 .s:gn
 

@@ -57,7 +57,7 @@ function MyFoldText()
 endfunction
 
 function GitStatus()
-	return getbufvar(bufnr('%'), 'git_status') 
+	return getbufvar(bufnr('%'), 'git_branch') . ' ' . getbufvar(bufnr('%'), 'git_status') 
 endfunction
 
 function! AdjustFontSize(amount)
@@ -70,6 +70,6 @@ function! AdjustFontSize(amount)
 	:execute command
 endfunction
 
-au BufEnter * let b:git_status = '' | call luaeval('require("git_status").run()')
-au BufWritePost * let b:git_status = '' | call luaeval('require("git_status").run()')
+au BufEnter * let b:git_status = '' | let b:git_branch = '' | call luaeval('require("git_status").run()')
+au BufWritePost * let b:git_status = '' | let b:git_branch = '' | call luaeval('require("git_status").run()')
 

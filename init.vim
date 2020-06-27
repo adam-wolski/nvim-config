@@ -20,13 +20,6 @@ let mapleader = "\<Space>"
 
 let g:neovide_refresh_rate=140
 
-let &shell = 'pwsh' 
-let &shellquote= ''
-let &shellpipe= '| Tee-Object' 
-let &shellxquote= ''
-let &shellcmdflag='-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
-let &shellredir='| Out-File -Encoding UTF8'
-
 nmap <Leader>/ :nohl<CR>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 nmap <silent> <leader>F :let g:neovide_fullscreen=!g:neovide_fullscreen<CR>
@@ -37,12 +30,15 @@ map Y y$
 
 let g:rainbow_active = 1
 
-let g:fzf_preview_window = ''
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 command! B :Buffers
 command! F :Files
 command! L :Lines
 nmap <C-p> :Files<CR>
+
+if has('win32')
+	runtime init-windows.vim
+endif
 
 function MyFoldText()
 	let linestart = trim(getline(v:foldstart))

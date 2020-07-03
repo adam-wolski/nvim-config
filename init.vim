@@ -25,6 +25,8 @@ tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 nmap <silent> <leader>F :let g:neovide_fullscreen=!g:neovide_fullscreen<CR>
 nmap <silent> <leader>> :call AdjustFontSize(1)<CR>
 nmap <silent> <leader>< :call AdjustFontSize(-1)<CR>
+nmap <silent> <leader>b :Buffers<CR>
+nmap <silent> <leader>f :Files<CR>
 vmap <silent> <leader>s( xi()<esc>P%
 vmap <silent> <leader>s[ xi[]<esc>P%
 vmap <silent> <leader>s{ xi{}<esc>P%
@@ -41,7 +43,6 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 command! B :Buffers
 command! F :Files
 command! L :Lines
-nmap <C-p> :Files<CR>
 
 if has('win32')
 	runtime init-windows.vim

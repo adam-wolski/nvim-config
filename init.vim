@@ -20,7 +20,7 @@ let mapleader = "\<Space>"
 
 let g:neovide_refresh_rate=140
 
-nmap <Leader>/ :nohl<CR>
+nmap <silent> <Leader>/ :nohl<CR>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 nmap <silent> <leader>F :let g:neovide_fullscreen=!g:neovide_fullscreen<CR>
 nmap <silent> <leader>> :call AdjustFontSize(1)<CR>

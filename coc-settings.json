@@ -1,4 +1,4 @@
 {
 	"clangd.semanticHighlighting": true,
-	"clangd.arguments": ["--clang-tidy", "--background-index", "--suggest-missing-includes", "--cross-file-rename"]
+	"clangd.arguments": ["--clang-tidy", "--background-index", "--suggest-missing-includes", "--cross-file-rename", "--completion-style=detailed"]
 }

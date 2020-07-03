@@ -30,6 +30,7 @@ map Y y$
 
 let g:rainbow_active = 1
 
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 command! B :Buffers
 command! F :Files
@@ -39,6 +40,18 @@ nmap <C-p> :Files<CR>
 if has('win32')
 	runtime init-windows.vim
 endif
+
+function! FloatingFZF()
+	let width = float2nr(&columns * 0.8)
+	let height = float2nr(&lines * 0.6)
+	let opts = { 'relative': 'editor',
+		   \ 'row': (&lines - height) / 2,
+		   \ 'col': (&columns - width) / 2,
+		   \ 'width': width,
+		   \ 'height': height }
+
+	call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+endfunction
 
 function MyFoldText()
 	let linestart = trim(getline(v:foldstart))

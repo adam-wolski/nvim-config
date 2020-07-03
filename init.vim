@@ -25,6 +25,12 @@ tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 nmap <silent> <leader>F :let g:neovide_fullscreen=!g:neovide_fullscreen<CR>
 nmap <silent> <leader>> :call AdjustFontSize(1)<CR>
 nmap <silent> <leader>< :call AdjustFontSize(-1)<CR>
+vmap <silent> <leader>s( xi()<esc>P%
+vmap <silent> <leader>s[ xi[]<esc>P%
+vmap <silent> <leader>s{ xi{}<esc>P%
+vmap <silent> <leader>s<lt> xi<lt>><esc>P
+vmap <silent> <leader>s' xi''<esc>P
+vmap <silent> <leader>s" xi""<esc>P
 
 map Y y$
 

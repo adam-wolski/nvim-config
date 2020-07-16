@@ -13,8 +13,8 @@ sign define BGBreakpoint text=* texthl=Error
 
 nmap <silent> <F9>   :BGBreak<CR>:exe "sign place " . g:BGBreakpointId . " name=BGBreakpoint group=BGBreakpoints line=" . line('.')<CR>:let g:BGBreakpointId =  g:BGBreakpointId + 1<CR>
 nmap <silent> <S-F9> :BGRBreak<CR>:sign unplace group=BGBreakpoints<CR>
-nmap <silent> <F11>   :BGOpen<CR>
-nmap <silent> <S-F11> :BGClose<CR>
+nmap <silent> <F7>   :BGOpen<CR>
+nmap <silent> <S-F7> :BGClose<CR>
 nmap <silent> <F5>    :BGStartDebug<CR>
 nmap <silent> <S-F5>  :BGStopDebug<CR>
 nmap <silent> <F6>    :BGContinue<CR>

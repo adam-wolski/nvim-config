@@ -44,6 +44,8 @@ command! B :Buffers
 command! F :Files
 command! L :Lines
 
+command! ClearBuffers :%bd|e#|bd#
+
 if has('win32')
 	runtime init-windows.vim
 endif

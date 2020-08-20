@@ -1,5 +1,5 @@
 colorscheme nugl
-
+set termguicolors
 set exrc
 set ignorecase
 set hidden

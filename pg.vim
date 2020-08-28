@@ -7,14 +7,15 @@ set colorcolumn=120
 let g:ue_dir = $UE_PATH
 let g:project_dir = getcwd() . "\\..\\..\\"
 let g:uproject_file = trim(system('Get-ChildItem "../.." | Where-Object -Property Name -Match ".uproject" | foreach { $_.FullName }'))
+let g:project_name = trim(system('Split-Path ' . g:uproject_file . ' -LeafBase'))
 let g:pg_dir = getcwd()
 let g:ue_editor_debug_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe"
 let g:ue_editor_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor.exe"
 let g:ue_insights_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UnrealInsights.exe"
 let g:ue_build = g:ue_dir . "\\Engine\\Build\\BatchFiles\\Build.bat"
-let g:build_debug_args = ' -Target="WIPEditor Win64 DebugGame" -Project="' . g:uproject_file . '" -NoEngineChanges'
-let g:build_debug_engine_args = ' -Target="WIPEditor Win64 DebugGame" -Project="' . g:uproject_file . '"'
-let g:build_game_args = ' -Target="WIP Win64 Development" -Project="' . g:uproject_file . '" -NoEngineChanges'
+let g:build_debug_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -Project="' . g:uproject_file . '" -NoEngineChanges'
+let g:build_debug_engine_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -Project="' . g:uproject_file . '"'
+let g:build_game_args = ' -Target="' . g:project_name . ' Win64 Development" -Project="' . g:uproject_file . '" -NoEngineChanges'
 let g:generate_clang_database_args = ' Win64 UE4Editor DebugGame -mode=GenerateClangDatabase -project="' . g:uproject_file . '"'
 
 let &makeprg = g:ue_build . g:build_debug_args

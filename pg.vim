@@ -13,11 +13,11 @@ let g:ue_editor_debug_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor-Win
 let g:ue_editor_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor.exe"
 let g:ue_insights_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UnrealInsights.exe"
 let g:ue_build = g:ue_dir . "\\Engine\\Build\\BatchFiles\\Build.bat"
-let g:build_debug_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -Project="' . g:uproject_file . '" -NoEngineChanges'
-let g:build_debug_engine_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -Project="' . g:uproject_file . '"'
-let g:build_game_args = ' -Target="' . g:project_name . ' Win64 Development" -Project="' . g:uproject_file . '" -NoEngineChanges'
-let g:generate_clang_database_args = ' Win64 UE4Editor DebugGame -mode=GenerateClangDatabase -project="' . g:uproject_file . '"'
-
+let g:project_arg = ' -Project="' .g:uproject_file . '"'
+let g:build_debug_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -NoEngineChanges' . g:project_arg
+let g:build_debug_engine_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame"' . g:project_arg
+let g:build_game_args = ' -Target="' . g:project_name . ' Win64 Development" -NoEngineChanges' . g:project_arg
+let g:generate_clang_database_args = ' Win64 UE4Editor DebugGame -mode=GenerateClangDatabase' . g:project_arg
 let &makeprg = g:ue_build . g:build_debug_args
 let &statusline = "%{coc#status()} | " . &statusline
 

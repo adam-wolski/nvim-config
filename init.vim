@@ -45,6 +45,8 @@ command! B :Buffers
 command! F :Files
 command! L :Lines
 
+command! G :LazyGit
+
 command! ClearBuffers :%bd|e#|bd#
 
 if has('win32')

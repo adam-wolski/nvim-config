@@ -19,6 +19,6 @@
 [submodule "pack/core/start/vim-polyglot"]
 	path = pack/core/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule "pack/core/start/vim-fugitive"]
-	path = pack/core/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
+[submodule "pack/core/start/lazygit.nvim"]
+	path = pack/core/start/lazygit.nvim
+	url = https://github.com/kdheepak/lazygit.nvim

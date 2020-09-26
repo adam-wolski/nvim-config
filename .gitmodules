@@ -22,6 +22,9 @@
 [submodule "pack/core/start/lazygit.nvim"]
 	path = pack/core/start/lazygit.nvim
 	url = https://github.com/kdheepak/lazygit.nvim
+[submodule "pack/core/start/nvim-lspconfig"]
+	path = pack/core/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
 [submodule "pack/core/start/goyo.vim"]
 	path = pack/core/start/goyo.vim
 	url = https://github.com/junegunn/goyo.vim

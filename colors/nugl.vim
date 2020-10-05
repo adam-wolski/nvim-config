@@ -286,7 +286,7 @@ exe "hi! PmenuThumb"   .s:gn   .s:fg0   .s:bgD
 exe "hi! TabLine"   .s:gu   .s:fg0   .s:bgd
 exe "hi! TabLineFill"   .s:gu   .s:fg0   .s:bgd
 exe "hi! TabLineSel"   .s:gu   .s:fg2   .s:bgl
-exe "hi! CursorColumn"   .s:gn   .s:fgn   .s:bgd
+exe "hi! CursorColumn"   .s:gn   .s:fgn   .s:bgl
 exe "hi! CursorLine"   .s:gn   .s:fgn   .s:bgl
 exe "hi! ColorColumn"   .s:gn   .s:fgn   .s:bgd
 exe "hi! Cursor"   .s:gr   .s:fgn   .s:ba2

@@ -17,6 +17,7 @@ let &grepprg = "rg --vimgrep"
 let &statusline = "%{GitStatus()} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
 let &guifont = "Iosevka:h16"
 let mapleader = "\<Space>"
+let g:vimsyn_embed = 'l'
 
 let g:neovide_refresh_rate=140
 

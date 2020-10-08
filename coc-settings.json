@@ -1,5 +1,7 @@
 {
 	"clangd.semanticHighlighting": true,
 	"clangd.arguments": ["--clang-tidy", "--background-index", "--suggest-missing-includes", "--cross-file-rename", "--completion-style=detailed"],
-	"coc.preferences.useQuickfixForLocations": true
+	"coc.preferences.useQuickfixForLocations": true,
+	"coc.preferences.formatOnSaveFiletypes": ["rust"],
+	"rust.clippy_preference": "on"
 }

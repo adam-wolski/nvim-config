@@ -97,7 +97,6 @@ function! ScrollOff()
 	let &scrolloff = float2nr(h * 0.35)
 endfunctio
 
-au BufEnter * let b:git_status = '' | let b:git_branch = '' | call luaeval('require("git_status").run()')
-au BufWritePost * let b:git_status = '' | let b:git_branch = '' | call luaeval('require("git_status").run()')
+au BufEnter,BufWritePost * let b:git_status = '' | let b:git_branch = '' | call luaeval('require("git_status").run()')
 au BufEnter,WinEnter,WinNew,VimResized *,*.* call ScrollOff()
 

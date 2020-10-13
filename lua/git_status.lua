@@ -2,9 +2,10 @@ local function update_branch()
 	local branch = ''
 	local stdout = vim.loop.new_pipe(false)
 	local stderr = vim.loop.new_pipe(false)
+	local cwd = vim.fn.expand("%:h")
 	local git = 'git'
 	local arguments = {'symbolic-ref', '--short', 'HEAD'}
-	local handle = vim.loop.spawn('git', {args=arguments, stdio={stdout,stderr}},  
+	local handle = vim.loop.spawn(git, {args=arguments, stdio={stdout,stderr}, cwd=cwd},  
 		vim.schedule_wrap(function()	
 			vim.b.git_branch = string.gsub(branch, '%s', '')
 		end)
@@ -23,9 +24,10 @@ local function update_status()
 	local stdout = vim.loop.new_pipe(false)
 	local stderr = vim.loop.new_pipe(false)
 	local filename = vim.fn.expand('%')
+	local cwd = vim.fn.expand("%:h")
 	local git = 'git'
 	local arguments = {'diff', '--numstat', filename}
-	local handle = vim.loop.spawn('git', {args=arguments, stdio={stdout,stderr}},  
+	local handle = vim.loop.spawn(git, {args=arguments, stdio={stdout,stderr}, cwd=cwd},  
 		vim.schedule_wrap(function()	
 			local matched = vim.fn.matchlist(output, "^\\W*\\(\\d*\\)\\W*\\(\\d*\\).*$")
 			if #matched == 0 then

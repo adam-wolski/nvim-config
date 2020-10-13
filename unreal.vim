@@ -24,6 +24,9 @@ let g:generate_clang_database_args = ' Win64 UE4Editor DebugGame -mode=GenerateC
 let &makeprg = g:ue_build . g:build_debug_args
 let &statusline = "%{coc#status()} | " . &statusline
 
+let g:goyo_width = &colorcolumn
+let g:goyo_height = "100%"
+
 command! Unreal :call SetUnrealWorkspace()
 command! Project :call SetProjectWorkspace()
 command! CdFile :cd %:p:h

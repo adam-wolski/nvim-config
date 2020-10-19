@@ -9,6 +9,9 @@ let g:uproject_file = trim(system('Get-ChildItem "." | Where-Object -Property Na
 let g:project_name = trim(system('Split-Path ' . g:uproject_file . ' -LeafBase'))
 let g:engine_association = trim(system('(ConvertFrom-Json (Get-Content ' . g:uproject_file . ' -Raw)).EngineAssociation'))
 let g:ue_dir = trim(system('(Get-ItemProperty -Path "Registry::HKEY_CURRENT_USER\SOFTWARE\Epic Games\Unreal Engine\Builds")."' . g:engine_association . '"'))
+if g:ue_dir == ""
+	let g:ue_dir = trim(system('(Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\EpicGames\Unreal Engine\' . g:engine_association . '").InstalledDirectory'))
+endif
 
 let g:ue_editor_debug_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe"
 let g:ue_editor_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor.exe"
@@ -21,7 +24,7 @@ let g:build_debug_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame
 let g:build_debug_engine_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame"' . g:project_arg
 let g:build_game_args = ' -Target="' . g:project_name . ' Win64 Development" -NoEngineChanges' . g:project_arg
 let g:generate_clang_database_args = ' Win64 UE4Editor DebugGame -mode=GenerateClangDatabase' . g:project_arg
-let &makeprg = g:ue_build . g:build_debug_args
+let &makeprg = '&' . shellescape(g:ue_build) . g:build_debug_args
 let &statusline = "%{coc#status()} | " . &statusline
 
 let g:goyo_width = &colorcolumn
@@ -90,7 +93,7 @@ function! Build(build_args)
 	let tmp = tempname()
 	let g:last_build_error_file = tmp
 	execute("below " . float2nr(termsize) . "split")
-	execute("terminal " . g:ue_build . a:build_args . ' | Tee-Object ' . tmp)
+	execute("terminal &" . shellescape(g:ue_build) . a:build_args . ' | Tee-Object ' . tmp)
 	set ft=log
 	augroup BuildGroup
 		au TermClose * execute("cfile " . g:last_build_error_file)

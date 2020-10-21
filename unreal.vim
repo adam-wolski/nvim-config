@@ -23,7 +23,7 @@ let g:build_dev_engine_args = ' -Target="' . g:project_name . 'Editor Win64 Deve
 let g:build_debug_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -NoEngineChanges' . g:project_arg
 let g:build_debug_engine_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame"' . g:project_arg
 let g:build_game_args = ' -Target="' . g:project_name . ' Win64 Development" -NoEngineChanges' . g:project_arg
-let g:generate_clang_database_args = ' Win64 UE4Editor DebugGame -mode=GenerateClangDatabase' . g:project_arg
+let g:generate_clang_database_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -mode=GenerateClangDatabase' . g:project_arg
 let &makeprg = '&' . shellescape(g:ue_build) . g:build_debug_args
 let &statusline = "%{coc#status()} | " . &statusline
 
@@ -68,7 +68,7 @@ EOF
 endfunction
 
 function! GenerateClangDatabase()
-	execute("!" . g:ue_build . g:generate_clang_database_args)
+	execute("!&" . shellescape(g:ue_build) . g:generate_clang_database_args)
 endfunction
 
 function! RunInsights()

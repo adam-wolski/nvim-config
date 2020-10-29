@@ -14,7 +14,7 @@ if g:ue_dir == ""
 endif
 
 let g:ue_editor_debug_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe"
-let g:ue_editor_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor.exe"
+let g:ue_editor_dev_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor.exe"
 let g:ue_insights_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UnrealInsights.exe"
 let g:ue_build = g:ue_dir . "\\Engine\\Build\\BatchFiles\\Build.bat"
 let g:project_arg = ' -Project="' .g:uproject_file . '"'
@@ -24,30 +24,38 @@ let g:build_debug_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame
 let g:build_debug_engine_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame"' . g:project_arg
 let g:build_game_args = ' -Target="' . g:project_name . ' Win64 Development" -NoEngineChanges' . g:project_arg
 let g:generate_clang_database_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -mode=GenerateClangDatabase' . g:project_arg
-let &makeprg = '&' . shellescape(g:ue_build) . g:build_debug_args
 let &statusline = "%{coc#status()} | " . &statusline
 
-let g:goyo_width = &colorcolumn
+let g:build_args = g:build_debug_args
+let g:ue_editor_exe = g:ue_editor_debug_exe
+let &makeprg = '&' . shellescape(g:ue_build) . g:build_args
+
+let g:goyo_width = &colorcolumn + 1
 let g:goyo_height = "100%"
 
 command! Unreal :call SetUnrealWorkspace()
 command! Project :call SetProjectWorkspace()
 command! CdFile :cd %:p:h
 
-command! Run :let g:unreal_run_job_id = jobstart([g:ue_editor_debug_exe, g:uproject_file])
-command! RunDev :let g:unreal_run_job_id = jobstart([g:ue_editor_exe, g:uproject_file])
-command! RunDx12 :let g:unreal_run_job_id = jobstart([g:ue_editor_debug_exe, g:uproject_file, '-dx12'])
+command! Run :let g:unreal_run_job_id = jobstart([g:ue_editor_exe, g:uproject_file])
+command! RunDx12 :let g:unreal_run_job_id = jobstart([g:ue_editor_exe, g:uproject_file, '-dx12'])
 command! RunInsights :call RunInsights()
 command! Stop :call jobstop(g:unreal_run_job_id)
-command! Build :call Build(g:build_debug_args)
-command! BuildEngine :call Build(g:build_debug_engine_args)
-command! BuildDev :call Build(g:build_dev_args)
-command! BuildDevEngine :call Build(g:build_dev_engine_args)
+command! Build :call Build(g:build_args)
 command! GenerateClangDatabase :call GenerateClangDatabase()
 command! CreateClangDatabaseLink :call CreateClangDatabaseLink()
-command! Cdb :call RunWithCdb()
+
+command! SetDebugConfiguration :call SetConfiguration(g:ue_editor_debug_exe, g:build_debug_args)
+command! SetDebugWithEngineConfiguration :call SetConfiguration(g:ue_editor_debug_exe, g:build_debug_engine_args)
+command! SetDevelopmentConfiguration :call SetConfiguration(g:ue_editor_dev_exe, g:build_dev_args)
+command! SetDevelopmentWithEngineConfiguration :call SetConfiguration(g:ue_editor_dev_exe, g:build_dev_engine_args)
+
+command! P4Edit :!p4 edit %:p
+command! P4Add :!p4 add %:p
 
 nmap <silent> <A-o> :call Switch()<CR>
+nmap <silent> <C-F5> :Run<CR>
+nmap <silent> <C-S-B> :make<CR>
 
 function! Switch()
 	let ext = expand('%:e')
@@ -57,6 +65,12 @@ function! Switch()
 	else
 		execute("find " . name . ".h")
 	endif
+endfunction
+
+function! SetConfiguration(editor, build)
+	let g:ue_editor_exe = a:editor
+	let g:build_args = a:build
+	let &makeprg = '&' . shellescape(g:ue_build) . g:build_args
 endfunction
 
 function! CreateClangDatabaseLink()
@@ -99,23 +113,6 @@ function! Build(build_args)
 		au TermClose * execute("cfile " . g:last_build_error_file)
 		au TermClose * autocmd! BuildGroup
 	augroup END
-endfunction
-
-function! RunWithCdb()
-	let h = winheight(0)
-	let termsize = h * 0.25
-	execute("below " . float2nr(termsize) . "split")
-
-	let projectsymbols = g:project_dir . "\\Binaries\\Win64\\"
-	let uesymbols = g:ue_dir . "\\Engine\\Binaries\\Win64\\"
-
-	let cdbpath = '&"C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64\\cdb.exe"'
-	let symbolpath = projectsymbols . ";" . uesymbols
-	let cdbargs = ' -g -lines -y "' . symbolpath . '" '
-	let runargs = ' ' . g:ue_editor_debug_exe . ' ' . g:uproject_file
-	let terminalargs = cdbpath . cdbargs . runargs
-	execute('terminal ' . terminalargs)
-	set ft=log
 endfunction
 
 au BufEnter *.usf set ft=hlsl

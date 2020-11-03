@@ -8,15 +8,18 @@ let g:project_dir = getcwd()
 let g:uproject_file = trim(system('Get-ChildItem "." | Where-Object -Property Name -Match ".uproject" | foreach { $_.FullName }'))
 let g:project_name = trim(system('Split-Path ' . g:uproject_file . ' -LeafBase'))
 let g:engine_association = trim(system('(ConvertFrom-Json (Get-Content ' . g:uproject_file . ' -Raw)).EngineAssociation'))
-let g:ue_dir = trim(system('(Get-ItemProperty -Path "Registry::HKEY_CURRENT_USER\SOFTWARE\Epic Games\Unreal Engine\Builds")."' . g:engine_association . '"'))
-if g:ue_dir == ""
-	let g:ue_dir = trim(system('(Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\EpicGames\Unreal Engine\' . g:engine_association . '").InstalledDirectory'))
+if !exists("g:ue_dir")
+	let g:ue_dir = trim(system('(Get-ItemProperty -Path "Registry::HKEY_CURRENT_USER\SOFTWARE\Epic Games\Unreal Engine\Builds")."' . g:engine_association . '"'))
+	if g:ue_dir == ""
+		let g:ue_dir = trim(system('(Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\EpicGames\Unreal Engine\' . g:engine_association . '").InstalledDirectory'))
+	endif
 endif
 
 let g:ue_editor_debug_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe"
 let g:ue_editor_dev_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor.exe"
 let g:ue_insights_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UnrealInsights.exe"
 let g:ue_build = g:ue_dir . "\\Engine\\Build\\BatchFiles\\Build.bat"
+let g:ue_clean = g:ue_dir . "\\Engine\\Build\\BatchFiles\\Clean.bat"
 let g:project_arg = ' -Project="' .g:uproject_file . '"'
 let g:build_dev_args = ' -Target="' . g:project_name . 'Editor Win64 Development" -NoEngineChanges' . g:project_arg
 let g:build_dev_engine_args = ' -Target="' . g:project_name . 'Editor Win64 Development"' . g:project_arg
@@ -42,6 +45,7 @@ command! RunDx12 :let g:unreal_run_job_id = jobstart([g:ue_editor_exe, g:uprojec
 command! RunInsights :call RunInsights()
 command! Stop :call jobstop(g:unreal_run_job_id)
 command! Build :call Build(g:build_args)
+command! Clean :call Clean(g:build_args)
 command! GenerateClangDatabase :call GenerateClangDatabase()
 command! CreateClangDatabaseLink :call CreateClangDatabaseLink()
 
@@ -83,6 +87,7 @@ endfunction
 
 function! GenerateClangDatabase()
 	execute("!&" . shellescape(g:ue_build) . g:generate_clang_database_args)
+	execute("!Move-Item -Force -Path " . shellescape(g:ue_dir . "/compile_commands.json") . " -Destination " . shellescape(g:project_dir . "/compile_commands.json"))
 endfunction
 
 function! RunInsights()
@@ -99,6 +104,10 @@ endfunction
 function! SetProjectWorkspace()
 	execute('cd ' . g:project_dir)
 	let &path = ".,Source/**,./../Private/**,./../Public/**,./../Classes/**"
+endfunction
+
+function! Clean(build_args)
+	execute("!&" . shellescape(g:ue_clean) . a:build_args)
 endfunction
 
 function! Build(build_args)

@@ -1,4 +1,5 @@
-colorscheme nugl
+packadd nvim-treesitter
+
 set termguicolors
 set exrc
 set ignorecase
@@ -54,7 +55,6 @@ if has('win32')
 	runtime init-windows.vim
 endif
 
-packadd nvim-treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = "maintained",
@@ -125,3 +125,4 @@ endfunctio
 au BufEnter,BufWritePost * let b:git_status = '' | let b:git_branch = '' | call luaeval('require("git_status").run()')
 au BufEnter,WinEnter,WinNew,VimResized *,*.* call ScrollOff()
 
+colorscheme edge

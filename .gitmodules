@@ -31,3 +31,6 @@
 [submodule "pack/core/start/nvim-treesitter"]
 	path = pack/core/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "pack/core/start/edge-colorscheme"]
+	path = pack/core/start/edge-colorscheme
+	url = https://github.com/sainnhe/edge

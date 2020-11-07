@@ -30,7 +30,6 @@ let g:build_debug_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame
 let g:build_debug_engine_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame"' . g:project_arg
 let g:build_game_args = ' -Target="' . g:project_name . ' Win64 Development" -NoEngineChanges' . g:project_arg
 let g:generate_clang_database_args = ' -Target="' . g:project_name . 'Editor Win64 DebugGame" -mode=GenerateClangDatabase' . g:project_arg
-let &statusline = "%{coc#status()} | " . &statusline
 
 let g:build_args = g:build_debug_args
 let g:ue_editor_exe = g:ue_editor_debug_exe

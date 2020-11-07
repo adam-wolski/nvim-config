@@ -1,4 +1,4 @@
-runtime init-coc.vim
+runtime init-lsp.vim
 
 set tabstop=4
 set shiftwidth=4

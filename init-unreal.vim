@@ -20,6 +20,9 @@ let g:ue_editor_dev_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UE4Editor.exe"
 let g:ue_insights_exe = g:ue_dir . "\\Engine\\Binaries\\Win64\\UnrealInsights.exe"
 let g:ue_build = g:ue_dir . "\\Engine\\Build\\BatchFiles\\Build.bat"
 let g:ue_clean = g:ue_dir . "\\Engine\\Build\\BatchFiles\\Clean.bat"
+if !exists("g:ue_generate_clang_database")
+	let g:ue_generate_clang_database = g:ue_build
+endif
 let g:project_arg = ' -Project="' .g:uproject_file . '"'
 let g:build_dev_args = ' -Target="' . g:project_name . 'Editor Win64 Development" -NoEngineChanges' . g:project_arg
 let g:build_dev_engine_args = ' -Target="' . g:project_name . 'Editor Win64 Development"' . g:project_arg
@@ -86,8 +89,7 @@ EOF
 endfunction
 
 function! GenerateClangDatabase()
-	execute("!&" . shellescape(g:ue_build) . g:generate_clang_database_args)
-	execute("!Move-Item -Force -Path " . shellescape(g:ue_dir . "/compile_commands.json") . " -Destination " . shellescape(g:project_dir . "/compile_commands.json"))
+	execute("!&" . shellescape(g:ue_generate_clang_database) . g:generate_clang_database_args)
 endfunction
 
 function! RunInsights()

@@ -36,7 +36,7 @@ let g:build_args = g:build_debug_args
 let g:ue_editor_exe = g:ue_editor_debug_exe
 let &makeprg = '&' . shellescape(g:ue_build) . g:build_args
 
-let g:goyo_width = &colorcolumn + 1
+let g:goyo_width = &colorcolumn + 10
 let g:goyo_height = "100%"
 
 command! Unreal :call SetUnrealWorkspace()

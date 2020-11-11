@@ -7,7 +7,7 @@ set scrolloff=15
 set foldtext=MyFoldText()
 set fillchars=fold:\  
 set foldmethod=syntax
-set foldlevel=2
+set foldlevel=1
 set linebreak
 set breakindent
 set icm=nosplit

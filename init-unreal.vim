@@ -93,8 +93,7 @@ function! GenerateClangDatabase()
 endfunction
 
 function! RunInsights()
-	let args = g:uproject_file " -statnamedevents -trace=log,bookmark,frame,cpu,gpu,loadtime"
-	let g:unreal_run_job_id = jobstart([g:ue_editor_debug_exe, args])
+	let g:unreal_run_job_id = jobstart([g:ue_editor_exe, g:uproject_file, "-statnamedevents", "-trace=log,bookmark,frame,cpu,gpu,loadtime"])
 	let g:unreal_insights_job_id = jobstart(g:ue_insights_exe)
 endfunction
 

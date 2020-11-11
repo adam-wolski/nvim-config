@@ -104,7 +104,7 @@ endfunction
 
 function! SetProjectWorkspace()
 	execute('cd ' . g:project_dir)
-	let &path = ".,Source/**,./../Private/**,./../Public/**,./../Classes/**"
+	let &path = ".,./../Private/**,./../Public/**,./../Classes/**,Source/**,Plugins/**"
 endfunction
 
 function! Clean(build_args)

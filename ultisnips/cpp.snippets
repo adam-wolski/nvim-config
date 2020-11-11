@@ -81,3 +81,17 @@ endsnippet
 snippet inc "Include header.h // " i
 include "${1}.h" // ${2:$1}
 endsnippet
+
+snippet ueheader "New unreal header" b
+#pragma once
+
+#include "CoreMinimal.h"
+endsnippet
+
+snippet ueheader_uht "New unreal header tool header" b
+#pragma once
+
+#include "CoreMinimal.h"
+
+#include "`!p snip.rv = fn.replace('.h', '.generated.h')`"
+endsnippet

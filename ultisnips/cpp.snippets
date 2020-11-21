@@ -95,3 +95,18 @@ snippet ueheader_uht "New unreal header tool header" b
 
 #include "`!p snip.rv = fn.replace('.h', '.generated.h')`"
 endsnippet
+
+snippet UCLASS "Unreal UCLASS" b
+UCLASS(${1})
+class ${2} : public ${3:UObject}
+{
+	GENERATED_BODY()
+public:
+	${2}() = default;
+};
+endsnippet
+
+snippet UPROPERTY "Unreal property" b
+UPROPERTY(${1:EditAnywhere}, Category = "${2}")
+${3}
+endsnippet

@@ -4,9 +4,6 @@
 [submodule "pack/core/start/fzf.vim"]
 	path = pack/core/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule "pack/core/start/rainbow"]
-	path = pack/core/start/rainbow
-	url = https://github.com/luochen1990/rainbow
 [submodule "pack/core/start/hlsl.vim"]
 	path = pack/core/start/hlsl.vim
 	url = https://github.com/beyondmarc/hlsl.vim

@@ -55,6 +55,8 @@ if has('win32')
 	runtime init-windows.vim
 endif
 
+runtime init-completion.vim
+
 lua << EOF
 require'nvim-treesitter.configs'.setup {
 	-- one of "all", "maintained" (parsers with maintainers), or a list of languages

@@ -34,3 +34,9 @@
 [submodule "pack/telescope/start/telescope.nvim"]
 	path = pack/telescope/start/telescope.nvim
 	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "pack/core/start/completion-nvim"]
+	path = pack/core/start/completion-nvim
+	url = https://github.com/nvim-lua/completion-nvim.git
+[submodule "pack/core/start/completion-treesitter"]
+	path = pack/core/start/completion-treesitter
+	url = https://github.com/nvim-treesitter/completion-treesitter.git

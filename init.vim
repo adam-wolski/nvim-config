@@ -26,8 +26,12 @@ tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 nmap <silent> <leader>F :let g:neovide_fullscreen=!g:neovide_fullscreen<CR>
 nmap <silent> <leader>> :call AdjustFontSize(1)<CR>
 nmap <silent> <leader>< :call AdjustFontSize(-1)<CR>
-nmap <silent> <leader>b :Buffers<CR>
-nmap <silent> <leader>f :Files<CR>
+nmap <silent> <leader>fb <CMD>lua require('telescope.builtin').buffers()<CR>
+nmap <silent> <leader>ff <CMD>lua require('telescope.builtin').find_files()<CR>
+nmap <silent> <leader>fg <CMD>lua require('telescope.builtin').live_grep()<CR>
+nmap <silent> <leader>ft <CMD>lua require('telescope.builtin').treesitter()<CR>
+nmap <silent> <leader>fz= <CMD>lua require('telescope.builtin').spell_suggest()<CR>
+nmap <silent> <leader>g :LazyGit<CR>
 vmap <silent> <leader>s( xi()<esc>P%
 vmap <silent> <leader>s[ xi[]<esc>P%
 vmap <silent> <leader>s{ xi{}<esc>P%
@@ -38,16 +42,7 @@ imap <silent> <C-R> <C-R><C-P>
 nmap <silent> <leader>p "+p
 vmap <silent> <leader>y "+y
 nmap <silent> <leader>c gg"+yG
-
 map Y y$
-
-let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
-command! B :Buffers
-command! F :Files
-command! L :Lines
-
-command! G :LazyGit
 
 command! ClearBuffers :%bd|e#|bd#
 
@@ -81,18 +76,6 @@ rainbow = {
 }
 }
 EOF
-
-function! FloatingFZF()
-	let width = float2nr(&columns * 0.8)
-	let height = float2nr(&lines * 0.6)
-	let opts = { 'relative': 'editor',
-		   \ 'row': (&lines - height) / 2,
-		   \ 'col': (&columns - width) / 2,
-		   \ 'width': width,
-		   \ 'height': height }
-
-	call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-endfunction
 
 function MyFoldText()
 	let linestart = trim(getline(v:foldstart))

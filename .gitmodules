@@ -25,3 +25,12 @@
 [submodule "pack/core/start/nvim-lspconfig"]
 	path = pack/core/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+[submodule "pack/telescope/start/plenary.nvim"]
+	path = pack/telescope/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "pack/telescope/start/popup.nvim"]
+	path = pack/telescope/start/popup.nvim
+	url = https://github.com/nvim-lua/popup.nvim.git
+[submodule "pack/telescope/start/telescope.nvim"]
+	path = pack/telescope/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git

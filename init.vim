@@ -41,8 +41,6 @@ nmap <silent> <leader>c gg"+yG
 
 map Y y$
 
-let g:rainbow_active = 1
-
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 command! B :Buffers

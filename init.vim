@@ -34,7 +34,10 @@ vmap <silent> <leader>s{ xi{}<esc>P%
 vmap <silent> <leader>s<lt> xi<lt>><esc>P
 vmap <silent> <leader>s' xi''<esc>P
 vmap <silent> <leader>s" xi""<esc>P
-imap <C-R> <C-R><C-P>
+imap <silent> <C-R> <C-R><C-P>
+nmap <silent> <leader>p "+p
+vmap <silent> <leader>y "+y
+nmap <silent> <leader>c gg"+yG
 
 map Y y$
 

@@ -51,31 +51,7 @@ if has('win32')
 endif
 
 runtime init-completion.vim
-
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-	-- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	ensure_installed = "maintained", 
-
-	highlight = {
-		-- false will disable the whole extension
-		enable = true,              
-
-		-- list of language that will be disabled
-		disable = {},  
-	},
-}
-
-require'nvim-treesitter.configs'.setup {
-rainbow = {
-	enable = true,
-	-- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-	extended_mode = true, 
-	-- Do not enable for files with more than 1000 lines, int
-	max_file_lines = 1000, 
-}
-}
-EOF
+lua require'init-treesitter'
 
 function MyFoldText()
 	let linestart = trim(getline(v:foldstart))

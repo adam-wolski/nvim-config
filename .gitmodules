@@ -14,7 +14,7 @@
 	path = pack/core/start/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
 [submodule "pack/core/start/nvim-treesitter"]
-	path = pack/core/start/nvim-treesitter
+	path = pack/treesitter/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
 [submodule "pack/core/start/nvim-lspconfig"]
 	path = pack/core/start/nvim-lspconfig
@@ -32,8 +32,14 @@
 	path = pack/core/start/completion-nvim
 	url = https://github.com/nvim-lua/completion-nvim.git
 [submodule "pack/core/start/completion-treesitter"]
-	path = pack/core/start/completion-treesitter
+	path = pack/treesitter/start/completion-treesitter
 	url = https://github.com/nvim-treesitter/completion-treesitter.git
 [submodule "pack/core/start/nvim-ts-rainbow"]
-	path = pack/core/start/nvim-ts-rainbow
+	path = pack/treesitter/start/nvim-ts-rainbow
 	url = https://github.com/p00f/nvim-ts-rainbow.git
+[submodule "pack/treesitter/start/nvim-treesitter-refactor"]
+	path = pack/treesitter/start/nvim-treesitter-refactor
+	url = https://github.com/nvim-treesitter/nvim-treesitter-refactor.git
+[submodule "pack/treesitter/start/nvim-treesitter-textobjects"]
+	path = pack/treesitter/start/nvim-treesitter-textobjects
+	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git

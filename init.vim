@@ -117,4 +117,4 @@ endfunctio
 
 au BufEnter,BufWritePost * let b:git_status = '' | let b:git_branch = '' | call luaeval('require("git_status").run()')
 au BufEnter,WinEnter,WinNew,VimResized *,*.* call ScrollOff()
-
+au BufEnter *.hlsl set ft=c

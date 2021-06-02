@@ -22,3 +22,6 @@
 [submodule "pack/core/start/goyo.vim"]
 	path = pack/core/start/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
+[submodule "pack/core/start/nvim-treesitter"]
+	path = pack/core/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter

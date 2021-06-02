@@ -54,6 +54,21 @@ if has('win32')
 	runtime init-windows.vim
 endif
 
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+	-- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	ensure_installed = "maintained", 
+
+	highlight = {
+		-- false will disable the whole extension
+		enable = true,              
+
+		-- list of language that will be disabled
+		disable = {},  
+	},
+}
+EOF
+
 function! FloatingFZF()
 	let width = float2nr(&columns * 0.8)
 	let height = float2nr(&lines * 0.6)

@@ -40,3 +40,6 @@
 [submodule "pack/core/start/completion-treesitter"]
 	path = pack/core/start/completion-treesitter
 	url = https://github.com/nvim-treesitter/completion-treesitter.git
+[submodule "pack/core/start/nvim-ts-rainbow"]
+	path = pack/core/start/nvim-ts-rainbow
+	url = https://github.com/p00f/nvim-ts-rainbow.git

@@ -26,11 +26,10 @@ tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 nmap <silent> <leader>F :let g:neovide_fullscreen=!g:neovide_fullscreen<CR>
 nmap <silent> <leader>> :call AdjustFontSize(1)<CR>
 nmap <silent> <leader>< :call AdjustFontSize(-1)<CR>
-nmap <silent> <leader>fb <CMD>lua require('telescope.builtin').buffers()<CR>
-nmap <silent> <leader>ff <CMD>lua require('telescope.builtin').find_files()<CR>
-nmap <silent> <leader>fg <CMD>lua require('telescope.builtin').live_grep()<CR>
-nmap <silent> <leader>ft <CMD>lua require('telescope.builtin').treesitter()<CR>
-nmap <silent> <leader>fz= <CMD>lua require('telescope.builtin').spell_suggest()<CR>
+nmap <silent> <leader>b <CMD>lua require('telescope.builtin').buffers()<CR>
+nmap <silent> <leader>f <CMD>lua require('telescope.builtin').find_files()<CR>
+nmap <silent> <leader>t <CMD>lua require('telescope.builtin').treesitter()<CR>
+nmap <silent> <leader>z= <CMD>lua require('telescope.builtin').spell_suggest()<CR>
 nmap <silent> <leader>g :LazyGit<CR>
 vmap <silent> <leader>s( xi()<esc>P%
 vmap <silent> <leader>s[ xi[]<esc>P%

@@ -466,50 +466,25 @@ exe "hi! pythonComment"   .s:bg0   .s:fa0   .s:gb
 " }}}
 " Cpp highlighting  {{{
 
-" exe "hi! LspCxxHlGroupMemberVariable"   .s:bg0 .s:fa2 .s:gn
-exe "hi! LspCxxHlSkippedRegion"         .s:ba2 .s:fa2 .s:gn
-" exe "hi! LspCxxHlGroupEnumConstant"     .s:bg0 .s:fa2 .s:gn
-" exe "hi! LspCxxHlGroupNamespace"        .s:bg0 .s:fa7 .s:gn
-
-exe "hi! LspCxxHlSymUnknown"            .s:ba2 .s:fa2 .s:gi
-exe "hi! LspCxxHlSymClass"              .s:bg0 .s:fa0 .s:gi
-exe "hi! LspCxxHlSymStruct"             .s:bg0 .s:fa0 .s:gi
-exe "hi! LspCxxHlSymEnum"               .s:bg0 .s:fa7 .s:gn
-exe "hi! LspCxxHlSymTypeAlias"          .s:ba7 .s:fa2 .s:gn
-exe "hi! LspCxxHlSymTypeParameter"      .s:ba6 .s:fa2 .s:gn
-
-exe "hi! LspCxxHlSymFunction"           .s:bg0 .s:fa5 .s:gn
-exe "hi! LspCxxHlSymMethod"             .s:bg0 .s:fa5 .s:gi
-exe "hi! LspCxxHlSymStaticMethod"       .s:bg0 .s:fa5 .s:gn
-exe "hi! LspCxxHlSymConstructor"        .s:bg0 .s:fa1 .s:gi
-
-exe "hi! LspCxxHlSymEnumMember"         .s:bg0 .s:fa2 .s:gn
-
-exe "hi! LspCxxHlSymMacro"              .s:bg0 .s:fa2 .s:gn
-
-exe "hi! LspCxxHlSymNamespace"          .s:bg0 .s:fa7 .s:gn
-
-exe "hi! LspCxxHlSymVariable"           .s:bg0 .s:fa3 .s:gn
-exe "hi! LspCxxHlSymParameter"          .s:bg0 .s:fg0 .s:gn
-exe "hi! LspCxxHlSymField"              .s:bg0 .s:fa1 .s:gi
-
-" Static only member
-exe "hi! LspCxxHlSymUnknownStaticField" .s:bg0 .s:fa6 .s:gn
-" Alias to primitive
-exe "hi! LspCxxHlSymPrimitive"          .s:bg0 .s:fa0 .s:gn
-" == TypeAlias
-exe "hi! LspCxxHlSymTypedef"            .s:bg0 .s:fa0 .s:gi
-" == TypeParamerer
-exe "hi! LspCxxHlSymTemplateParameter"  .s:bg0 .s:fa0 .s:gb
-" == EnumMember
-exe "hi! LspCxxHlSymEnumConstant"       .s:bg0 .s:fa6 .s:gn
-" A type dependent on a template
-" E.g. T::A, A would be a dependent type
-exe "hi! LspCxxHlSymDependentType"      .s:bg0 .s:fa0 .s:gb
-" A name dependent on a template, usually a function 
-" but can also be a variable?
-exe "hi! LspCxxHlSymDependentName"      .s:bg0 .s:fa1 .s:gb
-" C++20 concepts
-exe "hi! LspCxxHlSymConcept"            .s:ba0 .s:fa2 .s:gn
+exe "hi! ClangdInactiveCode"         	.s:g_comment   .s:f_comment   .s:b_comment
+exe "hi! ClangdClass"              	.s:bg0 .s:fa0 .s:gi
+exe "hi! ClangdEnum"               	.s:bg0 .s:fa7 .s:gn
+exe "hi! ClangdTypedef"          	.s:ba7 .s:fa2 .s:gn
+exe "hi! ClangdTemplateParameter"  	.s:bg0 .s:fa0 .s:gb
+exe "hi! ClangdFunction"           	.s:bg0 .s:fa5 .s:gn
+exe "hi! ClangdMemberFunction"          .s:bg0 .s:fa5 .s:gi
+exe "hi! ClangdStaticMemberFunction"	.s:bg0 .s:fa5 .s:gn
+exe "hi! ClangdEnumConstant"       	.s:bg0 .s:fa6 .s:gn
+exe "hi! ClangdMacro"              	.s:bg0 .s:fa2 .s:gn
+exe "hi! ClangdNamespace"          	.s:bg0 .s:fa7 .s:gn
+exe "hi! ClangdLocalVariable"          	.s:g_normal   .s:g_normal   .s:b_normal
+exe "hi! ClangdVariable"           	.s:bg0 .s:fa3 .s:gn
+exe "hi! ClangdParameter"          	.s:bg0 .s:fg0 .s:gn
+exe "hi! ClangdField"              	.s:bg0 .s:fa1 .s:gi
+exe "hi! ClangdStaticField"             .s:bg0 .s:fa1 .s:gi
+exe "hi! ClangdPrimitive"          	.s:bg0 .s:fa0 .s:gn
+exe "hi! ClangdConcept"            	.s:ba0 .s:fa2 .s:gn
+exe "hi! ClangdDependentName"      	.s:bg0 .s:fa1 .s:gb
+exe "hi! ClangdDependentType"      	.s:bg0 .s:fa0 .s:gb
 
 " }}}

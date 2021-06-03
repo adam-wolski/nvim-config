@@ -51,8 +51,11 @@ if has('win32')
 	runtime init-windows.vim
 endif
 
-runtime init-completion.vim
+" NOTE: Make sure to init lsp BEFORE treesitter
+" So treesitter initializes as fallback correctly
+lua require'init-lsp'
 lua require'init-treesitter'
+runtime init-completion.vim
 
 function MyFoldText()
 	let linestart = trim(getline(v:foldstart))

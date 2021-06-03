@@ -1,9 +1,3 @@
-[submodule "pack/core/start/coc.nvim"]
-	path = pack/core/opt/coc.nvim
-	url = https://github.com/neoclide/coc.nvim
-[submodule "pack/core/start/vim-lsp-cxx-highlight"]
-	path = pack/core/opt/vim-lsp-cxx-highlight
-	url = https://github.com/jackguo380/vim-lsp-cxx-highlight
 [submodule "pack/core/start/lazygit.nvim"]
 	path = pack/core/start/lazygit.nvim
 	url = https://github.com/kdheepak/lazygit.nvim
@@ -40,3 +34,6 @@
 [submodule "pack/treesitter/start/nvim-treesitter-textobjects"]
 	path = pack/treesitter/start/nvim-treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+[submodule "pack/core/start/nvim-lsp-clangd-highlight"]
+	path = pack/core/start/nvim-lsp-clangd-highlight
+	url = git@github.com:adam-wolski/nvim-lsp-clangd-highlight.git

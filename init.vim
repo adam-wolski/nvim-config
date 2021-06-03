@@ -19,7 +19,9 @@ let &guifont = "Iosevka:h16"
 let mapleader = "\<Space>"
 let g:vimsyn_embed = 'l'
 
-let g:neovide_refresh_rate=140
+let g:neovide_refresh_rate=144
+let g:neovide_cursor_animation_length=0
+let g:neovide_cursor_trail_length=0
 
 nmap <silent> <Leader>/ :nohl<CR>
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'

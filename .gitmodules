@@ -10,6 +10,7 @@
 [submodule "pack/core/start/nvim-lspconfig"]
 	path = pack/core/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+	ignore = dirty
 [submodule "pack/telescope/start/plenary.nvim"]
 	path = pack/telescope/start/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim.git
@@ -31,6 +32,7 @@
 [submodule "pack/treesitter/start/nvim-treesitter-refactor"]
 	path = pack/treesitter/start/nvim-treesitter-refactor
 	url = https://github.com/nvim-treesitter/nvim-treesitter-refactor.git
+	ignore = dirty
 [submodule "pack/treesitter/start/nvim-treesitter-textobjects"]
 	path = pack/treesitter/start/nvim-treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git

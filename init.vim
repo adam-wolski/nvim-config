@@ -6,8 +6,9 @@ set hidden
 set scrolloff=15
 set foldtext=MyFoldText()
 set fillchars=fold:\  
-set foldmethod=syntax
-set foldlevel=1
+set foldmethod=expr
+set foldlevel=10
+set foldexpr=nvim_treesitter#foldexpr()
 set linebreak
 set breakindent
 set icm=nosplit

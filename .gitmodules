@@ -54,3 +54,15 @@
 [submodule "pack/core/start/nvim-dap-virtual-text"]
 	path = pack/core/start/nvim-dap-virtual-text
 	url = https://github.com/theHamsta/nvim-dap-virtual-text.git
+[submodule "pack/core/start/vim-surround"]
+	path = pack/core/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "pack/core/start/vim-venter"]
+	path = pack/core/start/vim-venter
+	url = https://github.com/JMcKiern/vim-venter.git
+[submodule "pack/core/start/gina.vim"]
+	path = pack/core/start/gina.vim
+	url = https://github.com/lambdalisue/gina.vim.git
+[submodule "pack/core/start/hlsl.vim"]
+	path = pack/core/start/hlsl.vim
+	url = https://github.com/beyondmarc/hlsl.vim

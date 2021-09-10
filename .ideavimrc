@@ -1,0 +1,40 @@
+set scrolloff=20
+set surround
+set ignorecase
+set incsearch
+set hlsearch
+
+let mapleader = "\<space>"
+
+" Built in Delete word behaviour works better than ideavim one
+" Ideavim defult ctrl-w removes all whitespace + last word where
+" proper behaviour is to remove just white space
+imap <C-w> <Action>(EditorDeleteToWordStart)
+
+nmap <leader>R :source ~/.ideavimrc<CR>
+nmap <leader>g <Action>(ActivateCommitToolWindow)
+nmap <leader>/ :nohl<CR>
+nmap <leader>f <Action>(GotoFile)
+nmap <leader>p "+p
+vmap <leader>y "+y
+nmap <leader>c gg"+yG
+nmap <leader>tt <Action>(ActivateTimeTrackingToolWindow)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+nmap <leader>e <Action>(ActivateProjectToolWindow)
+nmap <leader>g <Action>(ActivateCommitToolWindow)
+nmap <leader>v <Action>(ActivateVersionControlToolWindow)
+nmap <leader>s <Action>(GotoSymbol)
+nmap <leader>S <Action>(FileStructurePopup)
+nmap <leader><leader> <Action>(HideAllWindows)
+nmap [m <Action>(MethodUp)
+nmap ]m <Action>(MethodDown)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+nmap <A-*> <Action>()
+nmap <A-#> <Action>()
+map Y y$
+nmap gd <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gI <Action>(ReSharperGotoImplementation)

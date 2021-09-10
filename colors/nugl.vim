@@ -469,7 +469,7 @@ exe "hi! pythonComment"   .s:bg0   .s:fa0   .s:gb
 exe "hi! ClangdInactiveCode"         	.s:g_comment   .s:f_comment   .s:b_comment
 exe "hi! ClangdClass"              	.s:bg0 .s:fa0 .s:gi
 exe "hi! ClangdEnum"               	.s:bg0 .s:fa7 .s:gn
-exe "hi! ClangdTypedef"          	.s:ba7 .s:fa2 .s:gn
+exe "hi! ClangdTypedef"          	.s:bg0 .s:fa0 .s:gn
 exe "hi! ClangdTemplateParameter"  	.s:bg0 .s:fa0 .s:gb
 exe "hi! ClangdFunction"           	.s:bg0 .s:fa5 .s:gn
 exe "hi! ClangdMemberFunction"          .s:bg0 .s:fa5 .s:gi

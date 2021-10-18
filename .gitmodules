@@ -60,6 +60,7 @@
 [submodule "pack/core/start/vim-venter"]
 	path = pack/core/start/vim-venter
 	url = https://github.com/JMcKiern/vim-venter.git
+	ignore = dirty
 [submodule "pack/core/start/gina.vim"]
 	path = pack/core/start/gina.vim
 	url = https://github.com/lambdalisue/gina.vim.git

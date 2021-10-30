@@ -57,7 +57,6 @@ endif
 lua require'init-lsp'
 lua require'init-treesitter'
 lua require'init-dap'
-lua require'init-telescope'
 runtime init-completion.vim
 
 function MyFoldText()

@@ -54,6 +54,7 @@ endif
 
 " NOTE: Make sure to init lsp BEFORE treesitter
 " So treesitter initializes as fallback correctly
+lua require'init-cmp'
 lua require'init-lsp'
 lua require'init-treesitter'
 lua require'init-dap'

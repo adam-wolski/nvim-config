@@ -64,3 +64,9 @@
 [submodule "pack/core/start/hlsl.vim"]
 	path = pack/core/start/hlsl.vim
 	url = https://github.com/beyondmarc/hlsl.vim
+[submodule "pack/core/start/nvim-cmp"]
+	path = pack/core/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "pack/core/start/cmp-nvim-lsp"]
+	path = pack/core/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp

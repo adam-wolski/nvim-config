@@ -3,6 +3,8 @@ set surround
 set ignorecase
 set incsearch
 set hlsearch
+set ideamarks
+set ideajoin
 
 let mapleader = "\<space>"
 

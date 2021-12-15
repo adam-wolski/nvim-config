@@ -1,4 +1,4 @@
-au BufWritePost *.rs :lua vim.lsp.buf.formatting()
+au BufWritePost *.rs :lua vim.lsp.buf.formatting_sync()
 let &makeprg = "cargo build"
 
 set errorformat=

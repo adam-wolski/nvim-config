@@ -1,8 +1,5 @@
 local cmp = require'cmp'
 
-cmp.setup {
-}
-
 cmp.setup({
   mapping = {
     ['<A-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
@@ -29,7 +26,6 @@ cmp.setup({
 
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    }, {
   })
 })
 

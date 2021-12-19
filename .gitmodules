@@ -73,3 +73,6 @@
 [submodule "pack/core/start/firenvim"]
 	path = pack/core/start/firenvim
 	url = https://github.com/glacambre/firenvim.git
+[submodule "pack/lisp/start/slimv"]
+	path = pack/lisp/opt/slimv
+	url = https://github.com/kovisoft/slimv

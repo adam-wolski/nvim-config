@@ -1,6 +1,7 @@
-let &shell = 'pwsh' 
+let &shell = 'powershell' 
 let &shellquote= ''
 let &shellpipe= '| Tee-Object' 
 let &shellxquote= ''
 let &shellcmdflag='-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
 let &shellredir='| Out-File -Encoding UTF8'
+let g:ps1_makeprg_cmd = 'powershell'

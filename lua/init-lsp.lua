@@ -50,6 +50,7 @@ nvim_lsp.clangd.setup {
 
 if (vim.fn.has('win32') == 1) then
   nvim_lsp.powershell_es.setup {
+    shell = "powershell.exe",
     bundle_path = os.getenv("PSES_BUNDLE_PATH"),
     on_attach = on_attach,
   }

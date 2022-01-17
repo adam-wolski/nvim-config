@@ -33,6 +33,7 @@ nmap <silent> <leader>b <CMD>lua require('telescope.builtin').buffers()<CR>
 nmap <silent> <leader>f <CMD>lua require('telescope.builtin').find_files()<CR>
 nmap <silent> <leader>t <CMD>lua require('telescope.builtin').treesitter()<CR>
 nmap <silent> <leader>z= <CMD>lua require('telescope.builtin').spell_suggest()<CR>
+nmap <silent> <A-m> <CMD>lua require('telescope.builtin').lsp_document_symbols()<CR>
 nmap <silent> <leader>g :LazyGit<CR>
 vmap <silent> <leader>s( xi()<esc>P%
 vmap <silent> <leader>s[ xi[]<esc>P%
@@ -45,6 +46,11 @@ nmap <silent> <leader>p "+p
 vmap <silent> <leader>y "+y
 nmap <silent> <leader>c gg"+yG
 map Y y$
+
+nmap <silent> <A-e> <cmd>lua vim.diagnostic.open_float()<CR>
+nmap <silent> [d <cmd>lua vim.diagnostic.goto_prev()<CR>
+nmap <silent> ]d <cmd>lua vim.diagnostic.goto_next()<CR>
+nmap <silent> <A-q> <cmd>lua vim.diagnostic.setloclist()<CR>
 
 command! ClearBuffers :%bd|e#|bd#
 

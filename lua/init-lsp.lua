@@ -53,9 +53,8 @@ if (vim.fn.has('win32') == 1) then
   }
 end
 
-do
-  local sumneko_root_path = os.getenv('LUA_LANGUAGE_SERVER')
-
+local sumneko_root_path = os.getenv('LUA_LANGUAGE_SERVER')
+if (sumneko_root_path) then
   local sumneko_binary = ""
 
   if (vim.fn.has('unix') == 1) then

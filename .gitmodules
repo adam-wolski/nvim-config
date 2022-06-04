@@ -70,6 +70,7 @@
 [submodule "pack/core/start/cmp-nvim-lsp"]
 	path = pack/core/start/cmp-nvim-lsp
 	url = https://github.com/hrsh7th/cmp-nvim-lsp
+	ignore = dirty
 [submodule "pack/core/start/firenvim"]
 	path = pack/core/start/firenvim
 	url = https://github.com/glacambre/firenvim.git

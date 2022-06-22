@@ -63,6 +63,7 @@ lua require'init-cmp'
 lua require'init-lsp'
 lua require'init-treesitter'
 lua require'init-dap'
+lua require'init-ufo'
 runtime init-firenvim.vim
 
 function MyFoldText()

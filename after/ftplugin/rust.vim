@@ -1,6 +1,8 @@
 au BufWritePost *.rs :lua vim.lsp.buf.formatting_sync()
 let &makeprg = "cargo build"
 
+nmap <C-F5> :!cargo run<CR>
+
 set errorformat=
 \%-G,
 \%-Gerror:\ aborting\ %.%#,

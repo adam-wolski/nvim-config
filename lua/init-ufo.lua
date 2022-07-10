@@ -1,4 +1,3 @@
-vim.wo.foldcolumn = '1'
 vim.wo.foldlevel = 99
 vim.wo.foldenable = true
 

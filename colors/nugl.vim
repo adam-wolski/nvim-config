@@ -137,7 +137,6 @@ let s:gs7 = " guisp=".s:c7
 
 " Basic highlighting" {{{
 
-let s:f_normal = s:fg0
 let s:g_normal = s:gn
 let s:b_normal = s:bg0
 exe "hi! Normal"   .s:g_normal   .s:g_normal   .s:b_normal
@@ -487,4 +486,24 @@ exe "hi! ClangdConcept"            	.s:ba0 .s:fa2 .s:gn
 exe "hi! ClangdDependentName"      	.s:bg0 .s:fa1 .s:gb
 exe "hi! ClangdDependentType"      	.s:bg0 .s:fa0 .s:gb
 
+" }}}
+" Terminal highlighting {{{
+let g:terminal_color_foreground = "#282828"
+let g:terminal_color_background = "#eeeeee"
+let g:terminal_color_0 = "#282828"
+let g:terminal_color_1 = "#f43753"
+let g:terminal_color_2 = "#c9d05c"
+let g:terminal_color_3 = "#ffc24b"
+let g:terminal_color_4 = "#b3deef"
+let g:terminal_color_5 = "#d3b987"
+let g:terminal_color_6 = "#73cef4"
+let g:terminal_color_7 = "#eeeeee"
+let g:terminal_color_8 = "#1d1d1d"
+let g:terminal_color_9 = "#f43753"
+let g:terminal_color_10 = "#c9d05c"
+let g:terminal_color_11 = "#ffc24b"
+let g:terminal_color_12 = "#b3deef"
+let g:terminal_color_13 = "#d3b987"
+let g:terminal_color_14 = "#73cef4"
+let g:terminal_color_15 = "#ffffff"
 " }}}

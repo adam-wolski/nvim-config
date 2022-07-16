@@ -92,3 +92,6 @@
 [submodule "pack/core/start/promise-async"]
 	path = pack/core/start/promise-async
 	url = https://github.com/kevinhwang91/promise-async
+[submodule "pack/core/start/nvim-autopairs"]
+	path = pack/core/start/nvim-autopairs
+	url = https://github.com/windwp/nvim-autopairs.git

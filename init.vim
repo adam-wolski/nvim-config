@@ -33,6 +33,7 @@ nmap <silent> <leader>f <CMD>lua require('telescope.builtin').find_files()<CR>
 nmap <silent> <leader>t <CMD>lua require('telescope.builtin').treesitter()<CR>
 nmap <silent> <leader>z= <CMD>lua require('telescope.builtin').spell_suggest()<CR>
 nmap <silent> <A-m> <CMD>lua require('telescope.builtin').lsp_document_symbols()<CR>
+nmap <silent> <A-s> <CMD>lua require('telescope.builtin').lsp_workspace_symbols()<CR>
 nmap <silent> <leader>g :LazyGit<CR>
 vmap <silent> <leader>s( xi()<esc>P%
 vmap <silent> <leader>s[ xi[]<esc>P%

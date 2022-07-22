@@ -84,7 +84,7 @@
 	path = pack/core/opt/null-ls.nvim
 	url = https://github.com/jose-elias-alvarez/null-ls.nvim
 [submodule "pack/core/opt/markdown-preview.nvim"]
-	path = pack/core/opt/markdown-preview.nvim
+	path = pack/core/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim.git
 [submodule "pack/core/start/nvim-ufo"]
 	path = pack/core/start/nvim-ufo

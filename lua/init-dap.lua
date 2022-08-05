@@ -156,6 +156,7 @@ do
   set_keymap('<S-F4>',  ":lua require'dapui'.close()<CR>")
   set_keymap('<F5>',    ":lua require'dap'.continue()<CR>")
   set_keymap('<F10>',   ":lua require'dap'.step_over()<CR>")
+  set_keymap('<S-F10>', ":lua require'dap'.run_to_cursor()<CR>")
   set_keymap('<F11>',   ":lua require'dap'.step_into()<CR>")
   set_keymap('<S-F11>', ":lua require'dap'.step_out()<CR>")
   set_keymap('<F9>',    ":lua require'dap'.toggle_breakpoint()<CR>")

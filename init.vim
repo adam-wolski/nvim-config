@@ -64,7 +64,6 @@ lua require'init-cmp'
 lua require'init-lsp'
 lua require'init-treesitter'
 lua require'init-dap'
-lua require'init-ufo'
 lua require'init-autopairs'
 runtime init-firenvim.vim
 

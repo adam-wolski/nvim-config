@@ -98,3 +98,6 @@
 [submodule "pack/core/start/nvim-lint"]
 	path = pack/core/start/nvim-lint
 	url = https://github.com/mfussenegger/nvim-lint
+[submodule "pack/core/start/rust-tools.nvim"]
+	path = pack/core/start/rust-tools.nvim
+	url = https://github.com/simrat39/rust-tools.nvim

@@ -27,13 +27,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", '<A-f>', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = {"rust_analyzer"}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
-
 nvim_lsp.ltex.setup {
   on_attach = on_attach,
   settings = {
@@ -104,3 +97,8 @@ if (sumneko_root_path) then
     },
   })
 end
+
+local M = {}
+M.on_attach = on_attach;
+
+return M

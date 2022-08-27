@@ -101,3 +101,6 @@
 [submodule "pack/core/start/rust-tools.nvim"]
 	path = pack/core/start/rust-tools.nvim
 	url = https://github.com/simrat39/rust-tools.nvim
+[submodule "pack/core/start/LuaSnip"]
+	path = pack/core/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip.git

@@ -95,3 +95,6 @@
 [submodule "pack/core/start/nvim-autopairs"]
 	path = pack/core/start/nvim-autopairs
 	url = https://github.com/windwp/nvim-autopairs.git
+[submodule "pack/core/start/nvim-lint"]
+	path = pack/core/start/nvim-lint
+	url = https://github.com/mfussenegger/nvim-lint

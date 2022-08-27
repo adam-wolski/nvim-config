@@ -34,6 +34,17 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
+nvim_lsp.ltex.setup {
+  on_attach = on_attach,
+  settings = {
+    ltex = {
+      additionalRules = {
+        languageModel = '~/ngrams/',
+      },
+    },
+  },
+}
+
 nvim_lsp.clangd.setup {
   capabilities = {
     textDocument = {

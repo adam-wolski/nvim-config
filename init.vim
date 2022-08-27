@@ -65,6 +65,7 @@ lua require'init-lsp'
 lua require'init-treesitter'
 lua require'init-dap'
 lua require'init-autopairs'
+lua require'init-lint'
 runtime init-firenvim.vim
 
 function MyFoldText()

@@ -12,7 +12,7 @@ set foldexpr=nvim_treesitter#foldexpr()
 set linebreak
 set breakindent
 set icm=nosplit
-set mouse=n
+set mouse=a
 let &breakat="),="
 let &grepprg = "rg --vimgrep"
 let &statusline = "%{GitStatus()} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"

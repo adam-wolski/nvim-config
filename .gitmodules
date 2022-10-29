@@ -104,3 +104,6 @@
 [submodule "pack/core/start/lsp_lines.nvim"]
 	path = pack/core/start/lsp_lines.nvim
 	url = https://git.sr.ht/~whynothugo/lsp_lines.nvim
+[submodule "pack/core/start/sterm.nvim"]
+	path = pack/core/start/sterm.nvim
+	url = https://github.com/Hvassaa/sterm.nvim.git

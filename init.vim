@@ -51,6 +51,8 @@ nmap <silent> [d <cmd>lua vim.diagnostic.goto_prev()<CR>
 nmap <silent> ]d <cmd>lua vim.diagnostic.goto_next()<CR>
 nmap <silent> <A-q> <cmd>lua vim.diagnostic.setloclist()<CR>
 
+nmap <silent> <A-t> <cmd>lua require('sterm').toggle()<CR>
+
 command! ClearBuffers :%bd|e#|bd#
 
 if has('win32')

@@ -61,9 +61,6 @@
 [submodule "pack/core/start/gina.vim"]
 	path = pack/core/start/gina.vim
 	url = https://github.com/lambdalisue/gina.vim.git
-[submodule "pack/core/start/hlsl.vim"]
-	path = pack/core/start/hlsl.vim
-	url = https://github.com/beyondmarc/hlsl.vim
 [submodule "pack/core/start/nvim-cmp"]
 	path = pack/core/start/nvim-cmp
 	url = https://github.com/hrsh7th/nvim-cmp

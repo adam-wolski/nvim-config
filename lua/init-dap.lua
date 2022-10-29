@@ -80,6 +80,16 @@ require"dapui".setup({
       expanded = "⯆",
       collapsed = "⯈",
     },
+    layouts = {
+      {
+        elements = {
+          "scopes",
+          "stacks",
+        },
+        size = 80,
+        position = "right",
+      },
+    },
     mappings = {
       -- Use a table to apply multiple mappings
       expand = {"<CR>", "<2-LeftMouse>"},

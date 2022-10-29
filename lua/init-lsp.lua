@@ -98,6 +98,14 @@ if (sumneko_root_path) then
   })
 end
 
+require("lsp_lines").setup()
+
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+  virtual_text = false,
+  virtual_lines = true,
+})
+
 local M = {}
 M.on_attach = on_attach;
 

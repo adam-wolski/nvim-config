@@ -101,3 +101,6 @@
 [submodule "pack/core/start/LuaSnip"]
 	path = pack/core/start/LuaSnip
 	url = https://github.com/L3MON4D3/LuaSnip.git
+[submodule "pack/core/start/lsp_lines.nvim"]
+	path = pack/core/start/lsp_lines.nvim
+	url = https://git.sr.ht/~whynothugo/lsp_lines.nvim

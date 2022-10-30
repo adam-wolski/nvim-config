@@ -23,15 +23,22 @@ vim.opt.termguicolors = true
 
 vim.cmd [[colorscheme nugl]]
 
+-- Force load packages so sourcing init.lua script reloads modules
+-- Packages are cached otherwise and require doesn't suffice
+local force_load = function(module_name)
+  package.loaded[module_name] = nil
+  require(module_name)
+end
+
 -- NOTE: Make sure to init lsp BEFORE treesitter
 -- So treesitter initializes as fallback correctly
-require'init-cmp'
-require'init-lsp'
-require'init-treesitter'
-require'init-dap'
-require'init-autopairs'
-require'init-lint'
-require'init-rust'
+force_load('init-cmp')
+force_load('init-lsp')
+force_load('init-treesitter')
+force_load('init-dap')
+force_load('init-autopairs')
+force_load('init-lint')
+force_load('init-rust')
 vim.cmd [[runtime init-firenvim.vim]]
 
 local maps = function(mode, key, action)
@@ -47,7 +54,7 @@ nmap('<A-m>', [[<CMD>lua require('telescope.builtin').lsp_document_symbols()<CR>
 nmap('<A-q>', [[<cmd>lua vim.diagnostic.setloclist()<CR>]])
 nmap('<A-s>', [[<CMD>lua require('telescope.builtin').lsp_workspace_symbols()<CR>]])
 nmap('<A-t>', [[<cmd>lua require('sterm').toggle()<CR>]])
-nmap('<Leader>/', [[:nohl<CR>]])
+nmap('<leader>/', [[:nohl<CR>]])
 nmap('<leader><', [[:call AdjustFontSize(-1)<CR>]])
 nmap('<leader>>', [[:call AdjustFontSize(1)<CR>]])
 nmap('<leader>F', [[:let g:neovide_fullscreen=!g:neovide_fullscreen<CR>]])
@@ -60,6 +67,10 @@ nmap('<leader>t', [[<CMD>lua require('telescope.builtin').treesitter()<CR>]])
 nmap('<leader>z=', [[<CMD>lua require('telescope.builtin').spell_suggest()<CR>]])
 nmap('[d', [[<cmd>lua vim.diagnostic.goto_prev()<CR>]])
 nmap(']d', [[<cmd>lua vim.diagnostic.goto_next()<CR>]])
+nmap('<leader>R', function()
+  local init_path = os.getenv("MYVIMRC")
+  vim.cmd(string.format("source %s", init_path))
+end)
 
 vim.cmd(
 [[

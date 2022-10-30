@@ -32,13 +32,13 @@ end
 
 -- NOTE: Make sure to init lsp BEFORE treesitter
 -- So treesitter initializes as fallback correctly
-force_load('init-cmp')
-force_load('init-lsp')
-force_load('init-treesitter')
-force_load('init-dap')
-force_load('init-autopairs')
-force_load('init-lint')
-force_load('init-rust')
+force_load('init.cmp')
+force_load('init.lsp')
+force_load('init.treesitter')
+force_load('init.dap')
+force_load('init.autopairs')
+force_load('init.lint')
+force_load('init.rust')
 vim.cmd [[runtime init-firenvim.vim]]
 
 local maps = function(mode, key, action)

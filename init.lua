@@ -7,7 +7,6 @@ vim.o.breakat = "),="
 vim.o.grepprg = "rg --vimgrep"
 vim.o.statusline = "%{GitStatus()} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
 vim.opt.breakindent = true
-vim.opt.exrc = true
 vim.opt.fillchars = [[fold:\]]
 vim.opt.foldexpr = [[nvim_treesitter#foldexpr()]]
 vim.opt.foldlevel = 10

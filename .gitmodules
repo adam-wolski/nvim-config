@@ -107,3 +107,6 @@
 [submodule "pack/core/start/sterm.nvim"]
 	path = pack/core/start/sterm.nvim
 	url = https://github.com/Hvassaa/sterm.nvim.git
+[submodule "pack/core/start/nvim-config-local"]
+	path = pack/core/start/nvim-config-local
+	url = https://github.com/klen/nvim-config-local.git

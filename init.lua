@@ -58,6 +58,7 @@ nmap('<leader>/', [[:nohl<CR>]])
 nmap('<leader><', [[:call AdjustFontSize(-1)<CR>]])
 nmap('<leader>>', [[:call AdjustFontSize(1)<CR>]])
 nmap('<leader>F', [[:let g:neovide_fullscreen=!g:neovide_fullscreen<CR>]])
+nmap('<leader>R', function() vim.cmd(string.format("source %s", os.getenv("MYVIMRC"))) end)
 nmap('<leader>b', [[<CMD>lua require('telescope.builtin').buffers()<CR>]])
 nmap('<leader>c', [[gg"+yG]])
 nmap('<leader>f', [[<CMD>lua require('telescope.builtin').find_files()<CR>]])
@@ -67,10 +68,6 @@ nmap('<leader>t', [[<CMD>lua require('telescope.builtin').treesitter()<CR>]])
 nmap('<leader>z=', [[<CMD>lua require('telescope.builtin').spell_suggest()<CR>]])
 nmap('[d', [[<cmd>lua vim.diagnostic.goto_prev()<CR>]])
 nmap(']d', [[<cmd>lua vim.diagnostic.goto_next()<CR>]])
-nmap('<leader>R', function()
-  local init_path = os.getenv("MYVIMRC")
-  vim.cmd(string.format("source %s", init_path))
-end)
 
 vim.cmd(
 [[

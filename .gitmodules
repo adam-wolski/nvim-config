@@ -110,3 +110,6 @@
 [submodule "pack/core/start/nvim-config-local"]
 	path = pack/core/start/nvim-config-local
 	url = https://github.com/klen/nvim-config-local.git
+[submodule "pack/core/start/gitsigns.nvim"]
+	path = pack/core/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim

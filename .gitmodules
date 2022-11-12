@@ -78,7 +78,7 @@
 	path = pack/core/start/cmp-omni
 	url = https://github.com/hrsh7th/cmp-omni
 [submodule "pack/core/opt/null-ls.nvim"]
-	path = pack/core/opt/null-ls.nvim
+	path = pack/core/start/null-ls.nvim
 	url = https://github.com/jose-elias-alvarez/null-ls.nvim
 [submodule "pack/core/opt/markdown-preview.nvim"]
 	path = pack/core/start/markdown-preview.nvim

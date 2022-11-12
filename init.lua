@@ -40,6 +40,7 @@ force_load('init.lint')
 force_load('init.rust')
 force_load('init.telescope')
 force_load('init.gitsigns')
+force_load('init.null-ls')
 vim.cmd [[runtime init-firenvim.vim]]
 
 local maps = function(mode, key, action)

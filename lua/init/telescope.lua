@@ -10,3 +10,4 @@ nmap('<leader>t', [[<CMD>lua require('telescope.builtin').treesitter()<CR>]])
 nmap('<leader>z=', [[<CMD>lua require('telescope.builtin').spell_suggest()<CR>]])
 
 require('telescope').load_extension('dap')
+require('telescope').load_extension('file_browser')

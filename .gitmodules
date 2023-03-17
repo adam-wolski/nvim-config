@@ -119,3 +119,6 @@
 [submodule "pack/core/opt/copilot-cmp"]
 	path = pack/core/opt/copilot-cmp
 	url = https://github.com/zbirenbaum/copilot-cmp.git
+[submodule "pack/telescope/start/telescope-file-browser.nvim"]
+	path = pack/telescope/start/telescope-file-browser.nvim
+	url = https://github.com/nvim-telescope/telescope-file-browser.nvim.git

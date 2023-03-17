@@ -58,45 +58,28 @@ if (vim.fn.has('win32') == 1) then
   }
 end
 
-local sumneko_root_path = os.getenv('LUA_LANGUAGE_SERVER')
-if (sumneko_root_path) then
-  local sumneko_binary = ""
-
-  if (vim.fn.has('unix') == 1) then
-    sumneko_binary = sumneko_root_path.."/bin/lua-language-server"
-  else
-    local system_name = "Windows" -- (Linux, macOS, or Windows)
-    sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
-  end
-
-  nvim_lsp.sumneko_lua.setup({
-    on_attach = on_attach,
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua", '--logpath="~/.cache/nvim/lua-language-server.log"'};
-    -- An example of settings for an LSP server.
-    --    For more options, see nvim-lspconfig
-    settings = {
-      Lua = {
-        runtime = {
-          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = 'LuaJIT',
-          -- Setup your lua path
-          path = vim.split(package.path, ';'),
-        },
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = {'vim'},
-        },
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = {
-            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-          },
-        },
-      }
+nvim_lsp.lua_ls.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
     },
-  })
-end
+  },
+}
 
 require("lsp_lines").setup()
 

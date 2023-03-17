@@ -113,3 +113,9 @@
 [submodule "pack/core/start/gitsigns.nvim"]
 	path = pack/core/start/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "pack/core/opt/copilot.lua"]
+	path = pack/core/opt/copilot.lua
+	url = https://github.com/zbirenbaum/copilot.lua.git
+[submodule "pack/core/opt/copilot-cmp"]
+	path = pack/core/opt/copilot-cmp
+	url = https://github.com/zbirenbaum/copilot-cmp.git

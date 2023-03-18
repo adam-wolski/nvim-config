@@ -43,6 +43,8 @@ force_load('init.gitsigns')
 force_load('init.null-ls')
 vim.cmd [[runtime init-firenvim.vim]]
 
+require('config-local').setup()
+
 local maps = function(mode, key, action)
   vim.keymap.set(mode, key, action, { silent = true })
 end

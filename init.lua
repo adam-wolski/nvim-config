@@ -53,6 +53,10 @@ local nmap = function (key, action)
   maps('n', key, action)
 end
 
+local imap = function (key, action)
+  maps('i', key, action)
+end
+
 nmap('<A-e>', [[<cmd>lua vim.diagnostic.open_float()<CR>]])
 nmap('<A-q>', [[<cmd>lua vim.diagnostic.setloclist()<CR>]])
 nmap('<A-t>', [[<cmd>lua require('sterm').toggle()<CR>]])
@@ -66,6 +70,7 @@ nmap('<leader>g', [[:LazyGit<CR>]])
 nmap('<leader>p', [["+p]])
 nmap('[d', [[<cmd>lua vim.diagnostic.goto_prev()<CR>]])
 nmap(']d', [[<cmd>lua vim.diagnostic.goto_next()<CR>]])
+imap('<C-R>', [[<C-R><C-O>]])
 
 vim.cmd(
 [[

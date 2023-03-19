@@ -5,7 +5,7 @@ vim.g.neovide_refresh_rate = 144
 vim.g.vimsyn_embed = 'l'
 vim.o.breakat = "),="
 vim.o.grepprg = "rg --vimgrep"
-vim.o.statusline = "%{GitStatus()} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
+vim.o.statusline = "%{get(b:,'gitsigns_status','')} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
 vim.opt.breakindent = true
 vim.opt.fillchars = [[fold:\]]
 vim.opt.foldexpr = [[nvim_treesitter#foldexpr()]]
@@ -87,10 +87,6 @@ function! MyFoldText()
 	endif
 endfunction
 
-function! GitStatus()
-	return getbufvar(bufnr('%'), 'git_branch') . ' ' . getbufvar(bufnr('%'), 'git_status') 
-endfunction
-
 function! AdjustFontSize(amount)
 	" Split font name from FontName:hSize format and set increased size
 	let current_font = &guifont
@@ -106,7 +102,6 @@ function! ScrollOff()
 	let &scrolloff = float2nr(h * 0.35)
 endfunctio
 
-au BufEnter,BufWritePost * let b:git_status = '' | let b:git_branch = '' | call luaeval('require("git_status").run()')
 au BufEnter,WinEnter,WinNew,VimResized *,*.* call ScrollOff()
 ]])
 

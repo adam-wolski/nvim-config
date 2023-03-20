@@ -70,6 +70,7 @@ nmap('<leader>g', [[:LazyGit<CR>]])
 nmap('<leader>p', [["+p]])
 nmap('[d', [[<cmd>lua vim.diagnostic.goto_prev()<CR>]])
 nmap(']d', [[<cmd>lua vim.diagnostic.goto_next()<CR>]])
+nmap('<C-S-B>', [[<cmd>make<CR>]])
 imap('<C-R>', [[<C-R><C-O>]])
 
 vim.cmd(

@@ -1,3 +1,8 @@
+-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+require("neodev").setup({
+  library = { plugins = { "nvim-dap-ui" }, types = true },
+})
+
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys 

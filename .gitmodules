@@ -123,3 +123,6 @@
 [submodule "pack/telescope/start/telescope-file-browser.nvim"]
 	path = pack/telescope/start/telescope-file-browser.nvim
 	url = https://github.com/nvim-telescope/telescope-file-browser.nvim.git
+[submodule "pack/core/start/neodev.nvim"]
+	path = pack/core/start/neodev.nvim
+	url = https://github.com/folke/neodev.nvim

@@ -58,7 +58,7 @@ do
   }
 
   dap.configurations.c = dap.configurations.cpp
-  
+
   dap.adapters.codelldb = {
     type = 'server',
     port = "${port}",
@@ -73,36 +73,9 @@ do
   }
 end
 
-vim.g.dap_virtual_text = true
+require("nvim-dap-virtual-text").setup()
 
-require"dapui".setup({
-    icons = {
-      expanded = "⯆",
-      collapsed = "⯈",
-    },
-    layouts = {
-      {
-        elements = {
-          "scopes",
-          "stacks",
-        },
-        size = 80,
-        position = "right",
-      },
-    },
-    mappings = {
-      -- Use a table to apply multiple mappings
-      expand = {"<CR>", "<2-LeftMouse>"},
-      open = "o",
-      remove = "d",
-      edit = "e",
-    },
-    floating = {
-      max_height = nil, -- These can be integers or a float between 0 and 1.
-      max_width = nil,  -- Floats will be treated as percentage of your screen.
-    },
-  }
-)
+require"dapui".setup({})
 
 do
   local function set_keymap(lhs, rhs)
@@ -121,4 +94,22 @@ do
   set_keymap('<S-F9>',  ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
   set_keymap('<F12>',   ":lua require'dap'.repl.open()<CR>")
   set_keymap('<S-F12>', ":lua require'dap'.run_last()<CR>")
+  set_keymap('<leader>dw0', [[:lua require'dapui'.toggle({layout=0})<CR>]])
+  set_keymap('<leader>dw1', [[:lua require'dapui'.toggle({layout=1})<CR>]])
+  set_keymap('<leader>dw2', [[:lua require'dapui'.toggle({layout=2})<CR>]])
+  set_keymap('<leader>dw3', [[:lua require'dapui'.toggle({layout=3})<CR>]])
+  set_keymap('<leader>dw4', [[:lua require'dapui'.toggle({layout=4})<CR>]])
+  set_keymap('<leader>dw5', [[:lua require'dapui'.toggle({layout=5})<CR>]])
+  set_keymap('<leader>dw6', [[:lua require'dapui'.toggle({layout=6})<CR>]])
+  set_keymap('<leader>dw7', [[:lua require'dapui'.toggle({layout=7})<CR>]])
+  set_keymap('<leader>dw8', [[:lua require'dapui'.toggle({layout=8})<CR>]])
+  set_keymap('<leader>dw9', [[:lua require'dapui'.toggle({layout=9})<CR>]])
+  set_keymap('<leader>dwc', [[:lua require'dapui'.close()<CR>]])
+  set_keymap('<leader>db', [[:lua require'dapui'.float_element("breakpoints")<CR>]])
+  set_keymap('<leader>dh', [[:lua require'dapui'.float_element("hover")<CR>]])
+  set_keymap('<leader>dr', [[:lua require'dapui'.float_element("repl")<CR>]])
+  set_keymap('<leader>dw', [[:lua require'dapui'.float_element("watches")<CR>]])
+  set_keymap('<leader>ds', [[:lua require'dapui'.float_element("stack")<CR>]])
+  set_keymap('<leader>di', [[:lua require'dapui'.float_element("scopes")<CR>]])
+  set_keymap('<leader>dc', [[:lua require'dapui'.float_element("console")<CR>]])
 end

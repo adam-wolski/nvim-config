@@ -453,9 +453,21 @@ exe "hi! hsniceoperator"     . s:fa6   .s:bgn   .s:gn
 " }}}
 " Rust highlighting  {{{
 
-exe "hi! rustDerive"   .s:bg0   .s:fa1   .s:gn
-exe "hi! rustStorage"   .s:bg0   .s:fa0   .s:gn
-exe "hi! rustReservedKeyword"   .s:bg0   .s:fa0   .s:gn
+exe "hi! rustDerive"   			.s:bg0 .s:fa1 .s:gn
+exe "hi! rustStorage"   		.s:bg0 .s:fa0 .s:gn
+exe "hi! rustReservedKeyword"   	.s:bg0 .s:fa0 .s:gn
+
+exe "hi! @variable.rust" 		.s:g_normal   .s:g_normal   .s:b_normal
+exe "hi! @lsp.type.variable.rust" 	.s:g_normal   .s:g_normal   .s:b_normal
+exe "hi! @lsp.mod.mutable.rust" 	.s:g_normal   .s:g_normal   .s:gu
+exe "hi! @lsp.type.property.rust"	.s:bg0 .s:fa1 .s:gi
+exe "hi! @lsp.type.method.rust"		.s:bg0 .s:fa5 .s:gi
+exe "hi! @lsp.type.parameter.rust"	.s:bg0 .s:fg0 .s:gn
+exe "hi! @lsp.type.namespace.rust"	.s:bg0 .s:fa7 .s:gn
+exe "hi! @lsp.type.keyword.rust"	.s:bg0 .s:fa0 .s:gn
+exe "hi! @lsp.type.struct.rust"		.s:bg0 .s:fa0 .s:gi
+exe "hi! @lsp.type.enum.rust"		.s:bg0 .s:fa6 .s:gn
+exe "hi! @lsp.type.interface.rust"	.s:bg0 .s:fa0 .s:gb
 
 " }}}
 " Python highlighting  {{{

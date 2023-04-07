@@ -470,6 +470,10 @@ exe "hi! @lsp.type.keyword.rust"	.s:bg0 .s:fa0 .s:gn
 exe "hi! @lsp.type.struct.rust"		.s:bg0 .s:fa0 .s:gi
 exe "hi! @lsp.type.enum.rust"		.s:bg0 .s:fa6 .s:gn
 exe "hi! @lsp.type.interface.rust"	.s:bg0 .s:fa0 .s:gb
+exe "hi! @lsp.type.decorator.rust"	.s:bg0 .s:fa2 .s:gn
+exe "hi! @lsp.type.generic.rust"	.s:bg0 .s:fa2 .s:gn
+exe "hi! @lsp.type.deriveHelper.rust"	.s:bg0 .s:fa2 .s:gn
+exe "hi! @lsp.type.derive.rust"		.s:bg0 .s:fa0 .s:gb
 
 " }}}
 " Python highlighting  {{{

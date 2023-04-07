@@ -158,3 +158,5 @@ do
   set_keymap('<leader>di', [[:lua require'dapui'.float_element("scopes")<CR>]])
   set_keymap('<leader>dc', [[:lua require'dapui'.float_element("console")<CR>]])
 end
+
+vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='', numhl=''})

@@ -57,9 +57,9 @@ local imap = function (key, action)
   maps('i', key, action)
 end
 
-nmap('<A-e>', [[<cmd>lua vim.diagnostic.open_float()<CR>]])
-nmap('<A-q>', [[<cmd>lua vim.diagnostic.setloclist()<CR>]])
-nmap('<A-t>', [[<cmd>lua require('sterm').toggle()<CR>]])
+nmap('<A-e>', vim.diagnostic.open_float)
+nmap('<A-q>', vim.diagnostic.setloclist)
+nmap('<A-t>', require('sterm').toggle)
 nmap('<leader>/', [[:nohl<CR>]])
 nmap('<leader><', [[:call AdjustFontSize(-1)<CR>]])
 nmap('<leader>>', [[:call AdjustFontSize(1)<CR>]])
@@ -68,8 +68,8 @@ nmap('<leader>R', function() vim.cmd(string.format("source %s", os.getenv("MYVIM
 nmap('<leader>c', [[gg"+yG]])
 nmap('<leader>g', [[:LazyGit<CR>]])
 nmap('<leader>p', [["+p]])
-nmap('[d', [[<cmd>lua vim.diagnostic.goto_prev()<CR>]])
-nmap(']d', [[<cmd>lua vim.diagnostic.goto_next()<CR>]])
+nmap('[d', vim.diagnostic.goto_prev)
+nmap(']d', vim.diagnostic.goto_next)
 nmap('<C-S-B>', [[<cmd>make<CR>]])
 imap('<C-R>', [[<C-R><C-O>]])
 

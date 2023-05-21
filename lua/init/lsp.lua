@@ -86,6 +86,10 @@ nvim_lsp.lua_ls.setup {
   },
 }
 
+require'lspconfig'.tsserver.setup{
+  on_attach = on_attach,
+}
+
 require("lsp_lines").setup()
 
 -- Disable virtual_text since it's redundant due to lsp_lines.

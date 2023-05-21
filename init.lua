@@ -68,6 +68,7 @@ nmap('<leader>R', function() vim.cmd(string.format("source %s", os.getenv("MYVIM
 nmap('<leader>c', [[gg"+yG]])
 nmap('<leader>g', [[:LazyGit<CR>]])
 nmap('<leader>p', [["+p]])
+nmap('<leader>w', [[<cmd>w<CR>]])
 nmap('[d', vim.diagnostic.goto_prev)
 nmap(']d', vim.diagnostic.goto_next)
 nmap('<C-S-B>', [[<cmd>make<CR>]])

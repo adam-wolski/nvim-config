@@ -6,6 +6,7 @@ vim.g.vimsyn_embed = 'l'
 vim.o.breakat = "),="
 vim.o.grepprg = "rg --vimgrep"
 vim.o.statusline = "%{get(b:,'gitsigns_status','')} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
+vim.o.exrc = true
 vim.opt.breakindent = true
 vim.opt.fillchars = [[fold:\]]
 vim.opt.foldexpr = [[nvim_treesitter#foldexpr()]]
@@ -42,8 +43,6 @@ force_load('init.telescope')
 force_load('init.gitsigns')
 force_load('init.null-ls')
 vim.cmd [[runtime init-firenvim.vim]]
-
-require('config-local').setup()
 
 local maps = function(mode, key, action)
   vim.keymap.set(mode, key, action, { silent = true })

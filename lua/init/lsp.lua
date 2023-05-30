@@ -34,13 +34,6 @@ end
 
 nvim_lsp.ltex.setup {
   on_attach = on_attach,
-  settings = {
-    ltex = {
-      additionalRules = {
-        languageModel = '~/ngrams/',
-      },
-    },
-  },
 }
 
 nvim_lsp.clangd.setup {

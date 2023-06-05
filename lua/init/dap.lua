@@ -121,42 +121,4 @@ require"dapui".setup({
     } },
   })
 
-do
-  local function set_keymap(lhs, rhs)
-    local keymap_opts = { noremap=true, silent=true }
-    vim.api.nvim_set_keymap('n', lhs, rhs, keymap_opts)
-  end
-
-  set_keymap('<F4>',    ":lua require'dapui'.open()<CR>")
-  set_keymap('<S-F4>',  ":lua require'dapui'.close()<CR>")
-  set_keymap('<F5>',    ":lua require'dap'.continue()<CR>")
-  set_keymap('<F10>',   ":lua require'dap'.step_over()<CR>")
-  set_keymap('<S-F10>', ":lua require'dap'.run_to_cursor()<CR>")
-  set_keymap('<F11>',   ":lua require'dap'.step_into()<CR>")
-  set_keymap('<S-F11>', ":lua require'dap'.step_out()<CR>")
-  set_keymap('<F9>',    ":lua require'dap'.toggle_breakpoint()<CR>")
-  set_keymap('<S-F9>',  ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
-  set_keymap('<F12>',   ":lua require'dap'.repl.open()<CR>")
-  set_keymap('<S-F12>', ":lua require'dap'.run_last()<CR>")
-  set_keymap('<leader>d0', [[:lua require'dapui'.toggle({layout=0})<CR>]])
-  set_keymap('<leader>d1', [[:lua require'dapui'.toggle({layout=1})<CR>]])
-  set_keymap('<leader>d2', [[:lua require'dapui'.toggle({layout=2})<CR>]])
-  set_keymap('<leader>d3', [[:lua require'dapui'.toggle({layout=3})<CR>]])
-  set_keymap('<leader>d4', [[:lua require'dapui'.toggle({layout=4})<CR>]])
-  set_keymap('<leader>d5', [[:lua require'dapui'.toggle({layout=5})<CR>]])
-  set_keymap('<leader>d6', [[:lua require'dapui'.toggle({layout=6})<CR>]])
-  set_keymap('<leader>d7', [[:lua require'dapui'.toggle({layout=7})<CR>]])
-  set_keymap('<leader>d8', [[:lua require'dapui'.toggle({layout=8})<CR>]])
-  set_keymap('<leader>d9', [[:lua require'dapui'.toggle({layout=9})<CR>]])
-  set_keymap('<leader>d0', [[:lua require'dapui'.close()<CR>]])
-  set_keymap('<leader>db', [[:lua require'dapui'.float_element("breakpoints")<CR>]])
-  set_keymap('<leader>dh', [[:lua require'dapui'.float_element("hover")<CR>]])
-  set_keymap('<leader>dr', [[:lua require'dapui'.float_element("repl")<CR>]])
-  set_keymap('<leader>dw', [[:lua require'dapui'.float_element("watches")<CR>]])
-  set_keymap('<leader>dwa', [[:lua require'dapui'.elements.watches.add()<CR>]])
-  set_keymap('<leader>ds', [[:lua require'dapui'.float_element("stack")<CR>]])
-  set_keymap('<leader>di', [[:lua require'dapui'.float_element("scopes")<CR>]])
-  set_keymap('<leader>dc', [[:lua require'dapui'.float_element("console")<CR>]])
-end
-
 vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='', numhl=''})

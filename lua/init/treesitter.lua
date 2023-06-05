@@ -89,8 +89,8 @@ require'nvim-treesitter.configs'.setup {
 			enable = true,
 			keymaps = {
 				goto_definition_lsp_fallback = "gd",
-				list_definitions = "gD",
-				list_definitions_toc = "gO",
+				list_definitions = "<leader>tD",
+				list_definitions_toc = "<leader>tO",
 				goto_next_usage = "<a-*>",
 				goto_previous_usage = "<a-#>",
 			},

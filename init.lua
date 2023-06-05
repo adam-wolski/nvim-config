@@ -42,36 +42,8 @@ force_load('init.rust')
 force_load('init.telescope')
 force_load('init.gitsigns')
 force_load('init.null-ls')
+force_load('init.map')
 vim.cmd [[runtime init-firenvim.vim]]
-
-local maps = function(mode, key, action)
-  vim.keymap.set(mode, key, action, { silent = true })
-end
-
-local nmap = function (key, action)
-  maps('n', key, action)
-end
-
-local imap = function (key, action)
-  maps('i', key, action)
-end
-
-nmap('<A-e>', vim.diagnostic.open_float)
-nmap('<A-q>', vim.diagnostic.setloclist)
-nmap('<A-t>', require('sterm').toggle)
-nmap('<leader>/', [[:nohl<CR>]])
-nmap('<leader><', [[:call AdjustFontSize(-1)<CR>]])
-nmap('<leader>>', [[:call AdjustFontSize(1)<CR>]])
-nmap('<leader>F', [[:let g:neovide_fullscreen=!g:neovide_fullscreen<CR>]])
-nmap('<leader>R', function() vim.cmd(string.format("source %s", os.getenv("MYVIMRC"))) end)
-nmap('<leader>c', [[gg"+yG]])
-nmap('<leader>g', [[:LazyGit<CR>]])
-nmap('<leader>p', [["+p]])
-nmap('<leader>w', [[<cmd>w<CR>]])
-nmap('[d', vim.diagnostic.goto_prev)
-nmap(']d', vim.diagnostic.goto_next)
-nmap('<C-S-B>', [[<cmd>make<CR>]])
-imap('<C-R>', [[<C-R><C-O>]])
 
 vim.cmd(
 [[

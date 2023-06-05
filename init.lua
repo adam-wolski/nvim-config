@@ -41,7 +41,6 @@ force_load('init.lint')
 force_load('init.rust')
 force_load('init.telescope')
 force_load('init.gitsigns')
-force_load('init.null-ls')
 force_load('init.map')
 vim.cmd [[runtime init-firenvim.vim]]
 

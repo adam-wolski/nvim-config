@@ -1,5 +1,5 @@
 do
-  local dap = require"dap"
+  local dap = require "dap"
 
   dap.configurations.lua = {
     {
@@ -57,15 +57,61 @@ do
     },
   }
 
+  local rust_init_commands = function()
+    -- Find out where to look for the pretty printer Python module
+    local rustc_sysroot = vim.fn.trim(vim.fn.system('rustc --print sysroot'))
+
+    local script_import = 'command script import "' .. rustc_sysroot .. '/lib/rustlib/etc/lldb_lookup.py"'
+    local commands_file = rustc_sysroot .. '/lib/rustlib/etc/lldb_commands'
+
+    local commands = {}
+    local file = io.open(commands_file, 'r')
+    if file then
+      for line in file:lines() do
+        table.insert(commands, line)
+      end
+      file:close()
+    end
+    table.insert(commands, 1, script_import)
+
+    return commands
+  end
+
+  dap.configurations.rust = {
+    {
+      name = 'Launch',
+      type = 'lldb',
+      request = 'launch',
+      program = function()
+        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      end,
+      cwd = '${workspaceFolder}',
+      stopOnEntry = false,
+      args = {},
+
+      initCommands = rust_init_commands,
+    },
+    {
+      name = 'Attach',
+      type = 'lldb',
+      request = 'attach',
+      pid = require('dap.utils').pick_process,
+      cwd = '${workspaceFolder}',
+      stopOnEntry = false,
+      args = {},
+
+      initCommands = rust_init_commands,
+    },
+  }
+
   dap.configurations.c = dap.configurations.cpp
 
   dap.adapters.codelldb = {
     type = 'server',
     port = "${port}",
     executable = {
-      -- CHANGE THIS to your path!
       command = os.getenv('CODE_LLDB_PATH'),
-      args = {"--port", "${port}"},
+      args = { "--port", "${port}" },
 
       -- On windows you may have to uncomment this:
       -- detached = false,
@@ -75,7 +121,7 @@ end
 
 require("nvim-dap-virtual-text").setup()
 
-require"dapui".setup({
+require "dapui".setup({
   layouts = {
     {
       elements = { {
@@ -119,6 +165,6 @@ require"dapui".setup({
       position = "bottom",
       size = 10
     } },
-  })
+})
 
-vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpoint', { text = '', texthl = '', linehl = '', numhl = '' })

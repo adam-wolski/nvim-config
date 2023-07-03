@@ -457,24 +457,6 @@ exe "hi! rustDerive"   			.s:bg0 .s:fa1 .s:gn
 exe "hi! rustStorage"   		.s:bg0 .s:fa0 .s:gn
 exe "hi! rustReservedKeyword"   	.s:bg0 .s:fa0 .s:gn
 
-exe "hi! @variable.rust" 		.s:g_normal   .s:g_normal   .s:b_normal
-exe "hi! @lsp.type.variable.rust" 	.s:g_normal   .s:g_normal   .s:b_normal
-exe "hi! @lsp.mod.mutable.rust" 	.s:g_normal   .s:g_normal   .s:gu
-exe "hi! @lsp.type.property.rust"	.s:bg0 .s:fa1 .s:gi
-exe "hi! @field.rust"			.s:bg0 .s:fa1 .s:gi
-exe "hi! @lsp.type.method.rust"		.s:bg0 .s:fa5 .s:gi
-exe "hi! @lsp.type.parameter.rust"	.s:bg0 .s:fg0 .s:gn
-exe "hi! @lsp.type.namespace.rust"	.s:bg0 .s:fa7 .s:gn
-exe "hi! @namespace.rust"		.s:bg0 .s:fa7 .s:gn
-exe "hi! @lsp.type.keyword.rust"	.s:bg0 .s:fa0 .s:gn
-exe "hi! @lsp.type.struct.rust"		.s:bg0 .s:fa0 .s:gi
-exe "hi! @lsp.type.enum.rust"		.s:bg0 .s:fa6 .s:gn
-exe "hi! @lsp.type.interface.rust"	.s:bg0 .s:fa0 .s:gb
-exe "hi! @lsp.type.decorator.rust"	.s:bg0 .s:fa2 .s:gn
-exe "hi! @lsp.type.generic.rust"	.s:bg0 .s:fa2 .s:gn
-exe "hi! @lsp.type.deriveHelper.rust"	.s:bg0 .s:fa2 .s:gn
-exe "hi! @lsp.type.derive.rust"		.s:bg0 .s:fa0 .s:gb
-
 " }}}
 " Python highlighting  {{{
 
@@ -524,4 +506,25 @@ let g:terminal_color_12 = "#b3deef"
 let g:terminal_color_13 = "#d3b987"
 let g:terminal_color_14 = "#73cef4"
 let g:terminal_color_15 = "#ffffff"
+" }}}
+" Lsp {{{
+
+exe "hi! @variable" 		.s:g_normal   .s:g_normal   .s:b_normal
+exe "hi! @lsp.type.variable" 	.s:g_normal   .s:g_normal   .s:b_normal
+exe "hi! @lsp.mod.mutable" 	.s:g_normal   .s:g_normal   .s:gu
+exe "hi! @lsp.type.property"	.s:bg0 .s:fa1 .s:gi
+exe "hi! @field"		.s:bg0 .s:fa1 .s:gi
+exe "hi! @lsp.type.method"	.s:bg0 .s:fa5 .s:gi
+exe "hi! @lsp.type.parameter"	.s:bg0 .s:fg0 .s:gn
+exe "hi! @lsp.type.namespace"	.s:bg0 .s:fa7 .s:gn
+exe "hi! @namespace"		.s:bg0 .s:fa7 .s:gn
+exe "hi! @lsp.type.keyword"	.s:bg0 .s:fa0 .s:gn
+exe "hi! @lsp.type.struct"	.s:bg0 .s:fa0 .s:gi
+exe "hi! @lsp.type.enum"	.s:bg0 .s:fa6 .s:gn
+exe "hi! @lsp.type.interface"	.s:bg0 .s:fa0 .s:gb
+exe "hi! @lsp.type.decorator"	.s:bg0 .s:fa2 .s:gn
+exe "hi! @lsp.type.generic"	.s:bg0 .s:fa2 .s:gn
+exe "hi! @lsp.type.deriveHelper".s:bg0 .s:fa2 .s:gn
+exe "hi! @lsp.type.derive"	.s:bg0 .s:fa0 .s:gb
+
 " }}}

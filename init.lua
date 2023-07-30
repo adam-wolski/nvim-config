@@ -42,6 +42,7 @@ force_load('init.rust')
 force_load('init.telescope')
 force_load('init.gitsigns')
 force_load('init.map')
+force_load('init.hydra')
 vim.cmd [[runtime init-firenvim.vim]]
 
 vim.cmd(

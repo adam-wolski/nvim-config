@@ -9,10 +9,6 @@ vim.o.statusline = "%{get(b:,'gitsigns_status','')} %f %h%w%m%r%=%-14.(%l,%c%V%)
 vim.o.exrc = true
 vim.opt.breakindent = true
 vim.opt.fillchars = [[fold:\]]
-vim.opt.foldexpr = [[nvim_treesitter#foldexpr()]]
-vim.opt.foldlevel = 10
-vim.opt.foldmethod = "expr"
-vim.opt.foldtext = [[MyFoldText()]]
 vim.opt.hidden = true
 vim.opt.icm = "nosplit"
 vim.opt.ignorecase = true
@@ -43,6 +39,7 @@ force_load('init.telescope')
 force_load('init.gitsigns')
 force_load('init.map')
 force_load('init.hydra')
+force_load('init.ufo')
 force_load('init.misc')
 vim.cmd [[runtime init-firenvim.vim]]
 

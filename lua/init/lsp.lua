@@ -45,24 +45,30 @@ local on_attach = function(client, bufnr)
 
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
+capabilities.textDocument.semanticHighlightingCapabilities = {
+  semanticHighlighting = true
+}
+
 nvim_lsp.ltex.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
 }
 
 nvim_lsp.clangd.setup {
-  capabilities = {
-    textDocument = {
-      semanticHighlightingCapabilities = {
-        semanticHighlighting = true
-      }
-    }
-  },
+  capabilities = capabilities,
   on_init = require'nvim-lsp-clangd-highlight'.on_init,
   on_attach = on_attach,
 }
 
 if (vim.fn.has('win32') == 1) then
   nvim_lsp.powershell_es.setup {
+    capabilities = capabilities,
     shell = "powershell.exe",
     bundle_path = os.getenv("PSES_BUNDLE_PATH"),
     on_attach = on_attach,
@@ -70,6 +76,7 @@ if (vim.fn.has('win32') == 1) then
 end
 
 nvim_lsp.lua_ls.setup {
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -93,6 +100,7 @@ nvim_lsp.lua_ls.setup {
 }
 
 require'lspconfig'.tsserver.setup{
+  capabilities = capabilities,
   on_attach = on_attach,
 }
 

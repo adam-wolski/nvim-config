@@ -84,7 +84,7 @@
 	path = pack/core/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim.git
 [submodule "pack/core/start/nvim-ufo"]
-	path = pack/core/opt/nvim-ufo
+	path = pack/core/start/nvim-ufo
 	url = https://github.com/kevinhwang91/nvim-ufo
 [submodule "pack/core/start/promise-async"]
 	path = pack/core/start/promise-async

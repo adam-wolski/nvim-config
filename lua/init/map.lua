@@ -28,7 +28,7 @@ nmap('<C-S-B>', [[<cmd>make<CR>]])
 imap('<C-R>', [[<C-R><C-O>]])
 
 nmap('<A-m>', [[<CMD>lua require('telescope.builtin').lsp_document_symbols()<CR>]])
-nmap('<A-s>', [[<CMD>lua require('telescope.builtin').lsp_workspace_symbols()<CR>]])
+nmap('<A-s>', [[<CMD>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>]])
 nmap('<leader>b', [[<CMD>lua require('telescope.builtin').buffers()<CR>]])
 nmap('<leader>f', [[<CMD>lua require('telescope.builtin').find_files()<CR>]])
 nmap('<leader>t', [[<CMD>lua require('telescope.builtin').treesitter()<CR>]])

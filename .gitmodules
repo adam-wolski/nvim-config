@@ -126,3 +126,6 @@
 [submodule "pack/core/start/hydra.nvim"]
 	path = pack/core/start/hydra.nvim
 	url = https://github.com/anuvyklack/hydra.nvim.git
+[submodule "pack/core/start/nvim-ts-autotag"]
+	path = pack/core/start/nvim-ts-autotag
+	url = https://github.com/windwp/nvim-ts-autotag.git

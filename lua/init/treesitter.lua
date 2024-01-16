@@ -1,10 +1,10 @@
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
-    "c", 
+    "c",
     "c_sharp",
     "cmake",
-    "commonlisp", 
-    "cpp", 
+    "commonlisp",
+    "cpp",
     "dockerfile",
     "glsl",
     "go",
@@ -14,31 +14,31 @@ require'nvim-treesitter.configs'.setup {
     "http",
     "java",
     "javascript",
-    "json", 
-    "lua", 
-    "markdown", 
+    "json",
+    "lua",
+    "markdown",
     "python",
-    "rust", 
+    "rust",
     "toml",
     "typescript",
     "vim",
     "yaml",
-  }, 
+  },
 
 	highlight = {
 		-- false will disable the whole extension
-		enable = true,              
+		enable = true,
 
 		-- list of language that will be disabled
-		disable = {'cpp'},  
+		disable = {'cpp'},
 	},
 
 	rainbow = {
 		enable = true,
 		-- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-		extended_mode = true, 
+		extended_mode = true,
 		-- Do not enable for files with more than 1000 lines, int
-		max_file_lines = 1000, 
+		max_file_lines = 1000,
 	},
 
 	textobjects = {
@@ -100,4 +100,15 @@ require'nvim-treesitter.configs'.setup {
   autotag = {
     enable = true,
   }
+}
+
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+parser_config.nu = {
+  install_info = {
+    url = "https://github.com/nushell/tree-sitter-nu",
+    files = { "src/parser.c" },
+    branch = "main",
+  },
+  filetype = "nu",
 }

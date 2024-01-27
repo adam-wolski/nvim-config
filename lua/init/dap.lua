@@ -31,6 +31,15 @@ do
     name = "lldb"
   }
 
+  dap.adapters.cppdbg = {
+    id = 'cppdbg',
+    type = 'executable',
+    command = 'OpenDebugAD7',
+    options = {
+      detached = false
+    }
+  }
+
   dap.configurations.cpp = {
     {
       name = "Launch",
@@ -77,6 +86,12 @@ do
     return commands
   end
 
+  local codelldb = os.getenv('CODE_LLDB_PATH')
+  if codelldb == nil then
+    -- Fallback to binary in the path
+    codelldb = "codelldb"
+  end
+
   dap.configurations.rust = {
     {
       name = 'Launch',
@@ -110,7 +125,7 @@ do
     type = 'server',
     port = "${port}",
     executable = {
-      command = os.getenv('CODE_LLDB_PATH'),
+      command = codelldb,
       args = { "--port", "${port}" },
 
       -- On windows you may have to uncomment this:

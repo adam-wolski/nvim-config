@@ -129,3 +129,6 @@
 [submodule "pack/core/start/nvim-ts-autotag"]
 	path = pack/core/start/nvim-ts-autotag
 	url = https://github.com/windwp/nvim-ts-autotag.git
+[submodule "pack/core/start/nvim-gdb"]
+	path = pack/core/start/nvim-gdb
+	url = https://github.com/sakhnik/nvim-gdb.git

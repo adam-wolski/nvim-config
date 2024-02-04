@@ -19,6 +19,8 @@ vim.opt.linebreak = true
 vim.opt.mouse = "a"
 vim.opt.scrolloff = 15
 vim.opt.termguicolors = true
+vim.g.nvimgdb_use_find_executables = 0
+vim.g.nvimgdb_disable_start_keymaps = 1
 
 vim.cmd [[colorscheme nugl]]
 

@@ -99,6 +99,8 @@ nvim_lsp.lua_ls.setup {
   },
 }
 
+nvim_lsp.wgsl_analyzer.setup{}
+
 require'lspconfig'.tsserver.setup{
   capabilities = capabilities,
   on_attach = on_attach,

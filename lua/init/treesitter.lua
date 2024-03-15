@@ -22,6 +22,7 @@ require'nvim-treesitter.configs'.setup {
     "toml",
     "typescript",
     "vim",
+    "wgsl",
     "yaml",
   },
 

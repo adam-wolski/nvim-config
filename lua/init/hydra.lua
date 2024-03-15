@@ -1,3 +1,5 @@
+vim.cmd('packadd hydra.nvim')
+
 local Hydra = require("hydra")
 local gitsigns = require('gitsigns')
 

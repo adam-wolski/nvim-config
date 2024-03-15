@@ -1,3 +1,7 @@
+vim.cmd('packadd nvim-dap')
+vim.cmd('packadd nvim-dap-ui')
+vim.cmd('packadd nvim-dap-virtual-text')
+
 do
   local dap = require "dap"
 

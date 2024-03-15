@@ -1,3 +1,8 @@
+vim.cmd('packadd neodev.nvim')
+vim.cmd('packadd nvim-lspconfig')
+vim.cmd('packadd nvim-lsp-clangd-highlight')
+vim.cmd('packadd lsp_lines.nvim')
+
 -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
 require("neodev").setup({
   library = { plugins = { "nvim-dap-ui" }, types = true },

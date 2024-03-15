@@ -1,3 +1,5 @@
+vim.cmd('packadd rust-tools.nvim')
+
 local rt = require("rust-tools")
 
 local inlays = false

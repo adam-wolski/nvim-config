@@ -12,7 +12,6 @@ end
 
 nmap('<A-e>', vim.diagnostic.open_float)
 nmap('<A-q>', vim.diagnostic.setloclist)
-nmap('<A-t>', require('sterm').toggle)
 nmap('<leader>/', [[:nohl<CR>]])
 nmap('<leader><', [[:call AdjustFontSize(-1)<CR>]])
 nmap('<leader>>', [[:call AdjustFontSize(1)<CR>]])

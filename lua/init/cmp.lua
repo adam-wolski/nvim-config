@@ -1,3 +1,10 @@
+vim.cmd("packadd nvim-cmp")
+vim.cmd("packadd cmp-nvim-lsp")
+vim.cmd("packadd cmp-omni")
+vim.cmd("packadd copilot-cmp")
+vim.cmd("packadd vim-surround")
+vim.cmd("packadd vim-venter")
+
 local cmp = require'cmp'
 
 cmp.setup({

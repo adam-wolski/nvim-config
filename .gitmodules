@@ -1,115 +1,80 @@
 [submodule "pack/core/start/lazygit.nvim"]
-	path = pack/core/start/lazygit.nvim
+	path = pack/core/opt/lazygit.nvim
 	url = https://github.com/kdheepak/lazygit.nvim
-[submodule "pack/core/start/goyo.vim"]
-	path = pack/core/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
 [submodule "pack/core/start/nvim-treesitter"]
-	path = pack/treesitter/start/nvim-treesitter
+	path = pack/treesitter/opt/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
 [submodule "pack/core/start/nvim-lspconfig"]
-	path = pack/core/start/nvim-lspconfig
+	path = pack/core/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
 	ignore = dirty
 [submodule "pack/telescope/start/plenary.nvim"]
-	path = pack/telescope/start/plenary.nvim
+	path = pack/telescope/opt/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim.git
 [submodule "pack/telescope/start/popup.nvim"]
-	path = pack/telescope/start/popup.nvim
+	path = pack/telescope/opt/popup.nvim
 	url = https://github.com/nvim-lua/popup.nvim.git
 [submodule "pack/telescope/start/telescope.nvim"]
-	path = pack/telescope/start/telescope.nvim
+	path = pack/telescope/opt/telescope.nvim
 	url = https://github.com/nvim-telescope/telescope.nvim.git
-[submodule "pack/core/start/completion-treesitter"]
-	path = pack/treesitter/start/completion-treesitter
-	url = https://github.com/nvim-treesitter/completion-treesitter.git
 [submodule "pack/core/start/nvim-ts-rainbow"]
-	path = pack/treesitter/start/nvim-ts-rainbow
+	path = pack/treesitter/opt/nvim-ts-rainbow
 	url = https://github.com/p00f/nvim-ts-rainbow.git
-[submodule "pack/treesitter/start/nvim-treesitter-refactor"]
-	path = pack/treesitter/start/nvim-treesitter-refactor
-	url = https://github.com/nvim-treesitter/nvim-treesitter-refactor.git
-	ignore = dirty
-[submodule "pack/treesitter/start/nvim-treesitter-textobjects"]
-	path = pack/treesitter/start/nvim-treesitter-textobjects
-	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
 [submodule "pack/core/start/nvim-lsp-clangd-highlight"]
-	path = pack/core/start/nvim-lsp-clangd-highlight
+	path = pack/core/opt/nvim-lsp-clangd-highlight
 	url = git@github.com:adam-wolski/nvim-lsp-clangd-highlight.git
 [submodule "pack/core/start/one-small-step-for-vimkind"]
-	path = pack/core/start/one-small-step-for-vimkind
+	path = pack/core/opt/one-small-step-for-vimkind
 	url = https://github.com/jbyuki/one-small-step-for-vimkind.git
 [submodule "pack/core/start/nvim-dap"]
-	path = pack/core/start/nvim-dap
+	path = pack/core/opt/nvim-dap
 	url = https://github.com/mfussenegger/nvim-dap.git
 [submodule "pack/telescope/start/telescope-dap.nvim"]
-	path = pack/telescope/start/telescope-dap.nvim
+	path = pack/telescope/opt/telescope-dap.nvim
 	url = https://github.com/nvim-telescope/telescope-dap.nvim.git
 [submodule "pack/core/start/nvim-dap-ui"]
-	path = pack/core/start/nvim-dap-ui
+	path = pack/core/opt/nvim-dap-ui
 	url = https://github.com/rcarriga/nvim-dap-ui.git
 [submodule "pack/core/start/nvim-dap-virtual-text"]
-	path = pack/core/start/nvim-dap-virtual-text
+	path = pack/core/opt/nvim-dap-virtual-text
 	url = https://github.com/theHamsta/nvim-dap-virtual-text.git
 [submodule "pack/core/start/vim-surround"]
-	path = pack/core/start/vim-surround
+	path = pack/core/opt/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule "pack/core/start/vim-venter"]
-	path = pack/core/start/vim-venter
+	path = pack/core/opt/vim-venter
 	url = https://github.com/JMcKiern/vim-venter.git
 	ignore = dirty
 [submodule "pack/core/start/gina.vim"]
-	path = pack/core/start/gina.vim
+	path = pack/core/opt/gina.vim
 	url = https://github.com/lambdalisue/gina.vim.git
 [submodule "pack/core/start/nvim-cmp"]
-	path = pack/core/start/nvim-cmp
+	path = pack/core/opt/nvim-cmp
 	url = https://github.com/hrsh7th/nvim-cmp
 [submodule "pack/core/start/cmp-nvim-lsp"]
-	path = pack/core/start/cmp-nvim-lsp
+	path = pack/core/opt/cmp-nvim-lsp
 	url = https://github.com/hrsh7th/cmp-nvim-lsp
 	ignore = dirty
-[submodule "pack/core/start/firenvim"]
-	path = pack/core/start/firenvim
-	url = https://github.com/glacambre/firenvim.git
-[submodule "pack/lisp/start/slimv"]
-	path = pack/lisp/opt/slimv
-	url = https://github.com/kovisoft/slimv
 [submodule "pack/core/start/cmp-omni"]
-	path = pack/core/start/cmp-omni
+	path = pack/core/opt/cmp-omni
 	url = https://github.com/hrsh7th/cmp-omni
-[submodule "pack/core/opt/null-ls.nvim"]
-	path = pack/core/start/null-ls.nvim
-	url = https://github.com/jose-elias-alvarez/null-ls.nvim
-[submodule "pack/core/opt/markdown-preview.nvim"]
-	path = pack/core/start/markdown-preview.nvim
-	url = https://github.com/iamcco/markdown-preview.nvim.git
 [submodule "pack/core/start/nvim-ufo"]
-	path = pack/core/start/nvim-ufo
+	path = pack/core/opt/nvim-ufo
 	url = https://github.com/kevinhwang91/nvim-ufo
 [submodule "pack/core/start/promise-async"]
-	path = pack/core/start/promise-async
+	path = pack/core/opt/promise-async
 	url = https://github.com/kevinhwang91/promise-async
 [submodule "pack/core/start/nvim-autopairs"]
-	path = pack/core/start/nvim-autopairs
+	path = pack/core/opt/nvim-autopairs
 	url = https://github.com/windwp/nvim-autopairs.git
-[submodule "pack/core/start/nvim-lint"]
-	path = pack/core/start/nvim-lint
-	url = https://github.com/mfussenegger/nvim-lint
 [submodule "pack/core/start/rust-tools.nvim"]
-	path = pack/core/start/rust-tools.nvim
+	path = pack/core/opt/rust-tools.nvim
 	url = https://github.com/simrat39/rust-tools.nvim
-[submodule "pack/core/start/LuaSnip"]
-	path = pack/core/start/LuaSnip
-	url = https://github.com/L3MON4D3/LuaSnip.git
 [submodule "pack/core/start/lsp_lines.nvim"]
-	path = pack/core/start/lsp_lines.nvim
+	path = pack/core/opt/lsp_lines.nvim
 	url = https://git.sr.ht/~whynothugo/lsp_lines.nvim
-[submodule "pack/core/start/sterm.nvim"]
-	path = pack/core/start/sterm.nvim
-	url = https://github.com/Hvassaa/sterm.nvim.git
-	ignore = dirty
 [submodule "pack/core/start/gitsigns.nvim"]
-	path = pack/core/start/gitsigns.nvim
+	path = pack/core/opt/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim
 [submodule "pack/core/opt/copilot.lua"]
 	path = pack/core/opt/copilot.lua
@@ -118,17 +83,14 @@
 	path = pack/core/opt/copilot-cmp
 	url = https://github.com/zbirenbaum/copilot-cmp.git
 [submodule "pack/telescope/start/telescope-file-browser.nvim"]
-	path = pack/telescope/start/telescope-file-browser.nvim
+	path = pack/telescope/opt/telescope-file-browser.nvim
 	url = https://github.com/nvim-telescope/telescope-file-browser.nvim.git
 [submodule "pack/core/start/neodev.nvim"]
-	path = pack/core/start/neodev.nvim
+	path = pack/core/opt/neodev.nvim
 	url = https://github.com/folke/neodev.nvim
 [submodule "pack/core/start/hydra.nvim"]
-	path = pack/core/start/hydra.nvim
+	path = pack/core/opt/hydra.nvim
 	url = https://github.com/anuvyklack/hydra.nvim.git
-[submodule "pack/core/start/nvim-ts-autotag"]
-	path = pack/core/start/nvim-ts-autotag
-	url = https://github.com/windwp/nvim-ts-autotag.git
 [submodule "pack/core/start/nvim-gdb"]
-	path = pack/core/start/nvim-gdb
+	path = pack/core/opt/nvim-gdb
 	url = https://github.com/sakhnik/nvim-gdb.git

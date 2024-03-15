@@ -1,3 +1,6 @@
+vim.cmd('packadd lazygit.nvim')
+vim.cmd('packadd nvim-gdb')
+
 vim.g.mapleader = [[ ]]
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_cursor_trail_length = 0
@@ -38,7 +41,6 @@ force_load('init.lsp')
 force_load('init.treesitter')
 force_load('init.dap')
 force_load('init.autopairs')
-force_load('init.lint')
 force_load('init.rust')
 force_load('init.telescope')
 force_load('init.gitsigns')
@@ -46,7 +48,6 @@ force_load('init.map')
 force_load('init.hydra')
 force_load('init.ufo')
 force_load('init.misc')
-vim.cmd [[runtime init-firenvim.vim]]
 
 local function insert_uuid()
   -- Generating a UUID using an external command like 'uuidgen'

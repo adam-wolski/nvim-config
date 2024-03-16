@@ -4,6 +4,7 @@ vim.cmd("packadd cmp-omni")
 vim.cmd("packadd copilot-cmp")
 vim.cmd("packadd vim-surround")
 vim.cmd("packadd vim-venter")
+vim.cmd("packadd LuaSnip")
 
 local cmp = require'cmp'
 

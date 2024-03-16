@@ -94,3 +94,6 @@
 [submodule "pack/core/start/nvim-gdb"]
 	path = pack/core/opt/nvim-gdb
 	url = https://github.com/sakhnik/nvim-gdb.git
+[submodule "pack/core/opt/LuaSnip"]
+	path = pack/core/opt/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip.git

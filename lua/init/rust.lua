@@ -28,8 +28,8 @@ rt.setup({
       vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
       vim.keymap.set("n", "<C-h>", toggle_inlays, { buffer = bufnr })
     end,
-    settings = { 
-      ['rust-analyzer'] = {diagnostics = {disabled = {"unresolved-proc-macro"}}}
+    settings = {
+      ['rust-analyzer'] = {diagnostics = {disabled = {"unresolved-proc-macro", "inactive-code"}}}
     },
   },
   dap = {

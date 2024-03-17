@@ -206,7 +206,7 @@ exe "hi! Special"   .s:g_special   .s:f_special   .s:b_special
 "        Delimiter       character that needs attention
 "        Debug           debugging statements
 
-let s:g_specialcomment = s:gr   
+let s:g_specialcomment = s:g_comment   
 let s:f_specialcomment = s:f_comment   
 let s:b_specialcomment = s:b_comment
 exe "hi! SpecialComment"   .s:g_specialcomment   .s:f_specialcomment   .s:b_specialcomment
@@ -512,6 +512,8 @@ let g:terminal_color_15 = "#ffffff"
 exe "hi! @variable" 		.s:g_normal   .s:g_normal   .s:b_normal
 exe "hi! @lsp.type.variable" 	.s:g_normal   .s:g_normal   .s:b_normal
 exe "hi! @lsp.mod.mutable" 	.s:g_normal   .s:g_normal   .s:gu
+exe "hi! @lsp.mod.constant" 	.s:bg0 .s:fa3 .s:gn
+exe "hi! @lsp.type.enumMember" 	.s:bg0 .s:fa3 .s:gn
 exe "hi! @lsp.type.property"	.s:bg0 .s:fa1 .s:gi
 exe "hi! @field"		.s:bg0 .s:fa1 .s:gi
 exe "hi! @lsp.type.method"	.s:bg0 .s:fa5 .s:gi

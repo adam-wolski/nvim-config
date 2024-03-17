@@ -21,7 +21,6 @@ require'nvim-treesitter.configs'.setup {
     "lua",
     "markdown",
     "python",
-    "rust",
     "toml",
     "typescript",
     "vim",

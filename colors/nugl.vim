@@ -513,6 +513,7 @@ exe "hi! @variable" 			.s:g_normal   .s:g_normal   .s:b_normal
 exe "hi! @lsp.type.variable" 		.s:g_normal   .s:g_normal   .s:b_normal
 exe "hi! @lsp.mod.mutable" 		.s:g_normal   .s:g_normal   .s:gu
 exe "hi! @lsp.mod.constant" 		.s:bg0 .s:fa3 .s:gn
+exe "hi! @lsp.typemod.variable.static.rust" 		.s:bg0 .s:fa3 .s:gn
 exe "hi! @lsp.type.enumMember" 		.s:bg0 .s:fa3 .s:gn
 exe "hi! @lsp.type.property"		.s:bg0 .s:fa1 .s:gi
 exe "hi! @field"			.s:bg0 .s:fa1 .s:gi

@@ -1,7 +1,5 @@
 vim.cmd('packadd gitsigns.nvim')
 
-vim.o.statusline = "%{get(b:,'gitsigns_status','')} %f %h%w%m%r%=%-14.(%l,%c%V%) %P"
-
 require('gitsigns').setup {
   signs = {
     add          = { hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },

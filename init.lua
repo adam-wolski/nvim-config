@@ -38,6 +38,9 @@ force_load('init.misc')
 force_load('init.neovide')
 force_load('init.gdb')
 force_load('utils.uuid')
+force_load('utils.lsp_progress')
+
+vim.o.statusline = "%{get(b:,'gitsigns_status','')} %f %{%v:lua.require('utils.lsp_progress').lsp_progress()%} %h%w%m%r%=%-14.(%l,%c%V%) %P"
 
 vim.cmd(
 [[
@@ -74,7 +77,9 @@ function! ScrollOff()
 	let &scrolloff = float2nr(h * 0.35)
 endfunctio
 
-au BufEnter,WinEnter,WinNew,VimResized *,*.* call ScrollOff()
+autocmd BufEnter,WinEnter,WinNew,VimResized *,*.* call ScrollOff()
+autocmd User LspProgressUpdate redrawstatus
+autocmd User LspRequest redrawstatus
 ]])
 
 

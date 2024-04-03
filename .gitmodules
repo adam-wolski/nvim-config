@@ -97,3 +97,6 @@
 [submodule "pack/core/opt/LuaSnip"]
 	path = pack/core/opt/LuaSnip
 	url = https://github.com/L3MON4D3/LuaSnip.git
+[submodule "pack/core/opt/codecompanion.nvim"]
+	path = pack/core/opt/codecompanion.nvim
+	url = https://github.com/olimorris/codecompanion.nvim.git

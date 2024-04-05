@@ -7,7 +7,7 @@ vim.cmd('packadd telescope-file-browser.nvim')
 require('telescope').setup({
   defaults = {
     layout_strategy = 'vertical',
-    path_display = {shorten = { len = 2, exclude = { -1 } }},
+    path_display = {shorten = { len = 3, exclude = { -1, -2, 1 } }},
   },
 })
 

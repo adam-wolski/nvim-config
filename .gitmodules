@@ -100,3 +100,4 @@
 [submodule "pack/core/opt/codecompanion.nvim"]
 	path = pack/core/opt/codecompanion.nvim
 	url = https://github.com/olimorris/codecompanion.nvim.git
+	ignore = dirty

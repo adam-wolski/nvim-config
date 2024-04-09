@@ -29,13 +29,13 @@ cmp.setup({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ['<CR>'] = cmp.mapping.confirm({ 
+    ['<CR>'] = cmp.mapping.confirm({
       cmp.ConfirmBehavior.Insert,
-      select = true, 
+      select = true,
     }),
-    ['<Tab>'] = cmp.mapping.confirm({ 
+    ['<Tab>'] = cmp.mapping.confirm({
       cmp.ConfirmBehavior.Replace,
-      select = true, 
+      select = true,
     }),
   },
 

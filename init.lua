@@ -13,7 +13,7 @@ vim.opt.mouse = "a"
 vim.opt.scrolloff = 15
 vim.opt.termguicolors = true
 
-vim.cmd [[colorscheme nugl]]
+vim.cmd [[colorscheme blacky]]
 
 -- Force load packages so sourcing init.lua script reloads modules
 -- Packages are cached otherwise and require doesn't suffice

@@ -106,6 +106,22 @@ nvim_lsp.lua_ls.setup {
 
 nvim_lsp.wgsl_analyzer.setup{}
 
+nvim_lsp.rust_analyzer.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        disabled = {
+          "unresolved-proc-macro",
+          "inactive-code"
+        }
+      }
+    }
+  }
+}
+
+
 require'lspconfig'.tsserver.setup{
   capabilities = capabilities,
   on_attach = on_attach,

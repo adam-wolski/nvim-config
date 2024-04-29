@@ -67,9 +67,6 @@
 [submodule "pack/core/start/nvim-autopairs"]
 	path = pack/core/opt/nvim-autopairs
 	url = https://github.com/windwp/nvim-autopairs.git
-[submodule "pack/core/start/rust-tools.nvim"]
-	path = pack/core/opt/rust-tools.nvim
-	url = https://github.com/simrat39/rust-tools.nvim
 [submodule "pack/core/start/lsp_lines.nvim"]
 	path = pack/core/opt/lsp_lines.nvim
 	url = https://git.sr.ht/~whynothugo/lsp_lines.nvim

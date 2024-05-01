@@ -1,3 +1,6 @@
+vim.cmd("packadd vim-venter")
+vim.cmd("packadd vim-surround")
+
 local M = {}
 
 M.lock_window_size = function()

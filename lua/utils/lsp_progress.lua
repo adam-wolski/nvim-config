@@ -5,7 +5,7 @@ M.lsp_progress = function()
 		return ""
 	end
 
-	local lsp = vim.lsp.util.get_progress_messages()[1]
+	local lsp = vim.lsp.status()
 
 	if lsp then
 		local name = lsp.name or ""

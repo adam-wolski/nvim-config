@@ -150,6 +150,7 @@ exe "hi! Comment"   .s:g_comment   .s:f_comment   .s:b_comment
 let s:g_constant = s:gn   
 let s:f_constant = s:fa6   
 let s:b_constant = s:bgn
+exe "hi! String"   .s:g_constant   .s:f_constant   .s:b_constant
 exe "hi! Constant"   .s:g_constant   .s:f_constant   .s:b_constant
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
@@ -161,6 +162,7 @@ exe "hi! Constant"   .s:g_constant   .s:f_constant   .s:b_constant
 let s:g_identifier = s:gn   
 let s:f_identifier = s:fa5   
 let s:b_identifier = s:bgn
+exe "hi! Function"   	.s:g_identifier   .s:f_identifier   .s:b_identifier
 exe "hi! Identifier"   .s:g_identifier   .s:f_identifier   .s:b_identifier
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
@@ -514,6 +516,8 @@ exe "hi! @lsp.type.variable" 		.s:g_normal   .s:g_normal   .s:b_normal
 exe "hi! @lsp.mod.mutable" 		.s:g_normal   .s:g_normal   .s:gu
 exe "hi! @lsp.mod.constant" 		.s:bg0 .s:fa3 .s:gn
 exe "hi! @lsp.typemod.variable.static.rust" 		.s:bg0 .s:fa3 .s:gn
+exe "hi! @lsp.type.macro" 		.s:bgn .s:fa1 .s:gn
+exe "hi! @lsp.type.static" 		.s:bg0 .s:fa3 .s:gn
 exe "hi! @lsp.type.enumMember" 		.s:bg0 .s:fa3 .s:gn
 exe "hi! @lsp.type.property"		.s:bg0 .s:fa1 .s:gi
 exe "hi! @field"			.s:bg0 .s:fa1 .s:gi

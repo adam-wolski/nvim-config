@@ -20,9 +20,6 @@
 [submodule "pack/core/start/nvim-ts-rainbow"]
 	path = pack/treesitter/opt/nvim-ts-rainbow
 	url = https://github.com/p00f/nvim-ts-rainbow.git
-[submodule "pack/core/start/nvim-lsp-clangd-highlight"]
-	path = pack/core/opt/nvim-lsp-clangd-highlight
-	url = git@github.com:adam-wolski/nvim-lsp-clangd-highlight.git
 [submodule "pack/core/start/one-small-step-for-vimkind"]
 	path = pack/core/opt/one-small-step-for-vimkind
 	url = https://github.com/jbyuki/one-small-step-for-vimkind.git

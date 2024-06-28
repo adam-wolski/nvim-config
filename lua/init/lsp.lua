@@ -1,6 +1,5 @@
 vim.cmd('packadd neodev.nvim')
 vim.cmd('packadd nvim-lspconfig')
-vim.cmd('packadd nvim-lsp-clangd-highlight')
 vim.cmd('packadd lsp_lines.nvim')
 
 -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
@@ -67,7 +66,6 @@ nvim_lsp.ltex.setup {
 
 nvim_lsp.clangd.setup {
   capabilities = capabilities,
-  on_init = require'nvim-lsp-clangd-highlight'.on_init,
   on_attach = on_attach,
 }
 

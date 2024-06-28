@@ -84,7 +84,21 @@ dap.adapters.rustgdb = {
   args = { "-i", "dap" }
 }
 
+dap.adapters.gdb = {
+  type = "executable",
+  command = "gdb",
+  args = { "-i", "dap" }
+}
+
 dap.configurations.cpp = {
+  {
+    name = "Launch Gdb",
+    type = "gdb",
+    request = "launch",
+    program = get_exe_path,
+    cwd = "${workspaceFolder}",
+    stopAtBeginningOfMainSubprogram = true,
+  },
   {
     name = "Launch",
     type = "lldb",
@@ -161,15 +175,15 @@ require "dapui".setup({
       elements = {
         {
           id = "stacks",
-          size = 0.25
+          size = 0.3
         },
         {
           id = "scopes",
-          size = 0.5
-        }
+          size = 0.70
+        },
       },
       position = "right",
-      size = 60
+      size = 0.3
     },
     {
       elements = {
@@ -191,7 +205,7 @@ require "dapui".setup({
         }
       },
       position = "right",
-      size = 60
+      size = 0.3
     },
     {
       elements = {
@@ -201,7 +215,7 @@ require "dapui".setup({
         },
       },
       position = "bottom",
-      size = 20
+      size = 0.3
     } },
   })
 

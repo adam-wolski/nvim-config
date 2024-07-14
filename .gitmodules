@@ -95,3 +95,6 @@
 	path = pack/core/opt/codecompanion.nvim
 	url = https://github.com/olimorris/codecompanion.nvim.git
 	ignore = dirty
+[submodule "pack/treesitter/opt/nvim-treesitter-context"]
+	path = pack/treesitter/opt/nvim-treesitter-context
+	url = https://github.com/nvim-treesitter/nvim-treesitter-context

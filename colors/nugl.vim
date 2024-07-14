@@ -141,6 +141,9 @@ let s:g_normal = s:gn
 let s:b_normal = s:bg0
 exe "hi! Normal"   .s:g_normal   .s:g_normal   .s:b_normal
 
+exe "hi! NormalFloat"   .s:g_normal   .s:g_normal   .s:bgd
+" Floating window
+
 let s:g_comment = s:gbi 
 let s:f_comment = s:fa6   
 let s:b_comment = s:bgn

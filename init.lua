@@ -2,6 +2,7 @@ vim.cmd('packadd lazygit.nvim')
 
 vim.g.mapleader = [[ ]]
 vim.g.vimsyn_embed = 'l'
+vim.g.c_syntax_for_h = 1
 vim.o.breakat = "),="
 vim.o.grepprg = "rg --vimgrep"
 vim.o.exrc = true

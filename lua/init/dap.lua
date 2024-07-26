@@ -1,3 +1,4 @@
+vim.cmd('packadd nvim-nio') -- nvim-dap-ui dependency
 vim.cmd('packadd nvim-dap')
 vim.cmd('packadd nvim-dap-ui')
 

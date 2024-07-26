@@ -98,3 +98,6 @@
 [submodule "pack/treesitter/opt/nvim-treesitter-context"]
 	path = pack/treesitter/opt/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context
+[submodule "pack/core/opt/nvim-nio"]
+	path = pack/core/opt/nvim-nio
+	url = https://github.com/nvim-neotest/nvim-nio.git

@@ -65,6 +65,7 @@ nvim_lsp.ltex.setup {
 }
 
 nvim_lsp.clangd.setup {
+  cmd = {'clangd', '--background-index', '--clang-tidy'},
   capabilities = capabilities,
   on_attach = on_attach,
 }

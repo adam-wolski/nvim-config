@@ -6,6 +6,7 @@ vim.g.c_syntax_for_h = 1
 vim.o.breakat = "),="
 vim.o.grepprg = "rg --vimgrep"
 vim.o.exrc = true
+vim.o.path = "**"
 vim.opt.breakindent = true
 vim.opt.fillchars = [[fold:\]]
 vim.opt.ignorecase = true

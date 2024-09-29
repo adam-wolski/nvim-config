@@ -38,6 +38,7 @@ force_load('init.misc')
 force_load('init.neovide')
 force_load('init.codecompanion')
 force_load('init.refactoring')
+force_load('init.oil')
 force_load('utils.uuid')
 force_load('utils.lsp_progress')
 

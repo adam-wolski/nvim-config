@@ -104,3 +104,6 @@
 [submodule "pack/core/opt/refactoring.nvim"]
 	path = pack/core/opt/refactoring.nvim
 	url = https://github.com/ThePrimeagen/refactoring.nvim.git
+[submodule "pack/core/opt/oil.nvim"]
+	path = pack/core/opt/oil.nvim
+	url = https://github.com/stevearc/oil.nvim.git

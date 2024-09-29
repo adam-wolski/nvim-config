@@ -10,6 +10,11 @@ local get_exe_path = function()
   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
 end
 
+local function get_pid()
+  local name = vim.fn.input('Executable name (filter): ')
+  return require("dap.utils").pick_process({ filter = name })
+end
+
 M.get_exe_path = get_exe_path;
 
 local rust_init_commands = function()
@@ -120,6 +125,14 @@ dap.configurations.cpp = {
     -- But you should be aware of the implications:
     -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
     runInTerminal = false,
+  },
+  {
+    name = "Attach",
+    type = "lldb",
+    request = "attach",
+    program = get_exe_path,
+    pid = get_pid,
+    cwd = '${workspaceFolder}'
   },
 }
 

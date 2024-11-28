@@ -25,7 +25,7 @@
 	url = https://github.com/jbyuki/one-small-step-for-vimkind.git
 [submodule "pack/core/start/nvim-dap"]
 	path = pack/core/opt/nvim-dap
-	url = https://github.com/mfussenegger/nvim-dap.git
+	url = git@github.com:adam-wolski/nvim-dap.git
 [submodule "pack/telescope/start/telescope-dap.nvim"]
 	path = pack/telescope/opt/telescope-dap.nvim
 	url = https://github.com/nvim-telescope/telescope-dap.nvim.git

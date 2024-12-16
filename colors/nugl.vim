@@ -492,6 +492,11 @@ exe "hi! ClangdDependentName"      	.s:bg0 .s:fa1 .s:gb
 exe "hi! ClangdDependentType"      	.s:bg0 .s:fa0 .s:gb
 
 " }}}
+" HLSL {{{
+
+hi! link @type.builtin.hlsl Type
+
+" }}}
 " Terminal highlighting {{{
 let g:terminal_color_foreground = "#282828"
 let g:terminal_color_background = "#eeeeee"

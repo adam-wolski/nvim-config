@@ -235,4 +235,34 @@ require "dapui".setup({
 
 vim.fn.sign_define('DapBreakpoint', { text = '', texthl = '', linehl = '', numhl = '' })
 
+function M.continue_improved()
+  -- If there's already an active DAP session, just continue without recompiling.
+  if dap.session() then
+    dap.continue()
+    return
+  end
+
+  vim.cmd('cclose')
+
+  local cmd = vim.o.makeprg
+
+  local output = vim.fn.system(cmd)
+  local retcode = vim.v.shell_error
+
+  -- Set the quickfix output
+  vim.fn.setqflist({}, 'r', {
+    lines = vim.split(output, '\n', { plain = true }),
+    efm   = vim.o.errorformat,
+  })
+
+  if retcode ~= 0 then
+    vim.api.nvim_err_writeln("Compilation failed.")
+    vim.cmd('copen')
+    return
+  end
+
+  -- If no errors, launch the debugger
+  require('dap').continue()
+end
+
 return M;

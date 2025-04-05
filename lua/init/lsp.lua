@@ -122,12 +122,6 @@ nvim_lsp.rust_analyzer.setup {
   }
 }
 
-
-require'lspconfig'.tsserver.setup{
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
 require("lsp_lines").setup()
 
 -- Disable virtual_text since it's redundant due to lsp_lines.

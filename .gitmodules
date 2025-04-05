@@ -17,9 +17,6 @@
 [submodule "pack/telescope/start/telescope.nvim"]
 	path = pack/telescope/opt/telescope.nvim
 	url = https://github.com/nvim-telescope/telescope.nvim.git
-[submodule "pack/core/start/nvim-ts-rainbow"]
-	path = pack/treesitter/opt/nvim-ts-rainbow
-	url = https://github.com/p00f/nvim-ts-rainbow.git
 [submodule "pack/core/start/one-small-step-for-vimkind"]
 	path = pack/core/opt/one-small-step-for-vimkind
 	url = https://github.com/jbyuki/one-small-step-for-vimkind.git
@@ -107,3 +104,6 @@
 [submodule "pack/core/opt/oil.nvim"]
 	path = pack/core/opt/oil.nvim
 	url = https://github.com/stevearc/oil.nvim.git
+[submodule "pack/treesitter/opt/rainbow-delimiters.nvim"]
+	path = pack/treesitter/opt/rainbow-delimiters.nvim
+	url = https://github.com/HiPhish/rainbow-delimiters.nvim.git

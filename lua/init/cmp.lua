@@ -36,7 +36,9 @@ cmp.setup({
       select = true,
     }),
   },
-
+  completion = {
+    autocomplete = false,
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'copilot' },

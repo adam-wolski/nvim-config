@@ -21,8 +21,6 @@ nmap('<leader>c', [[gg"+yG]])
 nmap('<leader>g', [[:LazyGit<CR>]])
 nmap('<leader>p', [["+p]])
 nmap('<leader>w', [[<cmd>w<CR>]])
-nmap('[d', function() vim.diagnostic.jump({count=1, float=true}) end)
-nmap(']d', function() vim.diagnostic.jump({count=-1, float=true})end )
 nmap('<C-S-B>', [[<cmd>make<CR>]])
 imap('<C-R>', [[<C-R><C-O>]])
 

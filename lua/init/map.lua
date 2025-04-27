@@ -36,6 +36,7 @@ nmap('<leader>d', [[<CMD>Telescope dap<CR>]])
 nmap('<leader>e', [[<CMD>Telescope file_browser<CR>]])
 nmap('<leader>h', [[<CMD>Telescope help_tags<CR>]])
 
+nmap('<F4>', ":lua require'dap'.terminate()<CR>")
 nmap('<F5>', ":lua require'init.dap'.continue_improved()<CR>")
 nmap('<F6>', ":lua require'dap'.pause(0)<CR>")
 nmap('<F7>', ":lua require'dap'.run_to_cursor()<CR>")

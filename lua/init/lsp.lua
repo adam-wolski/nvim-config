@@ -61,11 +61,6 @@ capabilities.textDocument.semanticHighlightingCapabilities = {
   semanticHighlighting = true
 }
 
-nvim_lsp.ltex.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
 nvim_lsp.clangd.setup {
   cmd = {'clangd', '--background-index', '--clang-tidy'},
   capabilities = capabilities,

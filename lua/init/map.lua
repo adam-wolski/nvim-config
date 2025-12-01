@@ -21,6 +21,7 @@ nmap('<leader>c', [[gg"+yG]])
 nmap('<leader>g', [[:LazyGit<CR>]])
 nmap('<leader>p', [["+p]])
 nmap('<leader>w', [[<cmd>w<CR>]])
+nmap('<leader>m', [[<cmd>w<CR><cmd>make<CR>]])
 nmap('<C-S-B>', [[<cmd>make<CR>]])
 imap('<C-R>', [[<C-R><C-O>]])
 

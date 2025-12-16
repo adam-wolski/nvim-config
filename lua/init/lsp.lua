@@ -9,45 +9,46 @@ require("neodev").setup({
 
 local nvim_lsp = require('lspconfig')
 
--- Use an on_attach function to only map the following keys 
+-- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   --Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local function map(mode, key, action, desc)
+    vim.api.nvim_buf_set_keymap(bufnr, mode, key, action, { noremap=true, silent=true, desc=desc })
+  end
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', '<A-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('i', '<A-D>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<A-d>', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<A-r>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<A-a>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('v', '<A-a>', "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  buf_set_keymap("n", '<A-f>', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', "Go to declaration")
+  map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', "Go to definition")
+  map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', "Find references")
+  map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', "Go to implementation")
+  map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', "Hover documentation")
+  map('n', '<A-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', "Signature help")
+  map('i', '<A-D>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', "Signature help")
+  map('n', '<A-d>', '<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition")
+  map('n', '<A-r>', '<cmd>lua vim.lsp.buf.rename()<CR>', "Rename symbol")
+  map('n', '<A-a>', '<cmd>lua vim.lsp.buf.code_action()<CR>', "Code action")
+  map('v', '<A-a>', "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action")
+  map("n", '<A-f>', '<cmd>lua vim.lsp.buf.formatting()<CR>', "Format buffer")
 
-  buf_set_keymap('n', '<leader>lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', '<leader>ld', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<leader>lh', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', '<leader>lk', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>lR', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('v', '<leader>la', "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  buf_set_keymap("n", '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  buf_set_keymap("n", '<leader>lm', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
-  buf_set_keymap("n", '<leader>ll', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+  map('n', '<leader>lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', "LSP: Declaration")
+  map('n', '<leader>ld', '<Cmd>lua vim.lsp.buf.definition()<CR>', "LSP: Definition")
+  map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>', "LSP: References")
+  map('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>', "LSP: Implementation")
+  map('n', '<leader>lh', '<Cmd>lua vim.lsp.buf.hover()<CR>', "LSP: Hover")
+  map('n', '<leader>lk', '<cmd>lua vim.lsp.buf.signature_help()<CR>', "LSP: Signature help")
+  map('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', "LSP: Type definition")
+  map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.rename()<CR>', "LSP: Rename")
+  map('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', "LSP: Code action")
+  map('v', '<leader>la', "<cmd>lua vim.lsp.buf.code_action()<CR>", "LSP: Code action")
+  map("n", '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', "LSP: Format")
+  map("n", '<leader>lm', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', "LSP: Document symbols")
+  map("n", '<leader>ll', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', "LSP: Workspace symbols")
 
 end
 

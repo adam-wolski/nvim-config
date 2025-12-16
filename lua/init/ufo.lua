@@ -7,10 +7,10 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
 -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
-vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
-vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds, {desc = "Open all folds"})
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds, {desc = "Close all folds"})
+vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds, {desc = "Open folds except kinds"})
+vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith, {desc = "Close folds with"}) -- closeAllFolds == closeFoldsWith(0)
 
 local handler = function(virtText, lnum, endLnum, width, truncate)
     local newVirtText = {}

@@ -75,14 +75,14 @@ Hydra({
   body = '<C-w>',
   invoke_on_body = true,
   heads = {
-    {'l', function() vim.cmd.wincmd('l') end, {exit = true}},
-    {'h', function() vim.cmd.wincmd('h') end, {exit = true}},
-    {'k', function() vim.cmd.wincmd('k') end, {exit = true}},
-    {'j', function() vim.cmd.wincmd('j') end, {exit = true}},
-    {'>', function() vim.cmd.wincmd('>') end},
-    {'<', function() vim.cmd.wincmd('<') end},
-    {'+', function() vim.cmd.wincmd('+') end},
-    {'=', function() vim.cmd.wincmd('=') end},
-    {'-', function() vim.cmd.wincmd('-') end},
+    {'l', function() vim.cmd.wincmd('l') end, {exit = true, desc = "Move right"}},
+    {'h', function() vim.cmd.wincmd('h') end, {exit = true, desc = "Move left"}},
+    {'k', function() vim.cmd.wincmd('k') end, {exit = true, desc = "Move up"}},
+    {'j', function() vim.cmd.wincmd('j') end, {exit = true, desc = "Move down"}},
+    {'>', function() vim.cmd.wincmd('>') end, {desc = "Increase width"}},
+    {'<', function() vim.cmd.wincmd('<') end, {desc = "Decrease width"}},
+    {'+', function() vim.cmd.wincmd('+') end, {desc = "Increase height"}},
+    {'=', function() vim.cmd.wincmd('=') end, {desc = "Equalize windows"}},
+    {'-', function() vim.cmd.wincmd('-') end, {desc = "Decrease height"}},
   }
 })

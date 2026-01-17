@@ -12,7 +12,12 @@ local nvim_lsp = require('lspconfig')
 vim.o.quickfixtextfunc = "v:lua.qf_text"
 
 function _G.qf_text(info)
-  local items = vim.fn.getqflist({ id = info.id, items = 1 }).items
+  local list = vim.fn.getqflist({ id = info.id, items = 1, title = 1 })
+  if list.title ~= "LSP References" then
+    return {}
+  end
+
+  local items = list.items
   local entries = {}
   local max_left = 0
   local max_func = 0
@@ -33,7 +38,6 @@ function _G.qf_text(info)
     local left = string.format("%s:%d", name, line)
 
     local text = item.text or ""
-    text = text:gsub("^%s+", ""):gsub("%s+$", "")
     local func, rest = text:match("^(.-) | (.*)$")
     if not func then
       func = ""

@@ -242,11 +242,8 @@ local on_attach = function(_, bufnr)
   end
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', "Go to declaration")
-  map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', "Go to definition")
-  map('n', 'gr', '<cmd>lua lsp_references_with_context()<CR>', "Find references")
-  map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', "Go to implementation")
-  map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', "Hover documentation")
+  map('n', 'grD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', "Go to declaration")
+  map('n', 'grd', '<Cmd>lua vim.lsp.buf.definition()<CR>', "Go to definition")
   map('n', '<A-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', "Signature help")
   map('i', '<A-D>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', "Signature help")
   map('n', '<A-d>', '<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition")

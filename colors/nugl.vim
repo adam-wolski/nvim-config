@@ -495,6 +495,7 @@ exe "hi! ClangdDependentType"      	.s:bg0 .s:fa0 .s:gb
 " HLSL {{{
 
 hi! link @type.builtin.hlsl Type
+hi! link @constructor.hlsl Function
 
 " }}}
 " Terminal highlighting {{{

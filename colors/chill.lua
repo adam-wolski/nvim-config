@@ -1,0 +1,210 @@
+local colors = {
+  none = "NONE",
+
+  black = "#000000",
+  charcoal = "#1c1c1c",
+  slate = "#303030",
+  gray = "#585858",
+  gray_light = "#707070",
+  silver = "#a8a8a8",
+  text = "#dadada",
+  white = "#ffffff",
+
+  red = "#d7005f",
+  red_bright = "#ff005f",
+  red_soft = "#d75f5f",
+  orange = "#d78700",
+  amber = "#ffaf00",
+  lime = "#afff00",
+  green = "#00af5f",
+  green_bright = "#00d75f",
+  mint = "#00ffaf",
+  blue = "#0087d7",
+  blue_bright = "#00afff",
+  blue_soft = "#87afd7",
+  cyan = "#00afaf",
+  cyan_bright = "#00d7d7",
+  magenta = "#d787d7",
+  magenta_bright = "#ff5fff",
+  pink = "#ff87ff",
+  pink_deep = "#ff00af",
+}
+
+local terminal_colors = {
+  foreground = colors.text,
+  background = colors.black,
+  [0] = colors.black,
+  [1] = colors.red,
+  [2] = colors.green,
+  [3] = colors.orange,
+  [4] = colors.blue,
+  [5] = colors.magenta,
+  [6] = colors.cyan,
+  [7] = colors.text,
+  [8] = colors.gray_light,
+  [9] = colors.red_bright,
+  [10] = colors.green_bright,
+  [11] = colors.amber,
+  [12] = colors.blue_soft,
+  [13] = colors.pink,
+  [14] = colors.cyan_bright,
+  [15] = colors.white,
+}
+
+local groups = {
+  Added = { link = "Normal" },
+  Changed = { link = "Normal" },
+  Removed = { link = "Normal" },
+  Terminal = { link = "Normal" },
+  StatusLineTerm = { link = "StatusLine" },
+  StatusLineTermNC = { link = "StatusLineNC" },
+  MessageWindow = { link = "Pmenu" },
+  PopupNotification = { link = "Todo" },
+  PopupSelected = { link = "PmenuSel" },
+  Boolean = { link = "Constant" },
+  Character = { link = "Constant" },
+  Conditional = { link = "Statement" },
+  Define = { link = "PreProc" },
+  Debug = { link = "Special" },
+  Delimiter = { link = "Special" },
+  Exception = { link = "Statement" },
+  Float = { link = "Constant" },
+  Function = { link = "Identifier" },
+  Include = { link = "PreProc" },
+  Keyword = { link = "Statement" },
+  Label = { link = "Statement" },
+  Macro = { link = "PreProc" },
+  Number = { link = "Constant" },
+  Operator = { link = "Statement" },
+  PreCondit = { link = "PreProc" },
+  Repeat = { link = "Statement" },
+  SpecialChar = { link = "Special" },
+  SpecialComment = { link = "Special" },
+  StorageClass = { link = "Type" },
+  String = { link = "Constant" },
+  Structure = { link = "Type" },
+  Tag = { link = "Special" },
+  Typedef = { link = "Type" },
+  lCursor = { link = "Cursor" },
+  debugBreakpoint = { link = "ModeMsg" },
+  debugPC = { link = "CursorLine" },
+
+  Normal = { fg = colors.text, bg = colors.charcoal },
+  NormalFloat = { fg = colors.text, bg = colors.slate },
+  ColorColumn = { bg = colors.charcoal },
+  Conceal = { fg = colors.none, bg = colors.none },
+  CurSearch = { fg = colors.magenta_bright, bg = colors.black, reverse = true },
+  Cursor = { fg = colors.none, bg = colors.none, reverse = true },
+  CursorColumn = { bg = colors.slate },
+  CursorLine = { bg = colors.slate },
+  CursorLineNr = { fg = colors.text, bg = colors.slate },
+  DiffAdd = { fg = "#00af00", bg = colors.black, reverse = true },
+  DiffChange = { fg = colors.blue_soft, bg = colors.black, reverse = true },
+  DiffDelete = { fg = colors.red_soft, bg = colors.black, reverse = true },
+  DiffText = { fg = colors.magenta, bg = colors.black, reverse = true },
+  Directory = { fg = colors.text },
+  EndOfBuffer = { fg = colors.gray_light },
+  ErrorMsg = { fg = colors.text, bg = colors.black, reverse = true },
+  FoldColumn = { fg = colors.gray_light },
+  Folded = { fg = colors.gray_light, bg = colors.black },
+  IncSearch = { fg = colors.amber, bg = colors.black, reverse = true },
+  LineNr = { fg = colors.gray },
+  MatchParen = { fg = colors.pink_deep, bold = true },
+  ModeMsg = { fg = colors.text, bold = true },
+  MoreMsg = { fg = colors.text },
+  NonText = { fg = colors.gray_light },
+  Pmenu = { fg = colors.black, bg = colors.gray },
+  PmenuMatch = { fg = colors.red, bg = colors.silver },
+  PmenuExtra = { fg = colors.black, bg = colors.silver },
+  PmenuKind = { fg = colors.black, bg = colors.silver, bold = true },
+  PmenuSbar = { fg = colors.gray_light, bg = colors.gray },
+  PmenuSel = { fg = colors.black, bg = colors.text },
+  PmenuMatchSel = { fg = colors.red, bg = colors.text, bold = true },
+  PmenuExtraSel = { fg = colors.black, bg = colors.text },
+  PmenuKindSel = { fg = colors.black, bg = colors.text, bold = true },
+  PmenuThumb = { fg = colors.text, bg = colors.text },
+  Question = { fg = colors.text },
+  QuickFixLine = { fg = colors.magenta_bright, bg = colors.black, reverse = true },
+  Search = { fg = colors.blue_bright, bg = colors.black, reverse = true },
+  SignColumn = { fg = colors.text },
+  SpecialKey = { fg = colors.gray_light, bold = true },
+  SpellBad = { fg = colors.red, sp = colors.red, undercurl = true },
+  SpellCap = { fg = colors.blue, sp = colors.blue, undercurl = true },
+  SpellLocal = { fg = colors.magenta, sp = colors.magenta, undercurl = true },
+  SpellRare = { fg = colors.cyan, sp = colors.cyan, undercurl = true },
+  StatusLine = { fg = colors.black, bg = colors.text, bold = true },
+  StatusLineNC = { fg = colors.gray_light, bg = colors.black, reverse = true },
+  TabLine = { fg = colors.gray_light, bg = colors.black, reverse = true },
+  TabLineFill = { fg = colors.text },
+  TabLineSel = { fg = colors.black, bg = colors.text, bold = true },
+  Title = { fg = colors.none, bg = colors.none },
+  VertSplit = { fg = colors.gray_light, bg = colors.black },
+  Visual = { fg = colors.amber, bg = colors.black, reverse = true },
+  VisualNOS = { bg = colors.slate },
+  WarningMsg = { fg = colors.text },
+  WildMenu = { fg = colors.blue_bright, bg = colors.black, bold = true },
+  Comment = { fg = colors.gray_light, bold = true },
+  Constant = { fg = colors.text },
+  Error = { fg = colors.red_bright, bg = colors.black, bold = true, reverse = true },
+  Identifier = { fg = colors.text },
+  Ignore = { fg = colors.text },
+  PreProc = { fg = colors.text },
+  Special = { fg = colors.text },
+  Statement = { fg = colors.text },
+  Todo = { fg = colors.mint, bold = true, reverse = true },
+  Type = { fg = colors.text },
+  Underlined = { fg = colors.text, underline = true },
+  CursorIM = { fg = colors.black, bg = colors.lime },
+  ToolbarLine = { fg = colors.none, bg = colors.black },
+  ToolbarButton = { fg = colors.text, bg = colors.black, bold = true },
+}
+
+local function apply()
+  vim.cmd("highlight clear")
+
+  if vim.fn.exists("syntax_on") == 1 then
+    vim.cmd("syntax reset")
+  end
+
+  vim.o.background = "dark"
+  vim.g.colors_name = "chill"
+
+  vim.g.terminal_ansi_colors = {
+    terminal_colors[0],
+    terminal_colors[1],
+    terminal_colors[2],
+    terminal_colors[3],
+    terminal_colors[4],
+    terminal_colors[5],
+    terminal_colors[6],
+    terminal_colors[7],
+    terminal_colors[8],
+    terminal_colors[9],
+    terminal_colors[10],
+    terminal_colors[11],
+    terminal_colors[12],
+    terminal_colors[13],
+    terminal_colors[14],
+    terminal_colors[15],
+  }
+
+  vim.g.terminal_color_foreground = terminal_colors.foreground
+  vim.g.terminal_color_background = terminal_colors.background
+
+  for i = 0, 15 do
+    vim.g["terminal_color_" .. i] = terminal_colors[i]
+  end
+
+  for group, spec in pairs(groups) do
+    vim.api.nvim_set_hl(0, group, spec)
+  end
+end
+
+apply()
+
+return {
+  colors = colors,
+  terminal_colors = terminal_colors,
+  groups = groups,
+  apply = apply,
+}

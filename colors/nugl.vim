@@ -553,6 +553,7 @@ hi! link @lsp.typemod.variable.globalScope.c @lsp.type.enumMember.c
 hi! link @property.c @lsp.type.variable.c
 hi! link @lsp.type.property.c @lsp.type.variable.c
 hi! link @operator.c @lsp.type.property
+hi! link @lsp.type.operator.c @lsp.type.property
 hi! link @punctuation.delimiter.c @lsp.type.property
 
 " }}}

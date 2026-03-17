@@ -69,7 +69,6 @@ local groups = {
   Delimiter = { link = "Special" },
   Exception = { link = "Statement" },
   Float = { link = "Constant" },
-  Function = { link = "Identifier" },
   Include = { link = "PreProc" },
   Keyword = { link = "Statement" },
   Label = { link = "Statement" },
@@ -144,9 +143,10 @@ local groups = {
   WarningMsg = { fg = colors.text },
   WildMenu = { fg = colors.blue_bright, bg = colors.black, bold = true },
   Comment = { fg = colors.gray_light, bold = true },
-  Constant = { fg = colors.text },
+  Constant = { fg = colors.silver },
   Error = { fg = colors.red_bright, bg = colors.black, bold = true, reverse = true },
   Identifier = { fg = colors.text },
+  Function = { fg = colors.silver },
   Ignore = { fg = colors.text },
   PreProc = { fg = colors.text },
   Special = { fg = colors.silver },
@@ -157,6 +157,10 @@ local groups = {
   CursorIM = { fg = colors.black, bg = colors.lime },
   ToolbarLine = { fg = colors.none, bg = colors.black },
   ToolbarButton = { fg = colors.text, bg = colors.black, bold = true },
+  LspReferenceTarget = { fg = colors.amber },
+  LspReferenceText = { fg = colors.amber },
+
+  ["@lsp.typemod.variable.globalScope.c"] = { link = "Constant" },
 }
 
 local function apply()

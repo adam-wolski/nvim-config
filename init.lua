@@ -7,7 +7,7 @@ vim.o.breakat = "),="
 vim.o.grepprg = "rg --vimgrep"
 vim.o.exrc = true
 vim.o.path = "**"
-vim.o.completeopt = "menu,popup"
+vim.o.completeopt = "menu,popup,fuzzy"
 vim.opt.breakindent = true
 vim.opt.fillchars = [[fold:\]]
 vim.opt.ignorecase = true

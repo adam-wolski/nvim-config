@@ -46,6 +46,17 @@ force_load('utils.lsp_progress')
 
 vim.o.statusline = "%{get(b:,'gitsigns_status','')} %f %{%v:lua.require('utils.lsp_progress').lsp_progress()%} %h%w%m%r%=%-14.(%l,%c%V%) %P"
 
+function _G.fuzzy_find_files(cmdarg, _)
+  local files = vim.fn.systemlist('rg --files --hidden --color=never --glob="!.git"')
+  if #cmdarg == 0 then
+    return files
+  else
+    return vim.fn.matchfuzzy(files, cmdarg)
+  end
+end
+
+vim.o.findfunc = 'v:lua.fuzzy_find_files'
+
 vim.cmd(
 [[
 command! ClearBuffers :%bd|e#|bd#

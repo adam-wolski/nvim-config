@@ -257,6 +257,27 @@ else
   groups.SpellLocal = { fg = colors.fg0, bg = colors.yellow, undercurl = true }
 end
 
+local terminal_colors = {
+  foreground = colors.fg0,
+  background = colors.bg0,
+  [0] = colors.darkgray,
+  [1] = colors.solar_red,
+  [2] = colors.green,
+  [3] = colors.yellow,
+  [4] = colors.blue,
+  [5] = colors.magenta,
+  [6] = colors.cyan,
+  [7] = colors.white,
+  [8] = colors.darkgraylighter,
+  [9] = colors.red,
+  [10] = colors.green,
+  [11] = colors.yellow,
+  [12] = colors.blue,
+  [13] = colors.violet,
+  [14] = colors.cyan,
+  [15] = colors.whitepp,
+}
+
 local function apply()
   vim.cmd("highlight clear")
 
@@ -270,24 +291,12 @@ local function apply()
   vim.g.hs_highlight_boolean = 1
   vim.g.hs_highlight_delimiters = 1
 
-  vim.g.terminal_color_foreground = "#282828"
-  vim.g.terminal_color_background = "#eeeeee"
-  vim.g.terminal_color_0 = "#282828"
-  vim.g.terminal_color_1 = "#f43753"
-  vim.g.terminal_color_2 = "#c9d05c"
-  vim.g.terminal_color_3 = "#ffc24b"
-  vim.g.terminal_color_4 = "#b3deef"
-  vim.g.terminal_color_5 = "#d3b987"
-  vim.g.terminal_color_6 = "#73cef4"
-  vim.g.terminal_color_7 = "#eeeeee"
-  vim.g.terminal_color_8 = "#1d1d1d"
-  vim.g.terminal_color_9 = "#f43753"
-  vim.g.terminal_color_10 = "#c9d05c"
-  vim.g.terminal_color_11 = "#ffc24b"
-  vim.g.terminal_color_12 = "#b3deef"
-  vim.g.terminal_color_13 = "#d3b987"
-  vim.g.terminal_color_14 = "#73cef4"
-  vim.g.terminal_color_15 = "#ffffff"
+  vim.g.terminal_color_foreground = terminal_colors.foreground
+  vim.g.terminal_color_background = terminal_colors.background
+
+  for i = 0, 15 do
+    vim.g["terminal_color_" .. i] = terminal_colors[i]
+  end
 
   for group, spec in pairs(groups) do
     vim.api.nvim_set_hl(0, group, spec)

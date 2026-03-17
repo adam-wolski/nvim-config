@@ -544,4 +544,15 @@ exe "hi! @lsp.type.generic"		.s:bg0 .s:fa2 .s:gn
 exe "hi! @lsp.type.deriveHelper"	.s:bg0 .s:fa2 .s:gn
 exe "hi! @lsp.type.derive"		.s:bg0 .s:fa0 .s:gb
 
+" Lsp C
+" Enum members the same color as globals, as they are global in C anyway
+hi! link @lsp.typemod.variable.globalScope.c @lsp.type.enumMember.c
+" In C as we cannot use properties in methods without pointing no need
+" for a special color.
+" Instead add color for operators like -> and .
+hi! link @property.c @lsp.type.variable.c
+hi! link @lsp.type.property.c @lsp.type.variable.c
+hi! link @operator.c @lsp.type.property
+hi! link @punctuation.delimiter.c @lsp.type.property
+
 " }}}

@@ -9,3 +9,4 @@ inoremap ,enu typedef enum {} ;<Left>
 inoremap ,inc #include ""<Left>
 inoremap ,br (){}<Left><Left><Left>
 inoremap ,swi switch (){}<Left><Left><Left>
+inoremap ,cas case :{}break;<ESC>8<Left>i

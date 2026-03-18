@@ -10,8 +10,20 @@ local imap = function (key, action, desc)
   maps('i', key, action, desc)
 end
 
+local toggle_quickfix_window = function()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if vim.fn.win_gettype(win) == "quickfix" then
+      vim.cmd("cclose")
+      return
+    end
+  end
+
+  vim.cmd("cwindow")
+end
+
 nmap('<A-e>', vim.diagnostic.open_float, "Open diagnostic float")
 nmap('<A-q>', vim.diagnostic.setloclist, "Set diagnostic loclist")
+nmap('<leader>q', toggle_quickfix_window, "Toggle quickfix window")
 nmap('<leader>/', [[:nohl<CR>]], "Clear search highlight")
 nmap('<leader><', [[:call AdjustFontSize(-1)<CR>]], "Decrease font size")
 nmap('<leader>>', [[:call AdjustFontSize(1)<CR>]], "Increase font size")
@@ -66,4 +78,3 @@ nmap('<leader>dwa', [[:lua require'dapui'.elements.watches.add()<CR>]], "DAP UI:
 nmap('<leader>ds', [[:lua require'dapui'.float_element("stack")<CR>]], "DAP UI: Float stack")
 nmap('<leader>di', [[:lua require'dapui'.float_element("scopes")<CR>]], "DAP UI: Float scopes")
 nmap('<leader>dc', [[:lua require'dapui'.float_element("console")<CR>]], "DAP UI: Float console")
-

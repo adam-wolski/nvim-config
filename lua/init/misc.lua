@@ -1,5 +1,6 @@
 vim.cmd("packadd vim-venter")
 vim.cmd("packadd vim-surround")
+vim.cmd("packadd nvim-autopairs")
 
 local M = {}
 
@@ -17,5 +18,7 @@ end
 
 vim.api.nvim_create_user_command('ScaleUpNeovide', function() M.scale_neovide(0.1) end, {})
 vim.api.nvim_create_user_command('ScaleDownNeovide', function() M.scale_neovide(-0.1) end, {})
+
+require("nvim-autopairs").setup()
 
 return M

@@ -77,16 +77,6 @@ function! MyFoldText()
 	endif
 endfunction
 
-function! AdjustFontSize(amount)
-	" Split font name from FontName:hSize format and set increased size
-	let current_font = &guifont
-	let font_split = split(current_font, ':')
-	let font = font_split[0]
-	let font_size = font_split[1][1:] + a:amount
-	let command = "let &guifont = \"" . font . ":h" . font_size . "\""
-	:execute command
-endfunction
-
 function! ScrollOff()
 	let h = winheight(win_getid())
 	let &scrolloff = float2nr(h * 0.35)

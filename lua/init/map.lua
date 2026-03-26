@@ -33,7 +33,7 @@ nmap('<leader>c', [[gg"+yG]], "Copy entire buffer to clipboard")
 nmap('<leader>g', [[:LazyGit<CR>]], "Open LazyGit")
 nmap('<leader>p', [["+p]], "Paste from clipboard")
 nmap('<leader>w', [[<cmd>w<CR>]], "Write file")
-nmap('<leader>m', [[<cmd>w<CR><cmd>make<CR>]], "Write and make")
+nmap('<leader>m', [[<cmd>w<CR><cmd>MakeAsync<CR>]], "Write and make")
 nmap('<C-S-B>', [[<cmd>make<CR>]], "Make")
 imap('<C-R>', [[<C-R><C-O>]], "Insert register")
 

@@ -2,16 +2,10 @@ vim.cmd("packadd nvim-cmp")
 vim.cmd("packadd cmp-nvim-lsp")
 vim.cmd("packadd cmp-omni")
 vim.cmd("packadd copilot-cmp")
-vim.cmd("packadd LuaSnip")
 
 local cmp = require'cmp'
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
   mapping = {
     ['<A-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
     ['<A-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),

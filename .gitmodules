@@ -85,13 +85,6 @@
 [submodule "pack/core/start/nvim-gdb"]
 	path = pack/core/opt/nvim-gdb
 	url = https://github.com/sakhnik/nvim-gdb.git
-[submodule "pack/core/opt/LuaSnip"]
-	path = pack/core/opt/LuaSnip
-	url = https://github.com/L3MON4D3/LuaSnip.git
-[submodule "pack/core/opt/codecompanion.nvim"]
-	path = pack/core/opt/codecompanion.nvim
-	url = https://github.com/olimorris/codecompanion.nvim.git
-	ignore = dirty
 [submodule "pack/treesitter/opt/nvim-treesitter-context"]
 	path = pack/treesitter/opt/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context

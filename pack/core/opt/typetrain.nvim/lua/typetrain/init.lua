@@ -12,7 +12,7 @@ M.config = {
     ghost_hl = "TypeTrainGhost",
     error_hl = "TypeTrainError",
     stats_hl = "Title",
-    ignore_chars = "{}()/#*",
+    ignore_chars = "{}()/#* \t",
 }
 
 -- Create highlight groups

@@ -32,6 +32,8 @@ function Session.new(bufnr, filepath, config)
     self.original_lines = {}
     self.config = config
     self.ns_id = api.nvim_create_namespace("typetrain")
+    self.ns_vlines = api.nvim_create_namespace("typetrain_vlines")
+    self.vlines_extmark = nil
     self.start_time = nil
     self.end_time = nil
     self.keystrokes = 0
@@ -62,8 +64,9 @@ function Session:start()
     -- Clear the buffer
     api.nvim_buf_set_lines(self.bufnr, 0, -1, false, {""})
 
-    -- Set up ghost text (virtual text overlay)
+    -- Set up ghost text (decoration provider for inline, extmarks for remaining lines)
     self:setup_ghost_text()
+    self:update_errors()
 
     -- Attach to buffer for tracking
     self:attach()
@@ -71,54 +74,72 @@ function Session:start()
     vim.notify("TypeTrain: Session started! Type to recreate the file. Use :TypeTrainFinish when done.", vim.log.levels.INFO)
 end
 
---- Set up initial ghost text using extmarks
+--- Set up decoration provider for jitter-free ghost text rendering
 function Session:setup_ghost_text()
-    self:update_ghost_text()
+    local self_ref = self
+    api.nvim_set_decoration_provider(self.ns_id, {
+        on_win = function(_, _, bufnr)
+            return bufnr == self_ref.bufnr and not self_ref.finished
+        end,
+
+        on_line = function(_, _, bufnr, row)
+            if bufnr ~= self_ref.bufnr or self_ref.finished then
+                return
+            end
+
+            local original = self_ref.original_lines[row + 1]
+            if not original then return end
+
+            local current = api.nvim_buf_get_lines(bufnr, row, row + 1, false)[1] or ""
+            local current_len = vim.fn.strchars(current)
+            local original_len = vim.fn.strchars(original)
+
+            -- Show remaining ghost text after typed content
+            if current_len < original_len then
+                local remaining = vim.fn.strcharpart(original, current_len)
+                api.nvim_buf_set_extmark(bufnr, self_ref.ns_id, row, #current, {
+                    virt_text = {{ remaining, self_ref.config.ghost_hl }},
+                    virt_text_pos = "overlay",
+                    ephemeral = true,
+                })
+            end
+
+        end,
+    })
 end
 
---- Update ghost text to show remaining text to type
-function Session:update_ghost_text()
+--- Update error highlights and track errors (called on buffer changes)
+function Session:update_errors()
     api.nvim_buf_clear_namespace(self.bufnr, self.ns_id, 0, -1)
 
     local current_lines = api.nvim_buf_get_lines(self.bufnr, 0, -1, false)
     local num_current = #current_lines
-    local num_original = #self.original_lines
 
-    -- Get cursor position to only validate characters before cursor
-    -- (auto-pairs and other plugins insert chars after cursor)
     local cursor = api.nvim_win_get_cursor(0)
-    local cursor_row = cursor[1] - 1  -- 0-indexed
-    local cursor_col = cursor[2]      -- byte position
+    local cursor_row = cursor[1] - 1
+    local cursor_col = cursor[2]
 
-    -- Process existing lines - mark errors and show remaining ghost text
     for i = 1, num_current do
         local current = current_lines[i] or ""
         local original = self.original_lines[i] or ""
         local current_len = vim.fn.strchars(current)
-        local original_len = vim.fn.strchars(original)
         local row = i - 1
 
-        -- Determine how many characters to validate on this line
         local validate_up_to
         if row < cursor_row then
-            -- Lines above cursor: validate entire line
             validate_up_to = current_len
         elseif row == cursor_row then
-            -- Cursor line: only validate up to cursor position
             validate_up_to = vim.fn.strchars(current:sub(1, cursor_col))
         else
-            -- Lines below cursor: don't validate (shouldn't happen normally)
             validate_up_to = 0
         end
 
-        -- Only highlight errors - let normal syntax highlighting show for correct chars
         for j = 1, validate_up_to do
             local typed_char = vim.fn.strcharpart(current, j - 1, 1)
             local expected_char = vim.fn.strcharpart(original, j - 1, 1)
             local pos_key = row .. ":" .. (j - 1)
 
             if typed_char ~= expected_char then
-                -- Skip error counting for ignored characters (auto-inserted by plugins)
                 local is_ignored = self.config.ignore_chars:find(typed_char, 1, true) ~= nil
 
                 if not is_ignored then
@@ -127,7 +148,6 @@ function Session:update_ghost_text()
                         self.errors = self.errors + 1
                     end
 
-                    -- Get byte position for highlight
                     local byte_start = vim.fn.byteidx(current, j - 1)
                     local byte_end = vim.fn.byteidx(current, j)
                     if byte_end == -1 then byte_end = #current end
@@ -136,28 +156,20 @@ function Session:update_ghost_text()
                 end
             end
         end
-
-        -- Show remaining ghost text after cursor on this line
-        if current_len < original_len then
-            local remaining = vim.fn.strcharpart(original, current_len)
-            api.nvim_buf_set_extmark(self.bufnr, self.ns_id, row, #current, {
-                virt_text = {{ remaining, self.config.ghost_hl }},
-                virt_text_pos = "overlay",
-            })
-        end
     end
 
-    -- Collect and show ghost lines for lines not yet created
-    if num_current < num_original then
+    -- Update virtual lines for remaining original lines (non-ephemeral, separate namespace)
+    api.nvim_buf_clear_namespace(self.bufnr, self.ns_vlines, 0, -1)
+    if num_current < #self.original_lines then
         local virt_lines = {}
-        for i = num_current + 1, num_original do
+        for i = num_current + 1, #self.original_lines do
             table.insert(virt_lines, {{ self.original_lines[i], self.config.ghost_hl }})
         end
 
         local last_row = num_current - 1
         if last_row < 0 then last_row = 0 end
 
-        api.nvim_buf_set_extmark(self.bufnr, self.ns_id, last_row, 0, {
+        api.nvim_buf_set_extmark(self.bufnr, self.ns_vlines, last_row, 0, {
             virt_lines = virt_lines,
             virt_lines_above = false,
         })
@@ -187,10 +199,10 @@ function Session:attach()
             -- Update keystroke count (approximate)
             self.keystrokes = self.keystrokes + 1
 
-            -- Update ghost text display
+            -- Update error highlights and check completion
             vim.schedule(function()
                 if self.attached and not self.finished then
-                    self:update_ghost_text()
+                    self:update_errors()
                     self:check_completion()
                 end
             end)
@@ -233,8 +245,10 @@ function Session:finish()
     -- Calculate stats (before restoring original)
     local stats = self:calculate_stats()
 
-    -- Clear ghost text
+    -- Disable decoration provider and clear highlights
+    api.nvim_set_decoration_provider(self.ns_id, {})
     api.nvim_buf_clear_namespace(self.bufnr, self.ns_id, 0, -1)
+    api.nvim_buf_clear_namespace(self.bufnr, self.ns_vlines, 0, -1)
 
     -- Restore original content from backup
     local backup_file = io.open(self.backup_path, "r")
@@ -257,8 +271,10 @@ function Session:stop()
     self.attached = false
     self.finished = true
 
-    -- Clear ghost text
+    -- Disable decoration provider and clear highlights
+    api.nvim_set_decoration_provider(self.ns_id, {})
     api.nvim_buf_clear_namespace(self.bufnr, self.ns_id, 0, -1)
+    api.nvim_buf_clear_namespace(self.bufnr, self.ns_vlines, 0, -1)
 
     -- Restore original content from backup
     local backup_file = io.open(self.backup_path, "r")

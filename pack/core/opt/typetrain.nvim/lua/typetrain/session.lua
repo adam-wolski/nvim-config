@@ -397,7 +397,6 @@ function Session:show_results(stats)
 
     vim.keymap.set("n", "q", close, { buffer = buf, nowait = true })
     vim.keymap.set("n", "<Esc>", close, { buffer = buf, nowait = true })
-    vim.keymap.set("n", "<CR>", close, { buffer = buf, nowait = true })
 end
 
 --- Get current status

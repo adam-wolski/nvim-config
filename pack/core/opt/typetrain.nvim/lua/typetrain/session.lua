@@ -32,8 +32,6 @@ function Session.new(bufnr, filepath, config)
     self.original_lines = {}
     self.config = config
     self.ns_id = api.nvim_create_namespace("typetrain")
-    self.ns_vlines = api.nvim_create_namespace("typetrain_vlines")
-    self.vlines_extmark = nil
     self.start_time = nil
     self.end_time = nil
     self.keystrokes = 0
@@ -61,12 +59,15 @@ function Session:start()
     backup_file:write(table.concat(self.original_lines, "\n"))
     backup_file:close()
 
-    -- Clear the buffer
-    api.nvim_buf_set_lines(self.bufnr, 0, -1, false, {""})
+    -- Replace buffer with empty lines matching original line count
+    local empty_lines = {}
+    for _ = 1, #self.original_lines do
+        table.insert(empty_lines, "")
+    end
+    api.nvim_buf_set_lines(self.bufnr, 0, -1, false, empty_lines)
 
-    -- Set up ghost text (decoration provider for inline, extmarks for remaining lines)
+    -- Set up ghost text (decoration provider for inline ghost and remaining lines)
     self:setup_ghost_text()
-    self:update_errors()
 
     -- Attach to buffer for tracking
     self:attach()
@@ -158,22 +159,6 @@ function Session:update_errors()
         end
     end
 
-    -- Update virtual lines for remaining original lines (non-ephemeral, separate namespace)
-    api.nvim_buf_clear_namespace(self.bufnr, self.ns_vlines, 0, -1)
-    if num_current < #self.original_lines then
-        local virt_lines = {}
-        for i = num_current + 1, #self.original_lines do
-            table.insert(virt_lines, {{ self.original_lines[i], self.config.ghost_hl }})
-        end
-
-        local last_row = num_current - 1
-        if last_row < 0 then last_row = 0 end
-
-        api.nvim_buf_set_extmark(self.bufnr, self.ns_vlines, last_row, 0, {
-            virt_lines = virt_lines,
-            virt_lines_above = false,
-        })
-    end
 end
 
 --- Attach to buffer for typing tracking
@@ -248,7 +233,6 @@ function Session:finish()
     -- Disable decoration provider and clear highlights
     api.nvim_set_decoration_provider(self.ns_id, {})
     api.nvim_buf_clear_namespace(self.bufnr, self.ns_id, 0, -1)
-    api.nvim_buf_clear_namespace(self.bufnr, self.ns_vlines, 0, -1)
 
     -- Restore original content from backup
     local backup_file = io.open(self.backup_path, "r")
@@ -274,7 +258,6 @@ function Session:stop()
     -- Disable decoration provider and clear highlights
     api.nvim_set_decoration_provider(self.ns_id, {})
     api.nvim_buf_clear_namespace(self.bufnr, self.ns_id, 0, -1)
-    api.nvim_buf_clear_namespace(self.bufnr, self.ns_vlines, 0, -1)
 
     -- Restore original content from backup
     local backup_file = io.open(self.backup_path, "r")

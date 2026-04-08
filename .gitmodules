@@ -72,7 +72,7 @@
 	url = https://github.com/zbirenbaum/copilot.lua.git
 [submodule "pack/core/opt/copilot-cmp"]
 	path = pack/core/opt/copilot-cmp
-	url = https://github.com/zbirenbaum/copilot-cmp.git
+	url = https://github.com/fstp/copilot-cmp.git
 [submodule "pack/telescope/start/telescope-file-browser.nvim"]
 	path = pack/telescope/opt/telescope-file-browser.nvim
 	url = https://github.com/nvim-telescope/telescope-file-browser.nvim.git

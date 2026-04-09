@@ -25,8 +25,6 @@ local force_load = function(module_name)
   require(module_name)
 end
 
--- NOTE: Make sure to init lsp BEFORE treesitter
--- So treesitter initializes as fallback correctly
 force_load('init.cmp')
 force_load('init.lsp')
 force_load('init.treesitter')

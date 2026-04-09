@@ -1,9 +1,6 @@
 [submodule "pack/core/start/lazygit.nvim"]
 	path = pack/core/opt/lazygit.nvim
 	url = https://github.com/kdheepak/lazygit.nvim
-[submodule "pack/core/start/nvim-treesitter"]
-	path = pack/treesitter/opt/nvim-treesitter
-	url = https://github.com/nvim-treesitter/nvim-treesitter
 [submodule "pack/core/start/nvim-lspconfig"]
 	path = pack/core/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
@@ -100,3 +97,66 @@
 [submodule "pack/treesitter/opt/rainbow-delimiters.nvim"]
 	path = pack/treesitter/opt/rainbow-delimiters.nvim
 	url = https://github.com/HiPhish/rainbow-delimiters.nvim.git
+[submodule "treesitter-grammars/cmake"]
+	path = treesitter-grammars/cmake
+	url = https://github.com/uyha/tree-sitter-cmake
+[submodule "treesitter-grammars/commonlisp"]
+	path = treesitter-grammars/commonlisp
+	url = https://github.com/theHamsta/tree-sitter-commonlisp
+[submodule "treesitter-grammars/cpp"]
+	path = treesitter-grammars/cpp
+	url = https://github.com/tree-sitter/tree-sitter-cpp
+[submodule "treesitter-grammars/c_sharp"]
+	path = treesitter-grammars/c_sharp
+	url = https://github.com/tree-sitter/tree-sitter-c-sharp
+[submodule "treesitter-grammars/dockerfile"]
+	path = treesitter-grammars/dockerfile
+	url = https://github.com/camdencheek/tree-sitter-dockerfile
+[submodule "treesitter-grammars/glsl"]
+	path = treesitter-grammars/glsl
+	url = https://github.com/theHamsta/tree-sitter-glsl
+[submodule "treesitter-grammars/go"]
+	path = treesitter-grammars/go
+	url = https://github.com/tree-sitter/tree-sitter-go
+[submodule "treesitter-grammars/graphql"]
+	path = treesitter-grammars/graphql
+	url = https://github.com/bkegley/tree-sitter-graphql
+[submodule "treesitter-grammars/hlsl"]
+	path = treesitter-grammars/hlsl
+	url = https://github.com/theHamsta/tree-sitter-hlsl
+[submodule "treesitter-grammars/html"]
+	path = treesitter-grammars/html
+	url = https://github.com/tree-sitter/tree-sitter-html
+[submodule "treesitter-grammars/http"]
+	path = treesitter-grammars/http
+	url = https://github.com/rest-nvim/tree-sitter-http
+[submodule "treesitter-grammars/java"]
+	path = treesitter-grammars/java
+	url = https://github.com/tree-sitter/tree-sitter-java
+[submodule "treesitter-grammars/javascript"]
+	path = treesitter-grammars/javascript
+	url = https://github.com/tree-sitter/tree-sitter-javascript
+[submodule "treesitter-grammars/json"]
+	path = treesitter-grammars/json
+	url = https://github.com/tree-sitter/tree-sitter-json
+[submodule "treesitter-grammars/luadoc"]
+	path = treesitter-grammars/luadoc
+	url = https://github.com/tree-sitter-grammars/tree-sitter-luadoc
+[submodule "treesitter-grammars/nu"]
+	path = treesitter-grammars/nu
+	url = https://github.com/nushell/tree-sitter-nu
+[submodule "treesitter-grammars/rust"]
+	path = treesitter-grammars/rust
+	url = https://github.com/tree-sitter/tree-sitter-rust
+[submodule "treesitter-grammars/toml"]
+	path = treesitter-grammars/toml
+	url = https://github.com/tree-sitter/tree-sitter-toml
+[submodule "treesitter-grammars/typescript"]
+	path = treesitter-grammars/typescript
+	url = https://github.com/tree-sitter/tree-sitter-typescript
+[submodule "treesitter-grammars/wgsl"]
+	path = treesitter-grammars/wgsl
+	url = https://github.com/szebniok/tree-sitter-wgsl
+[submodule "treesitter-grammars/yaml"]
+	path = treesitter-grammars/yaml
+	url = https://github.com/tree-sitter-grammars/tree-sitter-yaml

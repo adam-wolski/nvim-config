@@ -1,6 +1,4 @@
-vim.cmd('packadd nvim-nio') -- nvim-dap-ui dependency
 vim.cmd('packadd nvim-dap')
-vim.cmd('packadd nvim-dap-ui')
 
 local M = {}
 
@@ -183,55 +181,7 @@ dap.adapters.codelldb = {
   }
 }
 
-require "dapui".setup({
-  layouts = {
-    {
-      elements = {
-        {
-          id = "stacks",
-          size = 0.3
-        },
-        {
-          id = "scopes",
-          size = 0.70
-        },
-      },
-      position = "right",
-      size = 0.3
-    },
-    {
-      elements = {
-        {
-          id = "scopes",
-          size = 0.25
-        },
-        {
-          id = "breakpoints",
-          size = 0.25
-        },
-        {
-          id = "stacks",
-          size = 0.25
-        },
-        {
-          id = "watches",
-          size = 0.25
-        }
-      },
-      position = "right",
-      size = 0.3
-    },
-    {
-      elements = {
-        {
-          id = "repl",
-          size = 0.5
-        },
-      },
-      position = "bottom",
-      size = 0.3
-    } },
-  })
+require('init.dap_ui').setup({ auto_open = true })
 
 vim.fn.sign_define('DapBreakpoint', { text = '', texthl = '', linehl = '', numhl = '' })
 

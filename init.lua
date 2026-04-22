@@ -35,11 +35,14 @@ force_load('init.map')
 force_load('init.hydra')
 force_load('init.ufo')
 force_load('init.misc')
-force_load('init.neovide')
 force_load('init.refactoring')
 force_load('init.oil')
 force_load('utils.uuid')
 force_load('utils.lsp_progress')
+
+if vim.g.neovide then
+  force_load('init.neovide')
+end
 
 vim.o.statusline = "%{get(b:,'gitsigns_status','')} %f %{%v:lua.require('utils.lsp_progress').lsp_progress()%} %h%w%m%r%=%-14.(%l,%c%V%) %P"
 

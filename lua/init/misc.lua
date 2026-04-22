@@ -48,4 +48,8 @@ end
 
 vim.api.nvim_create_user_command('MakeAsync', M.make_async, {})
 
+vim.api.nvim_create_user_command('RenameBuffer', function(opts)
+  vim.cmd.file(opts.args)
+end, { nargs = 1, complete = 'file' })
+
 return M
